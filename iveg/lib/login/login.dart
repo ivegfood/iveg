@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iveg/menu/menu.dart';
 
 class PrimeiraTelaInicio extends StatelessWidget {
   @override
@@ -26,7 +27,7 @@ class PrimeiraTelaInicio extends StatelessWidget {
                 ),
               ),
               Image(
-                  image: AssetImage("/imagens/google.png"),
+                  image: AssetImage("/imagens/google.PNG"),
                   width: double.infinity),
               Center(
                 child: ConstrainedBox(
@@ -312,8 +313,11 @@ class _TelaLogin3State extends State<TelaLogin3> {
         style:
             ElevatedButton.styleFrom(primary: Colors.red),
         child: Text(rotulo, style: TextStyle(fontSize: 24)),
-        onPressed: () {}
-      ),
+        onPressed: () {
+            setState(() {              
+              Navigator.pushNamed(context, '/menu');
+            });
+          }),
     );
   }  
 }

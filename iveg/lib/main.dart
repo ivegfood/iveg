@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'login.dart';
+import 'login/login.dart';
+import 'menu/menu.dart';
 void main() {
   runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -17,7 +18,8 @@ void main() {
       routes: {
         '/login': (context) => TelaLogin(),
         '/login2': (context) => TelaLogin2(),
-        '/login3': (context) => TelaLogin3(),        
+        '/login3': (context) => TelaLogin3(),
+        '/menu': (context) => TelaMenu(),        
       }
     )
   );
