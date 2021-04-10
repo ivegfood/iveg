@@ -19,7 +19,13 @@ void main() {
         '/login': (context) => TelaLogin(),
         '/login2': (context) => TelaLogin2(),
         '/login3': (context) => TelaLogin3(),
-        '/menu': (context) => TelaMenu(),        
+        '/menu': (context) => TelaMenu(),
+        // '/alimentoH': (context) => TelaAlimentoH(),
+        // '/alimentoP': (context) => TelaAlimentoP(),
+        // '/bebidaH': (context) => TelaBebidaH(),
+        // '/bebidaP': (context) => TelaBebidaP(),
+        // '/utilidadesH': (context) => TelaUtilidadesH(),
+        // '/utilidadesP': (context) => TelaUtilidadesP(),
       }
     )
   );
