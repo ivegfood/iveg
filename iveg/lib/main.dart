@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'sobre/sobre.dart';
 import 'login/login.dart';
 import 'menu/menu.dart';
 void main() {
   runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'iVeg',
-      home: PrimeiraTelaInicio(),
+      home: TelaSobre(),
       theme: ThemeData(
           primaryColor: Colors.green[500],
           backgroundColor: Colors.grey[100],

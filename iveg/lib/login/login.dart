@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/menu/menu.dart';
 
-class PrimeiraTelaInicio extends StatelessWidget {
+class PrimeiraTelaInicio extends StatefulWidget {
+  @override
+  _PrimeiraTelaInicioState createState() => _PrimeiraTelaInicioState();
+}
+
+class _PrimeiraTelaInicioState extends State<PrimeiraTelaInicio> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +40,9 @@ class PrimeiraTelaInicio extends StatelessWidget {
                       width: double.infinity, height: 50),
                   child: OutlinedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/login');
+                      setState(() {
+                        Navigator.pushNamed(context, '/login');
+                      });
                     },
                     child: Text(
                       'Criar uma conta',
