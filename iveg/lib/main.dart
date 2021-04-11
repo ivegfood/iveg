@@ -6,7 +6,7 @@ void main() {
   runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'iVeg',
-      home: TelaSobre(),
+      home: PrimeiraTelaInicio(),
       theme: ThemeData(
           primaryColor: Colors.green[500],
           backgroundColor: Colors.grey[100],
