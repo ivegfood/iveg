@@ -9,7 +9,15 @@ class TelaMenu extends StatefulWidget {
 }
 
 class _TelaMenuState extends State<TelaMenu> {
-  var formKey = GlobalKey<FormState>();  
+  var formKey = GlobalKey<FormState>();
+  
+  int indexSelecionado = 0;
+  
+  void _onItemTapped(int index) {
+    setState(() {
+      indexSelecionado = index;
+    });
+  }  
 
   @override
   Widget build(BuildContext context) {
@@ -86,6 +94,32 @@ class _TelaMenuState extends State<TelaMenu> {
                 ],
               ),
             ]),
+            bottomNavigationBar: BottomNavigationBar(
+              items: const <BottomNavigationBarItem>[
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  label: 'Home',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.search),
+                  label: 'Pesquisar',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.list_alt),
+                  label: 'Pedidos',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.free_breakfast),
+                  label: 'Ofertas',
+                ),
+              ],
+              currentIndex: indexSelecionado,
+              selectedItemColor: Colors.white,
+              unselectedItemColor: Colors.grey,
+              onTap: _onItemTapped,
+              //Não consigo colocar a cor do background 
+              backgroundColor: Colors.green,
+            ),
           )),
     );
   }
