@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:iveg/menu/historico.dart';
 import 'package:iveg/menu/pesquisar.dart';
 
@@ -11,6 +13,9 @@ class TelaMenu extends StatefulWidget {
 
 class _TelaMenuState extends State<TelaMenu> {
   var formKey = GlobalKey<FormState>();
+  var listacategoria = [];
+  // var listaprodutos = [];
+  final cat = ['alimentos', 'bebidas', 'perfumaria', 'acessórios'];
 
   int indexSelecionado = 0;
 
@@ -24,9 +29,18 @@ class _TelaMenuState extends State<TelaMenu> {
       }
       if (indexSelecionado == 2) {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => TelaHistorico()));                 
+            context, MaterialPageRoute(builder: (context) => TelaHistorico()));
       }
     });
+  }
+
+  @override
+  void initState() {
+    listacategoria.add('assets/icones/vegetables_icones.png');
+    listacategoria.add('assets/icones/suco_icone.png');
+    listacategoria.add('assets/icones/perfumaria_icone.png');
+    listacategoria.add('assets/icones/acessorios_icone.png');
+    super.initState();
   }
 
   @override
@@ -39,18 +53,18 @@ class _TelaMenuState extends State<TelaMenu> {
             appBar: AppBar(
               bottom: TabBar(
                 tabs: [
-                  Tab(icon: Icon(Icons.people)),
-                  Tab(icon: Icon(Icons.pets))
+                  Tab(icon: Icon(Icons.people, size: 40)),
+                  Tab(icon: Icon(Icons.pets, size: 40))
                 ],
               ),
               title: Text(
                 'IVEG',
                 style: GoogleFonts.staatliches(
-                  fontSize: 40,
+                  fontSize: 30,
                   color: Colors.white,
                 ),
               ),
-              backgroundColor: Theme.of(context).primaryColor,
+              backgroundColor: Colors.green,
               centerTitle: true,
             ),
             drawer: Drawer(
@@ -83,88 +97,72 @@ class _TelaMenuState extends State<TelaMenu> {
               ),
             ),
             backgroundColor: Theme.of(context).backgroundColor,
-            body: TabBarView(
-              children: [
-                //Aba humano
-                Column(
-                  children: [Container(
-                          padding: EdgeInsets.all(40),
-                          color: Colors.grey[300],
-                          height: 320,
-                          child: Scrollbar(
-                            child: ListView.builder(
-                                scrollDirection: Axis.horizontal,
-                                itemCount: 3,
-                                itemBuilder: (context, index) {
-                                  return Container(
-                                    width: 200,
-                                    height: 200,
-                                    margin: EdgeInsets.all(20),
-                                    color: Colors.blue,
-                                    child: Center(
-                                      child: Text('Item $index'),
-                                    ),
-                                  );
-                                }),
+            body: TabBarView(children: [
+              //Aba humano
+              Column(children: [
+                Container(
+                  padding: EdgeInsets.all(15),
+                  color: Colors.grey[300],
+                  height: 200,
+                  child: Scrollbar(
+                    child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 4,
+                        itemBuilder: (context, index) {
+                          return Container(
+                            width: 200,
+                            height: 200,
+                            margin: EdgeInsets.all(15),
+                            child: new Stack(
+                              children: [
+                                Positioned(
+                                  child: Image.network(listacategoria[index],
+                                        height: 100)),
+                                Positioned(
+                                  bottom: 20,
+                                  child: Text(cat[index]),
+                                ),
+                              ],
+                            ),
+                          );
+                        }),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 40),
+                    color: Colors.grey[300],
+                    child: ListView.separated(
+                      scrollDirection: Axis.vertical,
+                      itemCount: 20,
+                      itemBuilder: (context, index) {
+                        return ListTile(
+                          leading: Icon(Icons.add_circle_outlined),
+                          trailing: IconButton(
+                            icon: Icon(Icons.favorite),
+                            onPressed: () {},
                           ),
-                        ),
-                      
-                       Expanded(
-                        child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 40),
-                          color: Colors.grey[300],
-                          child: ListView.builder(
-                              scrollDirection: Axis.vertical,
-                              itemCount: 20,
-                              itemBuilder: (context, index) {
-                                return Container(
-                                  width: 200,
-                                  height: 200,
-                                  margin: EdgeInsets.all(20),
-                                  color: Colors.grey[400],
-                                  child: Row(children: [
-                                    Container(
-                                      width: 150,
-                                      child: Center(
-                                        child: Image.network(
-                                            'https://picsum.photos/id/${index + 1}/120'),
-                                      ),
-                                    ),
-                                    Expanded(
-                                        child: Container(
-                                      padding: EdgeInsets.all(10),
-                                      child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.center,
-                                          crossAxisAlignment: CrossAxisAlignment.center,
-                                          children: [
-                                            Text(
-                                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus congue sem, at auctor mauris ornare vel. Nullam quis libero sit amet ante convallis ornare. '),
-                                            SizedBox(height: 20),
-                                            Container(
-                                              alignment: Alignment.bottomRight,
-                                              child: ElevatedButton(
-                                                child: Text('comprar'),
-                                                onPressed: () {},
-                                              ),
-                                            )
-                                          ]),
-                                    )),
-                                  ]),
-                                );
-                              }),
-                        ),
-                      ),
-                  ]                  
+                          title: Text('Produto $index'),
+                          // onTap: () {
+                          //   Navigator.pushNamed(context, '/pagamento');
+                          // },
+                          hoverColor: Colors.red,
+                        );
+                      },
+                      separatorBuilder: (context, index) {
+                        return Divider(
+                          color: Colors.blue[100],
+                          thickness: 1,
+                        );
+                      },
+                    ),
+                  ),
                 ),
+              ]),
 
-                //Aba Pet
+              //Aba Pet
 
-                Column(
-                               
-                ),
-
-
-
+              Column(),
             ]),
             bottomNavigationBar: BottomNavigationBar(
               items: const <BottomNavigationBarItem>[
@@ -192,9 +190,9 @@ class _TelaMenuState extends State<TelaMenu> {
               currentIndex: indexSelecionado,
               selectedItemColor: Colors.white,
               unselectedItemColor: Colors.grey,
-              onTap: _onItemTapped,              
+              onTap: _onItemTapped,
             ),
           )),
     );
-  }  
+  }
 }
