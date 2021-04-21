@@ -179,7 +179,7 @@ class _TelaInicialSobreState extends State<TelaInicialSobre> {
                     constraints: BoxConstraints.tightFor(width: 300, height: 50),
                     child: ElevatedButton(
                       onPressed: (){
-                        Navigator.pushNamed(context, '/inicial');
+                        Navigator.pushNamed(context, '/login');
                       },                  
                       child: Text('Entrar',        
                         style: GoogleFonts.staatliches(

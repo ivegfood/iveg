@@ -14,7 +14,7 @@ void main() {
     title: 'Iveg',
 
     //ROTAS DE NAVEGAÇÃO
-    initialRoute: '/inicial1',
+    initialRoute: '/inicial',
     routes: {
       '/inicial': (context) => TelaInicial(),
       '/inicial1': (context) => PrimeiraTelaInicial(),
@@ -47,7 +47,7 @@ class TelaInicial extends StatelessWidget {
             ),
           ),
           onPressed: () {
-            Navigator.pushNamed(context, '/menu');
+            Navigator.pushNamed(context, '/inicial1');
           },
         ),
       ),
