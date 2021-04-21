@@ -1,3 +1,4 @@
+import 'package:iveg/menu/pesquisar.dart';
 import 'package:iveg/menu/produto.dart';
 
 import 'package:flutter/material.dart';
@@ -10,14 +11,19 @@ class TelaMenu extends StatefulWidget {
 
 class _TelaMenuState extends State<TelaMenu> {
   var formKey = GlobalKey<FormState>();
-  
+
   int indexSelecionado = 0;
-  
+
   void _onItemTapped(int index) {
     setState(() {
       indexSelecionado = index;
+      if (indexSelecionado == 1) {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => TelaPesquisa()));
+        indexSelecionado = 0;
+      }
     });
-  }  
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +32,7 @@ class _TelaMenuState extends State<TelaMenu> {
       home: DefaultTabController(
           length: 2,
           child: Scaffold(
-            appBar: AppBar(              
+            appBar: AppBar(
               bottom: TabBar(
                 tabs: [
                   Tab(icon: Icon(Icons.people)),
@@ -48,28 +54,26 @@ class _TelaMenuState extends State<TelaMenu> {
                 padding: EdgeInsets.zero,
                 children: [
                   DrawerHeader(
-                    child: Center(child: Text('Menu', style: TextStyle(fontSize: 24, color: Colors.white),)),
+                    child: Center(
+                        child: Text(
+                      'Menu',
+                      style: TextStyle(fontSize: 24, color: Colors.white),
+                    )),
                     decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,                                
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                   ListTile(
                     title: Text('Funcionalidade 1'),
-                    onTap: () {
-                      
-                    },
+                    onTap: () {},
                   ),
                   ListTile(
                     title: Text('Funcionalidade 2'),
-                    onTap: () {
-                      
-                    },
+                    onTap: () {},
                   ),
                   ListTile(
                     title: Text('Funcionalidade 3'),
-                    onTap: () {
-                      
-                    },
+                    onTap: () {},
                   ),
                 ],
               ),
@@ -99,26 +103,28 @@ class _TelaMenuState extends State<TelaMenu> {
                 BottomNavigationBarItem(
                   icon: Icon(Icons.home),
                   label: 'Home',
+                  backgroundColor: Colors.green,
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.search),
                   label: 'Pesquisar',
+                  backgroundColor: Colors.green,
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.list_alt),
                   label: 'Pedidos',
+                  backgroundColor: Colors.green,
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.free_breakfast),
                   label: 'Ofertas',
+                  backgroundColor: Colors.green,
                 ),
               ],
               currentIndex: indexSelecionado,
               selectedItemColor: Colors.white,
               unselectedItemColor: Colors.grey,
-              onTap: _onItemTapped,
-              //Não consigo colocar a cor do background 
-              backgroundColor: Colors.green,
+              onTap: _onItemTapped,              
             ),
           )),
     );
