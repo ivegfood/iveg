@@ -1,3 +1,4 @@
+import 'package:iveg/menu/historico.dart';
 import 'package:iveg/menu/pesquisar.dart';
 import 'package:iveg/menu/produto.dart';
 
@@ -21,6 +22,10 @@ class _TelaMenuState extends State<TelaMenu> {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => TelaPesquisa()));
         indexSelecionado = 0;
+      }
+      if (indexSelecionado == 2) {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => TelaHistorico()));                 
       }
     });
   }
@@ -128,5 +133,5 @@ class _TelaMenuState extends State<TelaMenu> {
             ),
           )),
     );
-  }
+  }  
 }
