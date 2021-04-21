@@ -87,12 +87,16 @@ class _TelaMenuState extends State<TelaMenu> {
                     },
                   ),
                   ListTile(
-                    title: Text('Funcionalidade 2'),
-                    onTap: () {},
+                    title: Text('Fidelidades'),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/Fidelidade');
+                    },
                   ),
                   ListTile(
-                    title: Text('Funcionalidade 3'),
-                    onTap: () {},
+                    title: Text('Crédito'),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/Crédito');
+                    },
                   ),
                 ],
               ),
