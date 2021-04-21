@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:iveg/menu/menu.dart';
 
 class PrimeiraTelaInicio extends StatefulWidget {
   @override
@@ -322,7 +321,7 @@ class _TelaLogin3State extends State<TelaLogin3> {
         child: Text(rotulo, style: TextStyle(fontSize: 24)),
         onPressed: () {
             setState(() {              
-              Navigator.pushNamed(context, '/menu');
+              Navigator.pushNamed(context, '/Menu');
             });
           }),
     );

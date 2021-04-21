@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:iveg/login/login.dart';
+import 'package:iveg/PrimeiraTelaInicial.dart';
 
 class TelaSobrePeople extends StatefulWidget {
   @override
@@ -152,7 +152,7 @@ class _TelaSobrePeopleState extends State<TelaSobrePeople> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => PrimeiraTelaInicio()
+                              builder: (context) => PrimeiraTelaInicial()
                             )
                           );
                         });
