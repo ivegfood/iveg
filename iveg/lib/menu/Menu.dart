@@ -1,6 +1,5 @@
 import 'package:iveg/menu/historico.dart';
 import 'package:iveg/menu/pesquisar.dart';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -24,7 +23,7 @@ class _TelaMenuState extends State<TelaMenu> {
       }
       if (indexSelecionado == 2) {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => TelaHistorico()));                 
+            context, MaterialPageRoute(builder: (context) => TelaHistorico()));
       }
     });
   }
@@ -68,8 +67,10 @@ class _TelaMenuState extends State<TelaMenu> {
                     ),
                   ),
                   ListTile(
-                    title: Text('Funcionalidade 1'),
-                    onTap: () {},
+                    title: Text('Cupons'),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/Cupom');
+                    },
                   ),
                   ListTile(
                     title: Text('Funcionalidade 2'),
@@ -83,88 +84,81 @@ class _TelaMenuState extends State<TelaMenu> {
               ),
             ),
             backgroundColor: Theme.of(context).backgroundColor,
-            body: TabBarView(
-              children: [
-                //Aba humano
-                Column(
-                  children: [Container(
-                          padding: EdgeInsets.all(40),
-                          color: Colors.grey[300],
-                          height: 320,
-                          child: Scrollbar(
-                            child: ListView.builder(
-                                scrollDirection: Axis.horizontal,
-                                itemCount: 3,
-                                itemBuilder: (context, index) {
-                                  return Container(
-                                    width: 200,
-                                    height: 200,
-                                    margin: EdgeInsets.all(20),
-                                    color: Colors.blue,
-                                    child: Center(
-                                      child: Text('Item $index'),
-                                    ),
-                                  );
-                                }),
-                          ),
-                        ),
-                      
-                       Expanded(
-                        child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 40),
-                          color: Colors.grey[300],
-                          child: ListView.builder(
-                              scrollDirection: Axis.vertical,
-                              itemCount: 20,
-                              itemBuilder: (context, index) {
-                                return Container(
-                                  width: 200,
-                                  height: 200,
-                                  margin: EdgeInsets.all(20),
-                                  color: Colors.grey[400],
-                                  child: Row(children: [
-                                    Container(
-                                      width: 150,
-                                      child: Center(
-                                        child: Image.network(
-                                            'https://picsum.photos/id/${index + 1}/120'),
-                                      ),
-                                    ),
-                                    Expanded(
-                                        child: Container(
-                                      padding: EdgeInsets.all(10),
-                                      child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.center,
-                                          crossAxisAlignment: CrossAxisAlignment.center,
-                                          children: [
-                                            Text(
-                                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus congue sem, at auctor mauris ornare vel. Nullam quis libero sit amet ante convallis ornare. '),
-                                            SizedBox(height: 20),
-                                            Container(
-                                              alignment: Alignment.bottomRight,
-                                              child: ElevatedButton(
-                                                child: Text('comprar'),
-                                                onPressed: () {},
-                                              ),
-                                            )
-                                          ]),
-                                    )),
-                                  ]),
-                                );
-                              }),
-                        ),
-                      ),
-                  ]                  
+            body: TabBarView(children: [
+              //Aba humano
+              Column(children: [
+                Container(
+                  padding: EdgeInsets.all(40),
+                  color: Colors.grey[300],
+                  height: 320,
+                  child: Scrollbar(
+                    child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 3,
+                        itemBuilder: (context, index) {
+                          return Container(
+                            width: 200,
+                            height: 200,
+                            margin: EdgeInsets.all(20),
+                            color: Colors.blue,
+                            child: Center(
+                              child: Text('Item $index'),
+                            ),
+                          );
+                        }),
+                  ),
                 ),
-
-                //Aba Pet
-
-                Column(
-                               
+                Expanded(
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 40),
+                    color: Colors.grey[300],
+                    child: ListView.builder(
+                        scrollDirection: Axis.vertical,
+                        itemCount: 20,
+                        itemBuilder: (context, index) {
+                          return Container(
+                            width: 200,
+                            height: 200,
+                            margin: EdgeInsets.all(20),
+                            color: Colors.grey[400],
+                            child: Row(children: [
+                              Container(
+                                width: 150,
+                                child: Center(
+                                  child: Image.network(
+                                      'https://picsum.photos/id/${index + 1}/120'),
+                                ),
+                              ),
+                              Expanded(
+                                  child: Container(
+                                padding: EdgeInsets.all(10),
+                                child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus congue sem, at auctor mauris ornare vel. Nullam quis libero sit amet ante convallis ornare. '),
+                                      SizedBox(height: 20),
+                                      Container(
+                                        alignment: Alignment.bottomRight,
+                                        child: ElevatedButton(
+                                          child: Text('comprar'),
+                                          onPressed: () {},
+                                        ),
+                                      )
+                                    ]),
+                              )),
+                            ]),
+                          );
+                        }),
+                  ),
                 ),
+              ]),
 
+              //Aba Pet
 
-
+              Column(),
             ]),
             bottomNavigationBar: BottomNavigationBar(
               items: const <BottomNavigationBarItem>[
@@ -192,9 +186,9 @@ class _TelaMenuState extends State<TelaMenu> {
               currentIndex: indexSelecionado,
               selectedItemColor: Colors.white,
               unselectedItemColor: Colors.grey,
-              onTap: _onItemTapped,              
+              onTap: _onItemTapped,
             ),
           )),
     );
-  }  
+  }
 }

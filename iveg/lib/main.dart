@@ -7,6 +7,7 @@ import 'SegundaTelaInicial.dart';
 import 'TelaInicialSobre.dart';
 import 'TerceiraTelaInicial.dart';
 import 'menu/Menu.dart';
+import 'VisualizaCupom.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -26,6 +27,7 @@ void main() {
       '/login2': (context) => TelaLogin2(),
       '/login3': (context) => TelaLogin3(),
       '/Menu': (context) => TelaMenu(),
+      '/Cupom': (context) => VisualizaCupom(),
     },
   ));
 }
