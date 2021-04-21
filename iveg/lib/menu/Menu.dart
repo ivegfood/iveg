@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:iveg/menu/historico.dart';
 import 'package:iveg/menu/pesquisar.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +12,9 @@ class TelaMenu extends StatefulWidget {
 
 class _TelaMenuState extends State<TelaMenu> {
   var formKey = GlobalKey<FormState>();
+  var listacategoria = [];
+  // var listaprodutos = [];
+  final cat = ['alimentos', 'bebidas', 'perfumaria', 'acessórios'];
 
   int indexSelecionado = 0;
 
@@ -29,6 +34,15 @@ class _TelaMenuState extends State<TelaMenu> {
   }
 
   @override
+  void initState() {
+    listacategoria.add('assets/icones/vegetables_icones.png');
+    listacategoria.add('assets/icones/suco_icone.png');
+    listacategoria.add('assets/icones/perfumaria_icone.png');
+    listacategoria.add('assets/icones/acessorios_icone.png');
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -38,18 +52,18 @@ class _TelaMenuState extends State<TelaMenu> {
             appBar: AppBar(
               bottom: TabBar(
                 tabs: [
-                  Tab(icon: Icon(Icons.people)),
-                  Tab(icon: Icon(Icons.pets))
+                  Tab(icon: Icon(Icons.people, size: 40)),
+                  Tab(icon: Icon(Icons.pets, size: 40))
                 ],
               ),
               title: Text(
                 'IVEG',
                 style: GoogleFonts.staatliches(
-                  fontSize: 40,
+                  fontSize: 30,
                   color: Colors.white,
                 ),
               ),
-              backgroundColor: Theme.of(context).primaryColor,
+              backgroundColor: Colors.green,
               centerTitle: true,
             ),
             drawer: Drawer(
