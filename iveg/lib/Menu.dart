@@ -1,4 +1,4 @@
-import 'package:iveg/menu/produto.dart';
+import 'package:iveg/produto.dart';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
