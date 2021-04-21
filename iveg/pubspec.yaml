@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^2.0.0
+  imagebutton: ^0.0.6
 
   search_widget: ^1.0.2
 
