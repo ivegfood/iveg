@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/menu/pesquisar.dart';
+import 'package:iveg/menu/promocoes.dart';
 
 class TelaHistorico extends StatefulWidget {
   @override
@@ -21,6 +22,10 @@ class _TelaHistoricoState extends State<TelaHistorico> {
       if (indexSelecionado == 1) {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => TelaPesquisa()));
+      }
+      if (indexSelecionado == 3) {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => TelaOfertas()));                 
       }
     });
   }

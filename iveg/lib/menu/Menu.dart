@@ -5,6 +5,7 @@ import 'package:iveg/menu/pesquisar.dart';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iveg/menu/promocoes.dart';
 
 class TelaMenu extends StatefulWidget {
   @override
@@ -30,6 +31,10 @@ class _TelaMenuState extends State<TelaMenu> {
       if (indexSelecionado == 2) {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => TelaHistorico()));
+      }
+      if (indexSelecionado == 3) {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => TelaOfertas()));                 
       }
     });
   }

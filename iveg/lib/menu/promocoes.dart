@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:imagebutton/imagebutton.dart';
+import 'package:iveg/menu/historico.dart';
 
 import 'package:iveg/menu/pesquisar.dart';
 
@@ -24,6 +25,10 @@ class _TelaOfertasState extends State<TelaOfertas> {
       if (indexSelecionado == 1) {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => TelaPesquisa()));
+      }
+      if (indexSelecionado == 2) {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => TelaHistorico()));
       }
     });
   }
