@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class TelaInicialSobre extends StatelessWidget {
+
+ class TelaInicialSobre extends StatefulWidget {
+  @override
+  _TelaInicialSobreState createState() => _TelaInicialSobreState();
+}
+
+class _TelaInicialSobreState extends State<TelaInicialSobre> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -173,7 +179,7 @@ class TelaInicialSobre extends StatelessWidget {
                     constraints: BoxConstraints.tightFor(width: 300, height: 50),
                     child: ElevatedButton(
                       onPressed: (){
-                        Navigator.pushNamed(context, '/login');
+                        Navigator.pushNamed(context, '/inicial');
                       },                  
                       child: Text('Entrar',        
                         style: GoogleFonts.staatliches(

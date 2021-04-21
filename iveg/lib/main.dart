@@ -23,15 +23,8 @@ void main() {
       '/inicial4': (context) => QuartaTelaInicial(),
       '/inicial5': (context) => TelaInicialSobre(),
       '/login': (context) => TelaLogin(),
-      '/login1': (context) => TelaLogin(),
-      '/login2': (context) => TelaLogin(),
-      '/login3': (context) => TelaLogin(),
-
-
-
-
-
-
+      '/login2': (context) => TelaLogin2(),
+      '/login3': (context) => TelaLogin3(),
       '/Menu': (context) => TelaMenu(),
     },
   ));
@@ -54,7 +47,7 @@ class TelaInicial extends StatelessWidget {
             ),
           ),
           onPressed: () {
-            Navigator.pushNamed(context, '/inicial1');
+            Navigator.pushNamed(context, '/menu');
           },
         ),
       ),
