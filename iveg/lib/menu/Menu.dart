@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:iveg/menu/carrinho.dart';
 import 'package:iveg/menu/historico.dart';
 import 'package:iveg/menu/pesquisar.dart';
 
@@ -145,22 +146,33 @@ class _TelaMenuState extends State<TelaMenu> {
                       itemBuilder: (context, index) {
                         return ListTile(
                           leading: IconButton(
-                            icon: adicionar,
-                            onPressed: () {
-                              setState(() {
-                                adicionar = Icon(Icons.check_box_outlined);
-                              });
-                            }),
-                          
+                              icon: adicionar,
+                              onPressed: () {
+                                setState(() {
+                                  adicionar = Icon(Icons.check_box_outlined);
+                                });
+                              }),
+
                           trailing: IconButton(
                             icon: favorito,
                             onPressed: () {
                               setState(() {
-                                favorito = Icon(Icons.favorite, color: Colors.red);
+                                favorito =
+                                    Icon(Icons.favorite, color: Colors.red);
                               });
                             },
                           ),
-                          title: Text('Produto $index'),
+                          title: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          TelaCarrinho())
+                              );
+                            },
+                            child: Container(child: Text('Produto $index'))
+                          ),
                           // onTap: () {
                           //   Navigator.pushNamed(context, '/pagamento');
                           // },
