@@ -34,7 +34,7 @@ class TelaInicial extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(63, 168, 94, 100),
+      backgroundColor: Colors.green[400],
       body: Center(
         child: TextButton(
           child: Text(

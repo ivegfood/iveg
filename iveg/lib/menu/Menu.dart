@@ -17,6 +17,8 @@ class _TelaMenuState extends State<TelaMenu> {
   var listacategoria = [];
   // var listaprodutos = [];
   final cat = ['alimentos', 'bebidas', 'perfumaria', 'acessórios'];
+  var favorito = Icon(Icons.favorite);
+  var adicionar = Icon(Icons.add_circle_outlined);
 
   int indexSelecionado = 0;
 
@@ -34,7 +36,7 @@ class _TelaMenuState extends State<TelaMenu> {
       }
       if (indexSelecionado == 3) {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => TelaOfertas()));                 
+            context, MaterialPageRoute(builder: (context) => TelaOfertas()));
       }
     });
   }
@@ -121,7 +123,7 @@ class _TelaMenuState extends State<TelaMenu> {
                             child: new Stack(
                               children: [
                                 Positioned(
-                                  child: Image.network(listacategoria[index],
+                                    child: Image.network(listacategoria[index],
                                         height: 100)),
                                 Positioned(
                                   bottom: 20,
@@ -142,10 +144,21 @@ class _TelaMenuState extends State<TelaMenu> {
                       itemCount: 20,
                       itemBuilder: (context, index) {
                         return ListTile(
-                          leading: Icon(Icons.add_circle_outlined),
+                          leading: IconButton(
+                            icon: adicionar,
+                            onPressed: () {
+                              setState(() {
+                                adicionar = Icon(Icons.check_box_outlined);
+                              });
+                            }),
+                          
                           trailing: IconButton(
-                            icon: Icon(Icons.favorite),
-                            onPressed: () {},
+                            icon: favorito,
+                            onPressed: () {
+                              setState(() {
+                                favorito = Icon(Icons.favorite, color: Colors.red);
+                              });
+                            },
                           ),
                           title: Text('Produto $index'),
                           // onTap: () {

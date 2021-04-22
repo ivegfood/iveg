@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-class PrimeiraTelaInicial extends StatelessWidget {
+class PrimeiraTelaInicial extends StatefulWidget {
+  @override
+  _PrimeiraTelaInicialState createState() => _PrimeiraTelaInicialState();
+}
+class _PrimeiraTelaInicialState extends State<PrimeiraTelaInicial>{
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(30),
+      margin: EdgeInsets.all(30),      
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Text(
               'IVEG',
-              style: GoogleFonts.staatliches(
-                fontSize: 52,
-                color: Color.fromRGBO(63, 168, 94, 100),
+              style: TextStyle(
+              color: Colors.green,
+              fontSize: 50,
+              fontFamily: 'Goudy Stout',
+              fontWeight: FontWeight.bold,
               ),
             ),
             Container(
@@ -23,20 +28,25 @@ class PrimeiraTelaInicial extends StatelessWidget {
                 "/imagens/market.png",
                 height: 250,
                 width: 250,
-              )),
-            ),
-            Text(
-              'Seus Favoritos',
-              style: GoogleFonts.staatliches(
-                fontSize: 24,
-                color: Color.fromRGBO(63, 168, 94, 100),
+                )
               ),
             ),
             Text(
-              'Todos os seus restaurantes favoritos em um só lugar',
-              style: GoogleFonts.staatliches(
-                fontSize: 24,
-                color: Color.fromRGBO(104, 112, 97, 100),
+              'Seus Favoritos',
+              style: TextStyle(
+                color: Colors.green,
+                fontSize: 20,
+                fontFamily: 'Goudy Stout',
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              'Tudo que você precisa em um só lugar!',
+              style: TextStyle(
+                color: Colors.grey,
+                fontSize: 20,
+                fontFamily: 'Goudy Stout',
+                fontWeight: FontWeight.bold,
               ),
               textAlign: TextAlign.center,
             ),
@@ -48,7 +58,7 @@ class PrimeiraTelaInicial extends StatelessWidget {
                   height: 15,
                   margin: EdgeInsets.all(5),
                   decoration: BoxDecoration(
-                    color: Color.fromRGBO(112, 112, 112, 100),
+                    color: Colors.grey,
                     borderRadius: BorderRadius.all(Radius.circular(8)),
                   ),
                 ),
@@ -57,7 +67,7 @@ class PrimeiraTelaInicial extends StatelessWidget {
                   height: 15,
                   margin: EdgeInsets.all(5),
                   decoration: BoxDecoration(
-                    color: Color.fromRGBO(220, 220, 220, 100),
+                    color: Colors.grey[300],
                     borderRadius: BorderRadius.all(Radius.circular(8)),
                   ),
                 ),
@@ -66,7 +76,7 @@ class PrimeiraTelaInicial extends StatelessWidget {
                   height: 15,
                   margin: EdgeInsets.all(5),
                   decoration: BoxDecoration(
-                    color: Color.fromRGBO(220, 220, 220, 100),
+                    color: Colors.grey[300],
                     borderRadius: BorderRadius.all(Radius.circular(8)),
                   ),
                 ),
@@ -75,7 +85,7 @@ class PrimeiraTelaInicial extends StatelessWidget {
                   height: 15,
                   margin: EdgeInsets.all(5),
                   decoration: BoxDecoration(
-                    color: Color.fromRGBO(220, 220, 220, 100),
+                    color: Colors.grey[300],
                     borderRadius: BorderRadius.all(Radius.circular(8)),
                   ),
                 ),
@@ -84,7 +94,7 @@ class PrimeiraTelaInicial extends StatelessWidget {
                   height: 15,
                   margin: EdgeInsets.all(5),
                   decoration: BoxDecoration(
-                    color: Color.fromRGBO(220, 220, 220, 100),
+                    color: Colors.grey[300],
                     borderRadius: BorderRadius.all(Radius.circular(8)),
                   ),
                 ),
@@ -96,17 +106,19 @@ class PrimeiraTelaInicial extends StatelessWidget {
                 Center(
                   child: ConstrainedBox(
                     constraints:
-                        BoxConstraints.tightFor(width: 150, height: 50),
+                        BoxConstraints.tightFor(width: 105, height: 50),
                     child: OutlinedButton(
                       onPressed: () {
                         Navigator.pushNamed(context, '/login');
                       },
                       child: Text(
                         'Entrar',
-                        style: GoogleFonts.staatliches(
-                          fontSize: 24,
-                          color: Color.fromRGBO(112, 112, 112, 100),
-                        ),
+                        style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 15,
+                            fontFamily: 'Goudy Stout',
+                            fontWeight: FontWeight.bold,
+                          )
                       ),
                     ),
                   ),
@@ -114,20 +126,22 @@ class PrimeiraTelaInicial extends StatelessWidget {
                 Center(
                   child: ConstrainedBox(
                     constraints:
-                        BoxConstraints.tightFor(width: 150, height: 50),
+                        BoxConstraints.tightFor(width: 105, height: 50),
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.pushNamed(context, '/inicial2');
                       },
                       child: Text(
                         'Continuar',
-                        style: GoogleFonts.staatliches(
-                          fontSize: 24,
-                          color: Colors.white,
-                        ),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                        primary: Color.fromRGBO(232, 61, 54, 100),
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontFamily: 'Goudy Stout',
+                            fontWeight: FontWeight.bold,
+                          )
+                        ),                      
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.red,
                       ),
                     ),
                   ),

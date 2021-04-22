@@ -12,7 +12,7 @@ class TelaOfertas extends StatefulWidget {
 
 class _TelaOfertasState extends State<TelaOfertas> {
   int indexSelecionado = 3;
-  var cor = Icon(Icons.favorite_border, color: Colors.grey, size: 50);
+  var cor = Icon(Icons.favorite);
 
   void _onItemTapped(int index) {
     setState(() {
@@ -101,16 +101,16 @@ class _TelaOfertasState extends State<TelaOfertas> {
                   ],
                 ),
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 10),
               Text('Lugares incriveis pertinho de você!!!',
                   style: GoogleFonts.codaCaption(fontSize: 15)),
-              SizedBox(height: 15),
+              SizedBox(height: 10),
               SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
+                scrollDirection: Axis.vertical,
+                child: Column(
                   children: [
                     bannerLojasGrande("/imagens/PrimeiraLoja.png"),
-                    SizedBox(width: 15),
+                    SizedBox(height: 10),
                     bannerLojasGrande("/imagens/SegundaLoja.png"),
                   ],
                 ),
@@ -210,17 +210,17 @@ class _TelaOfertasState extends State<TelaOfertas> {
           padding: EdgeInsets.only(left: 15),
           child: Center(
             child: Container(
-              width: 90,
+              width: 20,
               height: 90,            
-              decoration: BoxDecoration(
-                color: Colors.grey[100],
-                borderRadius: BorderRadius.circular(45)
-              ),
+              // decoration: BoxDecoration(
+              //   color: Colors.grey[100],
+              //   borderRadius: BorderRadius.circular(45)
+              // ),
               child: IconButton(          
                 icon: cor,
                 onPressed: () {
                   setState(() {
-                    cor = Icon(Icons.favorite, color: Colors.red, size: 50);
+                    cor = Icon(Icons.favorite, color: Colors.red);
                   });
                 }),
             ),
