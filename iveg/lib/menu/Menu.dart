@@ -163,16 +163,13 @@ class _TelaMenuState extends State<TelaMenu> {
                             },
                           ),
                           title: InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          TelaCarrinho())
-                              );
-                            },
-                            child: Container(child: Text('Produto $index'))
-                          ),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => TelaCarrinho()));
+                              },
+                              child: Container(child: Text('Produto $index'))),
                           // onTap: () {
                           //   Navigator.pushNamed(context, '/pagamento');
                           // },

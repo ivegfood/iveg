@@ -7,6 +7,9 @@ import 'SegundaTelaInicial.dart';
 import 'TelaInicialSobre.dart';
 import 'TerceiraTelaInicial.dart';
 import 'menu/Menu.dart';
+import 'pj/pj1.dart';
+import 'pj/pj2.dart';
+import 'pj/pj3.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -26,6 +29,10 @@ void main() {
       '/login2': (context) => TelaLogin2(),
       '/login3': (context) => TelaLogin3(),
       '/Menu': (context) => TelaMenu(),
+      '/pj1': (context) => TelaPj1(),
+      '/pj2': (context) => TelaPj2(),
+      '/pj3': (context) => TelaPj3(),
+
     },
   ));
 }
