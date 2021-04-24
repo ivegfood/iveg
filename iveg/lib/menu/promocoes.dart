@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:imagebutton/imagebutton.dart';
 import 'package:iveg/menu/drawer.dart';
 import 'package:iveg/menu/historico.dart';
@@ -25,7 +24,8 @@ class _TelaOfertasState extends State<TelaOfertas> {
       }
       if (indexSelecionado == 1) {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => TelaPesquisa()));
+            context, 
+            MaterialPageRoute(builder: (context) => TelaPesquisa()));
       }
       if (indexSelecionado == 2) {
         Navigator.push(
@@ -40,16 +40,18 @@ class _TelaOfertasState extends State<TelaOfertas> {
       appBar: AppBar(
         title: Text(
           'IVEG',
-          style: GoogleFonts.staatliches(
-            fontSize: 40,
+          style: TextStyle(
             color: Colors.white,
+            fontSize: 40,
+            fontFamily: 'Goudy Stout',
+            fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Colors.green,
         centerTitle: true,
       ),
       drawer: TesteDrawer(),
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Colors.green[50],
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20),
         child: SingleChildScrollView(
@@ -75,8 +77,12 @@ class _TelaOfertasState extends State<TelaOfertas> {
                 ),
               ),
               SizedBox(height: 10),
-              Text('Lugares incriveis pertinho de você!!!',
-                  style: GoogleFonts.codaCaption(fontSize: 15)),
+              Text('Famosos no Iveg',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontFamily: 'Goudy Stout',
+                    fontWeight: FontWeight.bold,)),
               SizedBox(height: 10),
               SingleChildScrollView(
                 scrollDirection: Axis.vertical,
@@ -89,8 +95,12 @@ class _TelaOfertasState extends State<TelaOfertas> {
                 ),
               ),
               SizedBox(height: 15),
-              Text('Quer desconto?',
-                  style: GoogleFonts.codaCaption(fontSize: 15)),
+              Text('Descontos especias para você',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontFamily: 'Goudy Stout',
+                    fontWeight: FontWeight.bold,)),
               SizedBox(height: 10),
               bannerLojasPequena("/imagens/lojaUm.png"),
               SizedBox(height: 10),
