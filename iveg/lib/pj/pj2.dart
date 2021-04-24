@@ -33,13 +33,6 @@ class _TelaPj2State extends State<TelaPj2> {
           key: formKey,
           child: Column(
             children: [
-              // Text(
-              //   'Falta bem pouco agora...',
-              //   style: GoogleFonts.oswald(
-              //     fontSize: 24,
-              //     color: Color.fromRGBO(112, 112, 112, 100),
-              //   ),
-              // ),
               SizedBox(height: 5),
               campoTexto('Razao Social'),
               campoTexto('CNPJ'),

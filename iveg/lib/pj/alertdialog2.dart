@@ -2,12 +2,12 @@
 
 import 'package:flutter/material.dart';
 
-showAlertDialog1(BuildContext context) {
+showAlertDialog2(BuildContext context) {
   // configura os botões
   Widget aceitarButton = TextButton(
     child: Text("Aceitar"),
     onPressed: () {
-      Navigator.pushNamed(context, '/cadastro_produtos');
+      Navigator.pushNamed(context, '/menu');
     },
   );
   Widget cancelaButton = TextButton(

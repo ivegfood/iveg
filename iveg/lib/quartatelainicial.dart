@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class TerceiraTelaInicial extends StatelessWidget {
+class QuartaTelaInicial extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -11,24 +11,30 @@ class TerceiraTelaInicial extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Text('IVEG',        
-              style: GoogleFonts.staatliches(
-                fontSize: 52,
-                color: Color.fromRGBO(63, 168, 94, 100),                          
+              style: TextStyle(
+                color: Colors.green,
+                fontSize: 50,
+                fontFamily: 'Goudy Stout',
+                fontWeight: FontWeight.bold,                           
               ),        
             ),
             Container(              
-              child: Center(child: Image.asset("/imagens/pet.png", height: 250, width: 250,)),
+              child: Center(child: Image.asset("/imagens/gift.png", height: 250, width: 250,)),
             ),
             Text('Para seu pet',        
-              style: GoogleFonts.staatliches(
-                fontSize: 24,
-                color: Color.fromRGBO(63, 168, 94, 100),          
+              style: TextStyle(
+                color: Colors.green,
+                fontSize: 20,
+                fontFamily: 'Goudy Stout',
+                fontWeight: FontWeight.bold,           
               ),       
             ),
             Text('Tudo de melhor para o seu pet você encontra aqui',        
-              style: GoogleFonts.staatliches(
-                fontSize: 24,
-                color: Color.fromRGBO(104, 112, 97, 100),            
+              style: TextStyle(
+                color: Colors.green,
+                fontSize: 20,
+                fontFamily: 'Goudy Stout',
+                fontWeight: FontWeight.bold,            
               ),
               textAlign: TextAlign.center,
             ),        
@@ -40,7 +46,7 @@ class TerceiraTelaInicial extends StatelessWidget {
                   height: 15,
                   margin: EdgeInsets.all(5),                
                   decoration: BoxDecoration(
-                    color: Color.fromRGBO(220, 220, 220, 100),
+                    color: Colors.grey,
                     borderRadius: BorderRadius.all(Radius.circular(8)),
                   ),
                 ),
@@ -49,7 +55,7 @@ class TerceiraTelaInicial extends StatelessWidget {
                   height: 15,
                   margin: EdgeInsets.all(5),                
                   decoration: BoxDecoration(
-                    color: Color.fromRGBO(220, 220, 220, 100),
+                    color: Colors.grey,
                     borderRadius: BorderRadius.all(Radius.circular(8)),
                   ),
                 ),
@@ -58,7 +64,7 @@ class TerceiraTelaInicial extends StatelessWidget {
                   height: 15,
                   margin: EdgeInsets.all(5),                
                   decoration: BoxDecoration(
-                    color: Color.fromRGBO(112, 112, 112, 100),
+                    color: Colors.grey,
                     borderRadius: BorderRadius.all(Radius.circular(8)),
                   ),
                 ),
@@ -67,7 +73,7 @@ class TerceiraTelaInicial extends StatelessWidget {
                   height: 15,
                   margin: EdgeInsets.all(5),                
                   decoration: BoxDecoration(
-                    color: Color.fromRGBO(220, 220, 220, 100),
+                    color: Colors.grey[300],
                     borderRadius: BorderRadius.all(Radius.circular(8)),
                   ),
                 ),
@@ -76,7 +82,7 @@ class TerceiraTelaInicial extends StatelessWidget {
                   height: 15,
                   margin: EdgeInsets.all(5),                
                   decoration: BoxDecoration(
-                    color: Color.fromRGBO(220, 220, 220, 100),
+                    color: Colors.grey,
                     borderRadius: BorderRadius.all(Radius.circular(8)),
                   ),
                 ),
@@ -91,9 +97,11 @@ class TerceiraTelaInicial extends StatelessWidget {
                     child: OutlinedButton(                
                       onPressed: (){}, 
                       child: Text('Entrar',        
-                        style: GoogleFonts.staatliches(
-                          fontSize: 24,
-                          color: Color.fromRGBO(112, 112, 112, 100),                                
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 20,
+                          fontFamily: 'Goudy Stout',
+                          fontWeight: FontWeight.bold,                               
                         ),
                       ),
                     ),
@@ -104,16 +112,18 @@ class TerceiraTelaInicial extends StatelessWidget {
                     constraints: BoxConstraints.tightFor(width: 150, height: 50),
                     child: ElevatedButton(
                       onPressed: (){
-                        Navigator.pushNamed(context, '/inicial4');
+                        Navigator.pushNamed(context, '/inicial5');
                       },                  
                       child: Text('Continuar',        
-                        style: GoogleFonts.staatliches(
-                          fontSize: 24,
-                          color: Colors.white,                                 
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontFamily: 'Goudy Stout',
+                          fontWeight: FontWeight.bold,                                
                         ),                    
                       ),
                       style: ElevatedButton.styleFrom(                    
-                        primary: Color.fromRGBO(232, 61, 54, 100),
+                        primary: Colors.red,
                       ),
                     ),
                   ),

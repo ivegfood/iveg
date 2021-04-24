@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/menu/drawer.dart';
 import 'package:iveg/menu/pesquisar.dart';
 import 'package:iveg/menu/promocoes.dart';
 
-import 'Menu.dart';
+import 'menu.dart';
 
 class TelaCarrinho extends StatefulWidget {
   @override

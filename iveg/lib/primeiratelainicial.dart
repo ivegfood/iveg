@@ -7,7 +7,22 @@ class PrimeiraTelaInicial extends StatefulWidget {
 class _PrimeiraTelaInicialState extends State<PrimeiraTelaInicial>{
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'IVEG',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 40,
+            fontFamily: 'Goudy Stout',
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Colors.green,
+        centerTitle: true,
+      ),
+      backgroundColor: Colors.green[50],    
+    body: Container(
       margin: EdgeInsets.all(30),      
       child: Center(
         child: Column(
@@ -16,10 +31,10 @@ class _PrimeiraTelaInicialState extends State<PrimeiraTelaInicial>{
             Text(
               'IVEG',
               style: TextStyle(
-              color: Colors.green,
-              fontSize: 50,
-              fontFamily: 'Goudy Stout',
-              fontWeight: FontWeight.bold,
+                color: Colors.green,
+                fontSize: 50,
+                fontFamily: 'Goudy Stout',
+                fontWeight: FontWeight.bold,
               ),
             ),
             Container(
@@ -151,6 +166,6 @@ class _PrimeiraTelaInicialState extends State<PrimeiraTelaInicial>{
           ],
         ),
       ),
-    );
+    ));
   }
 }

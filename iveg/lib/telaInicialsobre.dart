@@ -17,38 +17,39 @@ class _TelaInicialSobreState extends State<TelaInicialSobre> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,          
           children: [
             Text('IVEG',        
-              style: GoogleFonts.staatliches(
-                fontSize: 52,
-                color: Color.fromRGBO(63, 168, 94, 100),                          
+              style: TextStyle(
+                color: Colors.green,
+                fontSize: 50,
+                fontFamily: 'Goudy Stout',
+                fontWeight: FontWeight.bold,                         
               ),        
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(              
-                  child: Center(child: Image.asset("/imagens/person.png", height: 100, width: 100,)),
+                  child: Center(
+                    child: Image.asset("/imagens/person.png", 
+                    height: 50, width: 50,)),
                 ),
                 SizedBox(width: 20),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [                    
                     Text('Jander Raul',
-                      style: GoogleFonts.staatliches(
-                          fontSize: 24,
-                          color: Color.fromRGBO(63, 168, 94, 100),
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontFamily: 'Goudy Stout',
+                          fontWeight: FontWeight.bold,
                       ), 
                     ),
                     SizedBox(height: 10),
                     Text('Algumas Informações sobre o aluno',
-                      style: GoogleFonts.staatliches(
+                      style: TextStyle(
+                          color: Colors.black,
                           fontSize: 12,
-                          color: Color.fromRGBO(104, 112, 97, 100),
-                      ),               
-                    ),
-                    Text('Algumas Informações sobre o aluno',
-                      style: GoogleFonts.staatliches(
-                          fontSize: 12,
-                          color: Color.fromRGBO(104, 112, 97, 100),
+                          fontFamily: 'Goudy Stout',
                       ),               
                     ),
                   ],
@@ -59,29 +60,28 @@ class _TelaInicialSobreState extends State<TelaInicialSobre> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(              
-                  child: Center(child: Image.asset("/imagens/person.png", height: 100, width: 100,)),
+                  child: Center(
+                    child: Image.asset("/imagens/person.png", 
+                    height: 50, width: 50,)),
                 ),
                 SizedBox(width: 20),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [                    
                     Text('Marcelo Claro',
-                      style: GoogleFonts.staatliches(
-                          fontSize: 24,
-                          color: Color.fromRGBO(63, 168, 94, 100),
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontFamily: 'Goudy Stout',
+                          fontWeight: FontWeight.bold,
                       ), 
                     ),
                     SizedBox(height: 10),
                     Text('Algumas Informações sobre o aluno',
-                      style: GoogleFonts.staatliches(
+                      style: TextStyle(
+                          color: Colors.black,
                           fontSize: 12,
-                          color: Color.fromRGBO(104, 112, 97, 100),
-                      ),               
-                    ),
-                    Text('Algumas Informações sobre o aluno',
-                      style: GoogleFonts.staatliches(
-                          fontSize: 12,
-                          color: Color.fromRGBO(104, 112, 97, 100),
+                          fontFamily: 'Goudy Stout',
                       ),               
                     ),
                   ],
@@ -92,29 +92,28 @@ class _TelaInicialSobreState extends State<TelaInicialSobre> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(              
-                  child: Center(child: Image.asset("/imagens/person.png", height: 100, width: 100,)),
+                  child: Center(
+                    child: Image.asset("/imagens/person.png", 
+                    height: 50, width: 50,)),
                 ),
                 SizedBox(width: 20),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [                    
                     Text('Marcelo Giacomini',
-                      style: GoogleFonts.staatliches(
-                          fontSize: 24,
-                          color: Color.fromRGBO(63, 168, 94, 100),
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontFamily: 'Goudy Stout',
+                          fontWeight: FontWeight.bold,
                       ), 
                     ),
                     SizedBox(height: 10),
                     Text('Algumas Informações sobre o aluno',
-                      style: GoogleFonts.staatliches(
+                      style: TextStyle(
+                          color: Colors.black,
                           fontSize: 12,
-                          color: Color.fromRGBO(104, 112, 97, 100),
-                      ),               
-                    ),
-                    Text('Algumas Informações sobre o aluno',
-                      style: GoogleFonts.staatliches(
-                          fontSize: 12,
-                          color: Color.fromRGBO(104, 112, 97, 100),
+                          fontFamily: 'Goudy Stout',
                       ),               
                     ),
                   ],
@@ -129,7 +128,7 @@ class _TelaInicialSobreState extends State<TelaInicialSobre> {
                   height: 15,
                   margin: EdgeInsets.all(5),                
                   decoration: BoxDecoration(
-                    color: Color.fromRGBO(220, 220, 220, 100),
+                    color: Colors.grey[300],
                     borderRadius: BorderRadius.all(Radius.circular(8)),
                   ),
                 ),
@@ -138,7 +137,7 @@ class _TelaInicialSobreState extends State<TelaInicialSobre> {
                   height: 15,
                   margin: EdgeInsets.all(5),                
                   decoration: BoxDecoration(
-                    color: Color.fromRGBO(220, 220, 220, 100),
+                    color: Colors.grey[300],
                     borderRadius: BorderRadius.all(Radius.circular(8)),
                   ),
                 ),
@@ -147,7 +146,7 @@ class _TelaInicialSobreState extends State<TelaInicialSobre> {
                   height: 15,
                   margin: EdgeInsets.all(5),                
                   decoration: BoxDecoration(
-                    color: Color.fromRGBO(220, 220, 220, 100),
+                    color: Colors.grey[300],
                     borderRadius: BorderRadius.all(Radius.circular(8)),
                   ),
                 ),
@@ -156,7 +155,7 @@ class _TelaInicialSobreState extends State<TelaInicialSobre> {
                   height: 15,
                   margin: EdgeInsets.all(5),                
                   decoration: BoxDecoration(
-                    color: Color.fromRGBO(220, 220, 220, 100),
+                    color: Colors.grey[300],
                     borderRadius: BorderRadius.all(Radius.circular(8)),
                   ),
                 ),
@@ -165,7 +164,7 @@ class _TelaInicialSobreState extends State<TelaInicialSobre> {
                   height: 15,
                   margin: EdgeInsets.all(5),                
                   decoration: BoxDecoration(
-                    color: Color.fromRGBO(112, 112, 112, 100),
+                    color: Colors.grey,
                     borderRadius: BorderRadius.all(Radius.circular(8)),
                   ),
                 ),
@@ -182,13 +181,14 @@ class _TelaInicialSobreState extends State<TelaInicialSobre> {
                         Navigator.pushNamed(context, '/login');
                       },                  
                       child: Text('Entrar',        
-                        style: GoogleFonts.staatliches(
-                          fontSize: 24,
-                          color: Colors.white,                                 
-                        ),                    
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontFamily: 'Goudy Stout',                               
+                        ),
                       ),
                       style: ElevatedButton.styleFrom(                    
-                        primary: Color.fromRGBO(232, 61, 54, 100),
+                        primary: Colors.red,
                       ),
                     ),
                   ),

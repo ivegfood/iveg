@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
 import 'login.dart';
-import 'PrimeiraTelaInicial.dart';
-import 'QuartaTelaInicial.dart';
-import 'SegundaTelaInicial.dart';
-import 'TelaInicialSobre.dart';
-import 'TerceiraTelaInicial.dart';
-import 'menu/Menu.dart';
+import 'primeiratelainicial.dart';
+import 'quartatelainicial.dart';
+import 'segundatelainicial.dart';
+import 'telaInicialsobre.dart';
+import 'terceiratelainicial.dart';
+import 'package:iveg/menu/menu.dart';
 import 'pj/pj1.dart';
 import 'pj/pj2.dart';
 import 'pj/pj3.dart';
 import 'package:iveg/menu/carrinho.dart';
+import 'package:iveg/menu/produtoh.dart';
+import 'package:iveg/menu/produtop.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -34,6 +36,9 @@ void main() {
       '/pj2': (context) => TelaPj2(),
       '/pj3': (context) => TelaPj3(),
       '/carrinho': (context) => TelaCarrinho(),
+      '/produtoh': (context) => TelaProdutoH(),
+      '/produtop': (context) => TelaProdutoP(),
+  
     },
   ));
 }

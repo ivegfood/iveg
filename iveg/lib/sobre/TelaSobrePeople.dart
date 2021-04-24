@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:iveg/PrimeiraTelaInicial.dart';
+import 'package:iveg/primeiratelainicial.dart';
 
 class TelaSobrePeople extends StatefulWidget {
   @override

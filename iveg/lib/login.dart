@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iveg/pj/alertdialog2.dart';
 
 class PrimeiraTelaInicio extends StatefulWidget {
   @override
@@ -101,17 +102,9 @@ class _TelaLoginState extends State<TelaLogin> {
           key: formKey,
           child: Column(
             children: [
-              // Text(
-              //   'Qual é o seu e-mail?',
-              //   style: TextStyle(
-              //   color: Colors.grey,
-              //   fontSize: 20,
-              //   fontFamily: 'Goudy Stout',
-              //   fontWeight: FontWeight.bold,
-              //   ),
-              // ),
               SizedBox(height: 5),
-              campoTexto('Informe seu Email', _txtConteudo),
+              campoTexto('Informe seu Email ou o'
+                          +'\n' 'número de celular', _txtConteudo),
               SizedBox(height: 30),
               botao('Cliente', '/login2'),
               SizedBox(height: 30),
@@ -132,8 +125,6 @@ class _TelaLoginState extends State<TelaLogin> {
         decoration: InputDecoration(
             labelText: rotulo,
             labelStyle: TextStyle(fontSize: 16, color: Colors.blue),
-            // hintText: 'Informe Dados',
-            // hintStyle: TextStyle(fontSize: 16, color: Colors.green[200]),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
             )),
@@ -172,8 +163,6 @@ class _TelaLogin2State extends State<TelaLogin2> {
 
   @override
   Widget build(BuildContext context) {
-    final Mensagem msg = ModalRoute.of(context).settings.arguments;
-
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -195,17 +184,9 @@ class _TelaLogin2State extends State<TelaLogin2> {
           key: formKey,
           child: Column(
             children: [
-              // Text(
-              //   'Enviamos um código de confirmação para ' +
-              //       msg.conteudo +
-              //       ', por favor insira o codigo abaixo: ',
-              //   style: GoogleFonts.oswald(
-              //     fontSize: 24,
-              //     color: Color.fromRGBO(112, 112, 112, 100),
-              //   ),
-              // ),
               SizedBox(height: 5),
-              campoTexto('Insira o código enviado para o seu Email', _txtCodigo,),
+              campoTexto('Insira o código enviado para'
+                          +'\n' 'seu email ou telefone', _txtCodigo,),
               SizedBox(height: 30),
               botao('Continuar', '/login3')
             ],
@@ -224,8 +205,6 @@ class _TelaLogin2State extends State<TelaLogin2> {
         decoration: InputDecoration(
             labelText: rotulo,
             labelStyle: TextStyle(fontSize: 16, color: Colors.blue),
-            // hintText: 'Informe Dados',
-            // hintStyle: TextStyle(fontSize: 16, color: Colors.green[200]),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
             )),
@@ -273,28 +252,22 @@ class _TelaLogin3State extends State<TelaLogin3> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Colors.green,
         centerTitle: true,
       ),
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Colors.green[50],
       body: Container(
         padding: EdgeInsets.all(40),
         child: Form(
           key: formKey,
           child: Column(
             children: [
-              Text(
-                'Falta bem pouco agora...',
-                style: GoogleFonts.oswald(
-                  fontSize: 24,
-                  color: Color.fromRGBO(112, 112, 112, 100),
-                ),
-              ),
               SizedBox(height: 5),
               campoTexto('Nome completo'),
               campoTexto('Data de Nascimento'),
               campoTexto('Endereço'),
               campoTexto('Telefone'),
+              botao2('Leia os termos de serviço'),
               botao('Cadastrar')
             ],
           ),
@@ -311,9 +284,9 @@ class _TelaLogin3State extends State<TelaLogin3> {
         style: TextStyle(fontSize: 18),
         decoration: InputDecoration(
           labelText: rotulo,
-          labelStyle: TextStyle(fontSize: 16, color: Colors.green[200]),
+          labelStyle: TextStyle(fontSize: 16, color: Colors.blue),
           hintText: 'Informe Dados',
-          hintStyle: TextStyle(fontSize: 16, color: Colors.green[200]),
+          hintStyle: TextStyle(fontSize: 16, color: Colors.blue),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           )
@@ -338,4 +311,17 @@ class _TelaLogin3State extends State<TelaLogin3> {
           }),
     );
   }  
+    Widget botao2(rotulo) {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 6),
+      child: ElevatedButton(
+          style: ElevatedButton.styleFrom(primary: Colors.blue),
+          child: Text(rotulo, style: TextStyle(fontSize: 24)),
+          onPressed: () {
+            showAlertDialog2(context);
+          }),
+    );
+  }
 }
+
+

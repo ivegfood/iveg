@@ -1,34 +1,33 @@
 import 'dart:ui';
 
-import 'package:iveg/menu/carrinho.dart';
 import 'package:iveg/menu/drawer.dart';
 import 'package:iveg/menu/historico.dart';
 import 'package:iveg/menu/pesquisar.dart';
 import 'package:flutter/material.dart';
 import 'package:iveg/menu/promocoes.dart';
+import 'package:iveg/menu/produtoh.dart';
+import 'package:iveg/menu/produtop.dart';
 
 class TelaMenu extends StatefulWidget {
   @override
   _TelaMenuState createState() => _TelaMenuState();
 }
-
-class Produtos {
-  String imagens;
+class Lojas {
   String nome;
-  double preco;
+  String imagens;
 
-  Produtos({this.imagens, this.nome, this.preco});
+  Lojas({this.imagens, this.nome});
 }
 
 class _TelaMenuState extends State<TelaMenu> {
   var formKey = GlobalKey<FormState>();
-  var listaProdutos = [];
-  var listacategoria = [];
-  // var listaprodutos = [];
-  final cat = ['alimentos', 'bebidas', 'perfumaria', 'acessórios'];
+  var listaCategoriaH = [];
+  var listaCategoriaP = [];
+  var listaLojasH = [];
+  var listaLojasP = [];
+  final catH = ['alimentos', 'bebidas', 'perfumaria', 'acessórios'];
+  final catP = ['alimentos', 'acessórios'];
   var favorito = Icon(Icons.favorite);
-  var adicionar = Icon(Icons.add_circle_outlined);
-
 
   int indexSelecionado = 0;
 
@@ -53,26 +52,38 @@ class _TelaMenuState extends State<TelaMenu> {
 
   @override
   void initState() {
-    listacategoria.add('assets/icones/vegetables_icone.png');
-    listacategoria.add('assets/icones/suco_icone.png');
-    listacategoria.add('assets/icones/perfumaria_icone.png');
-    listacategoria.add('assets/icones/acessorios_icone.png');
-    listaProdutos.add(Produtos(
-        nome: 'Suco de laranja',
-        preco: 24.99,
-        imagens: 'assets/icones/suco_icone.png'));
-    listaProdutos.add(Produtos(
-        nome: 'Perfume Vegano',
-        preco: 34.99,
-        imagens: 'assets/icones/perfumaria_icone.png'));
-    listaProdutos.add(Produtos(
-        nome: 'Mix de vegetais',
-        preco: 44.99,
-        imagens: 'assets/icones/vegetables_icone.png'));
-    listaProdutos.add(Produtos(
-        nome: 'Kit jantar ecológico',
-        preco: 99.99,
-        imagens: 'assets/icones/acessorios_icone.png'));
+    //Humano
+    listaCategoriaH.add('assets/icones/vegetables_icone.png');
+    listaCategoriaH.add('assets/icones/suco_icone.png');
+    listaCategoriaH.add('assets/icones/perfumaria_icone.png');
+    listaCategoriaH.add('assets/icones/acessorios_icone.png');
+
+    listaLojasH
+        .add(Lojas(nome: 'Loja 1', imagens: 'assets/icones/loja_icone.png'));
+    listaLojasH
+        .add(Lojas(nome: 'Loja 2', imagens: 'assets/icones/loja_icone.png'));
+    listaLojasH
+        .add(Lojas(nome: 'Loja 3', imagens: 'assets/icones/loja_icone.png'));
+    listaLojasH
+        .add(Lojas(nome: 'Loja 4', imagens: 'assets/icones/loja_icone.png'));
+
+    //Pet
+    listaCategoriaP.add('assets/icones/racao_icone.png');
+    listaCategoriaP.add('assets/icones/coleira_icone.png');
+
+    listaLojasP.add(Lojas(
+      nome: 'Petshop 1', 
+      imagens: 'assets/icones/petshop_icone.png'));
+    listaLojasP.add(Lojas(
+      nome: 'Petshop 2', 
+      imagens: 'assets/icones/petshop_icone.png'));
+    listaLojasP.add(Lojas(
+      nome: 'Petshop 3', 
+      imagens: 'assets/icones/petshop_icone.png'));
+    listaLojasP.add(Lojas(
+      nome: 'Petshop 4', 
+      imagens: 'assets/icones/petshop_icone.png'));
+  
     super.initState();
   }
 
@@ -109,7 +120,7 @@ class _TelaMenuState extends State<TelaMenu> {
               Column(children: [
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, '/carrinho');
+                    Navigator.pushNamed(context, '/produtoh');
                   },
                   child: Container(
                     padding: EdgeInsets.all(15),
@@ -128,11 +139,11 @@ class _TelaMenuState extends State<TelaMenu> {
                                 children: [
                                   Positioned(
                                       child: Image.network(
-                                          listacategoria[index],
+                                          listaCategoriaH[index],
                                           height: 100)),
                                   Positioned(
                                     bottom: 20,
-                                    child: Text(cat[index]),
+                                    child: Text(catH[index]),
                                   ),
                                 ],
                               ),
@@ -150,15 +161,7 @@ class _TelaMenuState extends State<TelaMenu> {
                       itemCount: 4,
                       itemBuilder: (context, index) {
                         return ListTile(
-                          leading: IconButton(
-                              icon: adicionar,
-                              onPressed: () {
-                                setState(() {
-                                  adicionar = Icon(Icons.check_box_outlined);
-                                });
-                              }),
-
-                          trailing: IconButton(
+                            trailing: IconButton(
                             icon: favorito,
                             onPressed: () {
                               setState(() {
@@ -172,7 +175,7 @@ class _TelaMenuState extends State<TelaMenu> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => TelaCarrinho()));
+                                        builder: (context) => TelaProdutoH()));
                               },
                               child: Container(
                                   child: Row(
@@ -181,8 +184,8 @@ class _TelaMenuState extends State<TelaMenu> {
                                       padding: EdgeInsets.all(1),
                                       height: 30,
                                       width: 30,
-                                      child: Image.asset(
-                                          retornaImagem(listaProdutos[index]))),
+                                      child: Image.asset(retornaImagem(
+                                          listaLojasH[index]))),
                                   Padding(
                                     padding:
                                         EdgeInsets.symmetric(horizontal: 10),
@@ -190,26 +193,15 @@ class _TelaMenuState extends State<TelaMenu> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text(retornaNome(listaProdutos[index]),
+                                        Text(retornaNome(listaLojasH[index]),
                                             style: TextStyle(
                                                 fontSize: 12,
                                                 fontWeight: FontWeight.bold)),
-                                        Text(
-                                            'R\$ ' +
-                                                retornaPreco(
-                                                    listaProdutos[index]),
-                                            style: TextStyle(
-                                                fontSize: 10,
-                                                color: Colors.grey)),
                                       ],
                                     ),
                                   ),
                                 ],
                               ))),
-                          // onTap: () {
-                          //   Navigator.pushNamed(context, '/pagamento');
-                          // },
-                          hoverColor: Colors.red,
                         );
                       },
                       separatorBuilder: (context, index) {
@@ -224,9 +216,105 @@ class _TelaMenuState extends State<TelaMenu> {
               ]),
 
               //Aba Pet
-
-              Column(),
+              Column(children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/produtop');
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(15),
+                    color: Colors.grey[300],
+                    height: 200,
+                    child: Scrollbar(
+                      child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 2,
+                          itemBuilder: (context, index) {
+                            return Container(
+                              width: 200,
+                              height: 200,
+                              margin: EdgeInsets.all(15),
+                              child: new Stack(
+                                children: [
+                                  Positioned(
+                                      child: Image.network(
+                                          listaCategoriaP[index],
+                                          height: 100)),
+                                  Positioned(
+                                    bottom: 20,
+                                    child: Text(catP[index]),
+                                  ),
+                                ],
+                              ),
+                            );
+                          }),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 5),
+                    color: Colors.grey[300],
+                    child: ListView.separated(
+                      scrollDirection: Axis.vertical,
+                      itemCount: 4,
+                      itemBuilder: (context, index) {
+                        return ListTile(
+                          trailing: IconButton(
+                            icon: favorito,
+                            onPressed: () {
+                              setState(() {
+                                favorito =
+                                    Icon(Icons.favorite, color: Colors.red);
+                              });
+                            },
+                          ),
+                          title: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => TelaProdutoP()));
+                              },
+                              child: Container(
+                                  child: Row(
+                                children: [
+                                  Container(
+                                      padding: EdgeInsets.all(1),
+                                      height: 30,
+                                      width: 30,
+                                      child: Image.asset(retornaImagem(
+                                          listaLojasP[index]))),
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 10),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(retornaNome(listaLojasP[index]),
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.bold)),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ))),
+                        );
+                      },
+                      separatorBuilder: (context, index) {
+                        return Divider(
+                          color: Colors.blue[100],
+                          thickness: 1,
+                        );
+                      },
+                    ),
+                  ),
+                ),
+              ]),
             ]),
+            //Rodapé
             bottomNavigationBar: BottomNavigationBar(
               items: const <BottomNavigationBarItem>[
                 BottomNavigationBarItem(
@@ -259,16 +347,11 @@ class _TelaMenuState extends State<TelaMenu> {
     );
   }
 
-  String retornaImagem(Produtos objeto) {
+  String retornaImagem(Lojas objeto) {
     return objeto.imagens;
   }
 
-  String retornaNome(Produtos objeto) {
+  String retornaNome(Lojas objeto) {
     return objeto.nome;
-  }
-
-  String retornaPreco(Produtos objeto) {
-    String texto = objeto.preco.toString();
-    return texto;
   }
 }
