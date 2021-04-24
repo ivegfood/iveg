@@ -42,6 +42,7 @@ class _TelaPesquisaState extends State<TelaPesquisa> {
                         Container(
                           margin: EdgeInsets.only(top: 16.0),
                           width: double.infinity,
+                          // ignore: deprecated_member_use
                           child: RaisedButton(
                             color: Colors.blue,
                             textColor: Colors.white,
