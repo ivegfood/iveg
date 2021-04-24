@@ -21,15 +21,18 @@ class _TelaCarrinhoState extends State<TelaCarrinho> {
       indexSelecionado = index;
       if (indexSelecionado == 0) {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => TelaMenu()));
+            context, 
+            MaterialPageRoute(builder: (context) => TelaMenu()));
       }
       if (indexSelecionado == 1) {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => TelaPesquisa()));
+            context, 
+            MaterialPageRoute(builder: (context) => TelaPesquisa()));
       }
       if (indexSelecionado == 3) {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => TelaOfertas()));
+            context, 
+            MaterialPageRoute(builder: (context) => TelaOfertas()));
       }
     });
   }
@@ -39,12 +42,13 @@ class _TelaCarrinhoState extends State<TelaCarrinho> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Colors.green,
         centerTitle: true,
       ),
       drawer: TesteDrawer(),
+      backgroundColor: Colors.blue,
       body: Container(
-        color: Theme.of(context).primaryColor,
+        color: Colors.blue,
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
@@ -57,12 +61,13 @@ class _TelaCarrinhoState extends State<TelaCarrinho> {
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 32,
-                          fontWeight: FontWeight.bold))),
+                          fontWeight: FontWeight.bold,
+                          ))),
               Container(
                   height: 800,
                   width: double.infinity,
                   decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Colors.green[50],
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(40),
                           topRight: Radius.circular(40))),
@@ -81,19 +86,19 @@ class _TelaCarrinhoState extends State<TelaCarrinho> {
                                 children: [
                                   Padding(
                                     padding: const EdgeInsets.symmetric(
-                                        horizontal: 15),
+                                        horizontal: 5),
                                     child: Text('1',
                                         style: TextStyle(
-                                            fontSize: 24,
+                                            fontSize: 12,
                                             fontWeight: FontWeight.bold)),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.all(6),
+                                    padding: EdgeInsets.all(5),
                                     child: Column(
                                       children: [
                                         Container(
-                                          width: 40,
-                                          height: 25,
+                                          width: 20,
+                                          height: 20,
                                           child: ElevatedButton(
                                               onPressed: () {},
                                               child: Container(
@@ -102,8 +107,8 @@ class _TelaCarrinhoState extends State<TelaCarrinho> {
                                         ),
                                         SizedBox(height: 5),
                                         Container(
-                                          width: 40,
-                                          height: 25,
+                                          width: 20,
+                                          height: 20,
                                           child: ElevatedButton(
                                               onPressed: () {},
                                               child: Container(
@@ -120,7 +125,7 @@ class _TelaCarrinhoState extends State<TelaCarrinho> {
                                 thickness: 5,
                               ),
                               Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 15),
+                                padding: EdgeInsets.symmetric(horizontal: 5),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -128,9 +133,10 @@ class _TelaCarrinhoState extends State<TelaCarrinho> {
                                     Text(
                                       'Nome do Produto 1',
                                       style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 16),
-                                    ),
+                                        fontSize: 12,
+                                        fontFamily: 'Goudy Stout',
+                                        fontWeight: FontWeight.bold,
+                                    )),
                                     TextButton(
                                         onPressed: () {},
                                         child: Text('+Detalhes'))
@@ -143,11 +149,11 @@ class _TelaCarrinhoState extends State<TelaCarrinho> {
                               ),
                               Padding(
                                 padding:
-                                    const EdgeInsets.symmetric(horizontal: 15),
+                                    const EdgeInsets.symmetric(horizontal: 5),
                                 child: Text('R\$ 15,00',
                                     style: TextStyle(
                                         color: Colors.blue[400],
-                                        fontSize: 24,
+                                        fontSize: 12,
                                         fontWeight: FontWeight.bold)),
                               ),
                               VerticalDivider(
@@ -156,7 +162,7 @@ class _TelaCarrinhoState extends State<TelaCarrinho> {
                               ),
                               IconButton(
                                   icon: Icon(Icons.delete_outline,
-                                      color: Colors.red, size: 32),
+                                      color: Colors.red, size: 20),
                                   onPressed: () {})
                             ],
                           ))

@@ -53,23 +53,25 @@ class _TelaMenuState extends State<TelaMenu> {
 
   @override
   void initState() {
-    listacategoria.add('assets/icones/vegetables_icones.png');
+    listacategoria.add('assets/icones/vegetables_icone.png');
     listacategoria.add('assets/icones/suco_icone.png');
     listacategoria.add('assets/icones/perfumaria_icone.png');
     listacategoria.add('assets/icones/acessorios_icone.png');
     listaProdutos.add(Produtos(
-        nome: 'Suco de laranja', preco: 25.00, imagens: 'assets/icones/suco_icone.png'));
+        nome: 'Suco de laranja', 
+        preco: 24.99, 
+        imagens: 'assets/icones/suco_icone.png'));
     listaProdutos.add(Produtos(
         nome: 'Perfume Vegano',
-        preco: 35.00,
+        preco: 34.99,
         imagens: 'assets/icones/perfumaria_icone.png'));
     listaProdutos.add(Produtos(
-        nome: 'Cherinho Vege',
-        preco: 45.50,
-        imagens: 'assets/icones/perfumaria_icone.png'));
+        nome: 'Mix de vegetais',
+        preco: 44.99,
+        imagens: 'assets/icones/vegetables_icone.png'));
     listaProdutos.add(Produtos(
-        nome: 'Canivete',
-        preco: 99.00,
+        nome: 'Kit jantar ecológico',
+        preco: 99.99,
         imagens: 'assets/icones/acessorios_icone.png'));
     super.initState();
   }
@@ -90,16 +92,18 @@ class _TelaMenuState extends State<TelaMenu> {
               ),
               title: Text(
                 'IVEG',
-                style: GoogleFonts.staatliches(
-                  fontSize: 30,
+                style: TextStyle(
                   color: Colors.white,
+                  fontSize: 30,
+                  fontFamily: 'Goudy Stout',
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               backgroundColor: Colors.green,
               centerTitle: true,
             ),
             drawer: TesteDrawer(),
-            backgroundColor: Theme.of(context).backgroundColor,
+            backgroundColor: Colors.green,
             body: TabBarView(children: [
               //Aba humano
               Column(children: [
@@ -133,7 +137,7 @@ class _TelaMenuState extends State<TelaMenu> {
                 ),
                 Expanded(
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 40),
+                    padding: EdgeInsets.symmetric(horizontal: 5),
                     color: Colors.grey[300],
                     child: ListView.separated(
                       scrollDirection: Axis.vertical,
@@ -168,9 +172,9 @@ class _TelaMenuState extends State<TelaMenu> {
                                   child: Row(
                                 children: [
                                   Container(
-                                      padding: EdgeInsets.all(3),
-                                      height: 60,
-                                      width: 60,
+                                      padding: EdgeInsets.all(1),
+                                      height: 30,
+                                      width: 30,
                                       child: Image.asset(
                                           retornaImagem(listaProdutos[index]))),
                                   Padding(
@@ -180,9 +184,9 @@ class _TelaMenuState extends State<TelaMenu> {
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         Text(retornaNome(listaProdutos[index]),
-                                            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
                                         Text('R\$ ' + retornaPreco(listaProdutos[index]),
-                                            style: TextStyle(fontSize: 16, color: Colors.grey)),
+                                            style: TextStyle(fontSize: 10, color: Colors.grey)),
                                       ],
                                     ),
                                   ),
