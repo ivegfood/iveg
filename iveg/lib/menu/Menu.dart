@@ -6,7 +6,6 @@ import 'package:iveg/menu/historico.dart';
 import 'package:iveg/menu/pesquisar.dart';
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/menu/promocoes.dart';
 
 class TelaMenu extends StatefulWidget {
@@ -30,6 +29,7 @@ class _TelaMenuState extends State<TelaMenu> {
   final cat = ['alimentos', 'bebidas', 'perfumaria', 'acessórios'];
   var favorito = Icon(Icons.favorite);
   var adicionar = Icon(Icons.add_circle_outlined);
+
 
   int indexSelecionado = 0;
 
@@ -59,8 +59,8 @@ class _TelaMenuState extends State<TelaMenu> {
     listacategoria.add('assets/icones/perfumaria_icone.png');
     listacategoria.add('assets/icones/acessorios_icone.png');
     listaProdutos.add(Produtos(
-        nome: 'Suco de laranja', 
-        preco: 24.99, 
+        nome: 'Suco de laranja',
+        preco: 24.99,
         imagens: 'assets/icones/suco_icone.png'));
     listaProdutos.add(Produtos(
         nome: 'Perfume Vegano',
@@ -108,32 +108,38 @@ class _TelaMenuState extends State<TelaMenu> {
             body: TabBarView(children: [
               //Aba humano
               Column(children: [
-                Container(
-                  padding: EdgeInsets.all(15),
-                  color: Colors.grey[300],
-                  height: 200,
-                  child: Scrollbar(
-                    child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: 4,
-                        itemBuilder: (context, index) {
-                          return Container(
-                            width: 200,
-                            height: 200,
-                            margin: EdgeInsets.all(15),
-                            child: new Stack(
-                              children: [
-                                Positioned(
-                                    child: Image.network(listacategoria[index],
-                                        height: 100)),
-                                Positioned(
-                                  bottom: 20,
-                                  child: Text(cat[index]),
-                                ),
-                              ],
-                            ),
-                          );
-                        }),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/carrinho');
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(15),
+                    color: Colors.grey[300],
+                    height: 200,
+                    child: Scrollbar(
+                      child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 4,
+                          itemBuilder: (context, index) {
+                            return Container(
+                              width: 200,
+                              height: 200,
+                              margin: EdgeInsets.all(15),
+                              child: new Stack(
+                                children: [
+                                  Positioned(
+                                      child: Image.network(
+                                          listacategoria[index],
+                                          height: 100)),
+                                  Positioned(
+                                    bottom: 20,
+                                    child: Text(cat[index]),
+                                  ),
+                                ],
+                              ),
+                            );
+                          }),
+                    ),
                   ),
                 ),
                 Expanded(
@@ -182,12 +188,20 @@ class _TelaMenuState extends State<TelaMenu> {
                                     padding:
                                         EdgeInsets.symmetric(horizontal: 10),
                                     child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Text(retornaNome(listaProdutos[index]),
-                                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
-                                        Text('R\$ ' + retornaPreco(listaProdutos[index]),
-                                            style: TextStyle(fontSize: 10, color: Colors.grey)),
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.bold)),
+                                        Text(
+                                            'R\$ ' +
+                                                retornaPreco(
+                                                    listaProdutos[index]),
+                                            style: TextStyle(
+                                                fontSize: 10,
+                                                color: Colors.grey)),
                                       ],
                                     ),
                                   ),
