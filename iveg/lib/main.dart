@@ -7,8 +7,10 @@ import 'SegundaTelaInicial.dart';
 import 'TelaInicialSobre.dart';
 import 'TerceiraTelaInicial.dart';
 import 'menu/Menu.dart';
-import 'menu/VisualizaCupom.dart';
-import 'menu/Fidelidades.dart';
+import 'pj/pj1.dart';
+import 'pj/pj2.dart';
+import 'pj/pj3.dart';
+import 'package:iveg/menu/carrinho.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -28,8 +30,10 @@ void main() {
       '/login2': (context) => TelaLogin2(),
       '/login3': (context) => TelaLogin3(),
       '/Menu': (context) => TelaMenu(),
-      '/Cupom': (context) => VisualizaCupom(),
-      '/Fidelidade': (context) => Fidelidade(),
+      '/pj1': (context) => TelaPj1(),
+      '/pj2': (context) => TelaPj2(),
+      '/pj3': (context) => TelaPj3(),
+      '/carrinho': (context) => TelaCarrinho(),
     },
   ));
 }
@@ -38,7 +42,7 @@ class TelaInicial extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(63, 168, 94, 100),
+      backgroundColor: Colors.green[400],
       body: Center(
         child: TextButton(
           child: Text(

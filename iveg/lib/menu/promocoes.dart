@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:imagebutton/imagebutton.dart';
+import 'package:iveg/menu/drawer.dart';
+import 'package:iveg/menu/historico.dart';
 
 import 'package:iveg/menu/pesquisar.dart';
 
@@ -11,7 +13,7 @@ class TelaOfertas extends StatefulWidget {
 
 class _TelaOfertasState extends State<TelaOfertas> {
   int indexSelecionado = 3;
-  var cor = Icon(Icons.favorite_border, color: Colors.grey, size: 50);
+  var cor = Icon(Icons.favorite);
 
   void _onItemTapped(int index) {
     setState(() {
@@ -24,6 +26,10 @@ class _TelaOfertasState extends State<TelaOfertas> {
       if (indexSelecionado == 1) {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => TelaPesquisa()));
+      }
+      if (indexSelecionado == 2) {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => TelaHistorico()));
       }
     });
   }
@@ -42,35 +48,7 @@ class _TelaOfertasState extends State<TelaOfertas> {
         backgroundColor: Theme.of(context).primaryColor,
         centerTitle: true,
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            DrawerHeader(
-              child: Center(
-                  child: Text(
-                'Menu',
-                style: TextStyle(fontSize: 24, color: Colors.white),
-              )),
-              decoration: BoxDecoration(
-                color: Theme.of(context).primaryColor,
-              ),
-            ),
-            ListTile(
-              title: Text('Funcionalidade 1'),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text('Funcionalidade 2'),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text('Funcionalidade 3'),
-              onTap: () {},
-            ),
-          ],
-        ),
-      ),
+      drawer: TesteDrawer(),
       backgroundColor: Theme.of(context).backgroundColor,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20),
@@ -96,16 +74,16 @@ class _TelaOfertasState extends State<TelaOfertas> {
                   ],
                 ),
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 10),
               Text('Lugares incriveis pertinho de você!!!',
                   style: GoogleFonts.codaCaption(fontSize: 15)),
-              SizedBox(height: 15),
+              SizedBox(height: 10),
               SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
+                scrollDirection: Axis.vertical,
+                child: Column(
                   children: [
                     bannerLojasGrande("/imagens/PrimeiraLoja.png"),
-                    SizedBox(width: 15),
+                    SizedBox(height: 10),
                     bannerLojasGrande("/imagens/SegundaLoja.png"),
                   ],
                 ),
@@ -205,17 +183,17 @@ class _TelaOfertasState extends State<TelaOfertas> {
           padding: EdgeInsets.only(left: 15),
           child: Center(
             child: Container(
-              width: 90,
+              width: 20,
               height: 90,            
-              decoration: BoxDecoration(
-                color: Colors.grey[100],
-                borderRadius: BorderRadius.circular(45)
-              ),
+              // decoration: BoxDecoration(
+              //   color: Colors.grey[100],
+              //   borderRadius: BorderRadius.circular(45)
+              // ),
               child: IconButton(          
                 icon: cor,
                 onPressed: () {
                   setState(() {
-                    cor = Icon(Icons.favorite, color: Colors.red, size: 50);
+                    cor = Icon(Icons.favorite, color: Colors.red);
                   });
                 }),
             ),

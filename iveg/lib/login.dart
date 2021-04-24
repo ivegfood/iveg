@@ -18,9 +18,11 @@ class _PrimeiraTelaInicioState extends State<PrimeiraTelaInicio> {
             children: [
               Text(
                 'IVEG',
-                style: GoogleFonts.staatliches(
-                  fontSize: 52,
-                  color: Color.fromRGBO(63, 168, 94, 100),
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 40,
+                    fontFamily: 'Goudy Stout',
+                    fontWeight: FontWeight.bold,
                 ),
               ),
               Text(
@@ -82,32 +84,38 @@ class _TelaLoginState extends State<TelaLogin> {
       appBar: AppBar(
         title: Text(
           'IVEG',
-          style: GoogleFonts.staatliches(
-            fontSize: 40,
+          style: TextStyle(
             color: Colors.white,
+            fontSize: 40,
+            fontFamily: 'Goudy Stout',
+            fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Colors.green,
         centerTitle: true,
       ),
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Colors.green[50],
       body: Container(
         padding: EdgeInsets.all(40),
         child: Form(
           key: formKey,
           child: Column(
             children: [
-              Text(
-                'Qual é o seu e-mail?',
-                style: GoogleFonts.oswald(
-                  fontSize: 24,
-                  color: Color.fromRGBO(112, 112, 112, 100),
-                ),
-              ),
+              // Text(
+              //   'Qual é o seu e-mail?',
+              //   style: TextStyle(
+              //   color: Colors.grey,
+              //   fontSize: 20,
+              //   fontFamily: 'Goudy Stout',
+              //   fontWeight: FontWeight.bold,
+              //   ),
+              // ),
               SizedBox(height: 5),
-              campoTexto('Email', _txtConteudo),
+              campoTexto('Informe seu Email', _txtConteudo),
               SizedBox(height: 30),
-              botao('Continuar', '/login2')
+              botao('Cliente', '/login2'),
+              SizedBox(height: 30),
+              botao('Lojista', '/pj1')
             ],
           ),
         ),
@@ -123,9 +131,9 @@ class _TelaLoginState extends State<TelaLogin> {
         style: TextStyle(fontSize: 18),
         decoration: InputDecoration(
             labelText: rotulo,
-            labelStyle: TextStyle(fontSize: 16, color: Colors.green[200]),
-            hintText: 'Informe Dados',
-            hintStyle: TextStyle(fontSize: 16, color: Colors.green[200]),
+            labelStyle: TextStyle(fontSize: 16, color: Colors.blue),
+            // hintText: 'Informe Dados',
+            // hintStyle: TextStyle(fontSize: 16, color: Colors.green[200]),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
             )),
@@ -170,32 +178,34 @@ class _TelaLogin2State extends State<TelaLogin2> {
       appBar: AppBar(
         title: Text(
           'IVEG',
-          style: GoogleFonts.staatliches(
-            fontSize: 40,
+          style: TextStyle(
             color: Colors.white,
+            fontSize: 40,
+            fontFamily: 'Goudy Stout',
+            fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Colors.green,
         centerTitle: true,
       ),
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Colors.green[50],
       body: Container(
         padding: EdgeInsets.all(40),
         child: Form(
           key: formKey,
           child: Column(
             children: [
-              Text(
-                'Enviamos um código de confirmação para ' +
-                    msg.conteudo +
-                    ', por favor insira o codigo abaixo: ',
-                style: GoogleFonts.oswald(
-                  fontSize: 24,
-                  color: Color.fromRGBO(112, 112, 112, 100),
-                ),
-              ),
+              // Text(
+              //   'Enviamos um código de confirmação para ' +
+              //       msg.conteudo +
+              //       ', por favor insira o codigo abaixo: ',
+              //   style: GoogleFonts.oswald(
+              //     fontSize: 24,
+              //     color: Color.fromRGBO(112, 112, 112, 100),
+              //   ),
+              // ),
               SizedBox(height: 5),
-              campoTexto('Codigo', _txtCodigo),
+              campoTexto('Insira o código enviado para o seu Email', _txtCodigo,),
               SizedBox(height: 30),
               botao('Continuar', '/login3')
             ],
@@ -213,9 +223,9 @@ class _TelaLogin2State extends State<TelaLogin2> {
         style: TextStyle(fontSize: 18),
         decoration: InputDecoration(
             labelText: rotulo,
-            labelStyle: TextStyle(fontSize: 16, color: Colors.green[200]),
-            hintText: 'Informe Dados',
-            hintStyle: TextStyle(fontSize: 16, color: Colors.green[200]),
+            labelStyle: TextStyle(fontSize: 16, color: Colors.blue),
+            // hintText: 'Informe Dados',
+            // hintStyle: TextStyle(fontSize: 16, color: Colors.green[200]),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
             )),
@@ -256,9 +266,11 @@ class _TelaLogin3State extends State<TelaLogin3> {
       appBar: AppBar(
         title: Text(
           'IVEG',
-          style: GoogleFonts.staatliches(
-            fontSize: 40,
+          style: TextStyle(
             color: Colors.white,
+            fontSize: 40,
+            fontFamily: 'Goudy Stout',
+            fontWeight: FontWeight.bold,
           ),
         ),
         backgroundColor: Theme.of(context).primaryColor,
