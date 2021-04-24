@@ -10,6 +10,7 @@ import 'menu/Menu.dart';
 import 'pj/pj1.dart';
 import 'pj/pj2.dart';
 import 'pj/pj3.dart';
+import 'package:iveg/menu/carrinho.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -32,7 +33,7 @@ void main() {
       '/pj1': (context) => TelaPj1(),
       '/pj2': (context) => TelaPj2(),
       '/pj3': (context) => TelaPj3(),
-
+      '/carrinho': (context) => TelaCarrinho(),
     },
   ));
 }
