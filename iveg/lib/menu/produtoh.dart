@@ -95,7 +95,8 @@ class _TelaProdutoHState extends State<TelaProdutoH> {
             color: Colors.grey[300],
             child: ListView.separated(
               scrollDirection: Axis.vertical,
-              itemCount: 4,
+              itemCount: listaProdutosH.length,
+              shrinkWrap: true,
               itemBuilder: (context, index) {
                 return ListTile(
                   trailing: IconButton(
@@ -121,7 +122,7 @@ class _TelaProdutoHState extends State<TelaProdutoH> {
                               height: 30,
                               width: 30,
                               child: Image.asset(
-                                  retornaImagem(listaLojasH[index]))),
+                                  retornaImagem(listaProdutosH[index]))),
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 10),
                             child: Column(
