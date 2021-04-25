@@ -14,6 +14,7 @@ class BotaoFimCompra extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       height: 56,
+      // ignore: deprecated_member_use
       child: FlatButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         color: Colors.orange[400],

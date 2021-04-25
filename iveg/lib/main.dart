@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 
 import 'login.dart';
@@ -13,6 +15,9 @@ import 'pj/pj3.dart';
 import 'package:iveg/menu/carrinho.dart';
 import 'package:iveg/menu/produtoh.dart';
 import 'package:iveg/menu/produtop.dart';
+import 'menu/visualizacupom.dart';
+import 'menu/fidelidades.dart';
+import 'pagamento/adicionarcartao.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -39,7 +44,9 @@ void main() {
       '/carrinho': (context) => TelaCarrinho(),
       '/produtoh': (context) => TelaProdutoH(),
       '/produtop': (context) => TelaProdutoP(),
-  
+      '/adicionarcartao': (context) => AdicionarCartao(),
+      '/visualizacupom': (context) => VisualizaCupom(),
+      '/fidelidades': (context) => Fidelidade(),
     },
   ));
 }
