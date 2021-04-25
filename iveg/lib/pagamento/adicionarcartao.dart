@@ -23,14 +23,33 @@ class _AdicionarCartaoState extends State<AdicionarCartao> {
         ),
         home: Scaffold(
             appBar: AppBar(
-              title: Text('Adicionar Cartão de Crédito'),
-              backgroundColor: Colors.green[50],
+              title: Text('Adicionar Cartão de Crédito',
+                style: TextStyle(
+            color: Colors.white,
+            fontSize: 24,
+            fontFamily: 'Goudy Stout',
+            fontWeight: FontWeight.bold),
             ),
-            body: CreditCardWidget(
-              listBand: listBand, onTap: _onTap)
+            backgroundColor: Colors.green,
+            centerTitle: true,              
+            ),
+            body: ListView(
+              children: [CreditCardWidget(
+                listBand: listBand,
+                onTap: _onTap),
+                
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text('Voltar'),
+                ),
+              ],
+            ),
         ),
-        debugShowCheckedModeBanner: true,
+        debugShowCheckedModeBanner: false,
       ),
+      
     );
   }
 

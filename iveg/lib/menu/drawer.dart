@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:iveg/menu/fidelidades.dart';
+import 'package:iveg/menu/visualizacupom.dart';
+import 'package:iveg/pagamento/adicionarcartao.dart';
 
 class TesteDrawer extends StatefulWidget {
   @override
@@ -23,16 +26,25 @@ class _TesteDrawerState extends State<TesteDrawer> {
             ),
           ),
           ListTile(
-            title: Text('Funcionalidade 1'),
-            onTap: () {},
+            title: Text('Adicionar Cartão de Crédito'),
+            onTap: () {
+              Navigator.push(
+                context, MaterialPageRoute(builder: (context) => AdicionarCartao()));
+            },
           ),
           ListTile(
-            title: Text('Funcionalidade 2'),
-            onTap: () {},
+            title: Text('Visualizar Cupons de Desconto'),
+            onTap: () {
+              Navigator.push(
+                context, MaterialPageRoute(builder: (context) => VisualizaCupom()));
+            },
           ),
           ListTile(
-            title: Text('Funcionalidade 3'),
-            onTap: () {},
+            title: Text('Fidelidades'),
+            onTap: () {
+              Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Fidelidade()));
+            },
           ),
         ],
       ),
