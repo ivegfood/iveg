@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// ignore: unused_import
 import 'package:google_fonts/google_fonts.dart';
 
 
@@ -11,20 +10,28 @@ import 'package:google_fonts/google_fonts.dart';
 class _TelaInicialSobreState extends State<TelaInicialSobre> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(30),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'IVEG',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 40,
+            fontFamily: 'Goudy Stout',
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Colors.green,
+        centerTitle: true,
+      ),
+      backgroundColor: Colors.green[50],    
+    body: Container(
+      margin: EdgeInsets.all(30),      
       child: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,          
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Text('IVEG',        
-              style: TextStyle(
-                color: Colors.green,
-                fontSize: 50,
-                fontFamily: 'Goudy Stout',
-                fontWeight: FontWeight.bold,                         
-              ),        
-            ),
+          
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -179,7 +186,7 @@ class _TelaInicialSobreState extends State<TelaInicialSobre> {
                     constraints: BoxConstraints.tightFor(width: 300, height: 50),
                     child: ElevatedButton(
                       onPressed: (){
-                        Navigator.pushNamed(context, '/login');
+                        Navigator.pushNamed(context, '/criarconta');
                       },                  
                       child: Text('Entrar',        
                         style: TextStyle(
@@ -199,6 +206,6 @@ class _TelaInicialSobreState extends State<TelaInicialSobre> {
           ],          
         ),
       ),
-    );
+    ));
   }
 }

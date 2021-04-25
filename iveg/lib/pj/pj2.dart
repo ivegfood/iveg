@@ -38,7 +38,6 @@ class _TelaPj2State extends State<TelaPj2> {
               campoTexto('CNPJ'),
               campoTexto('Endereço'),
               campoTexto('Telefone'),
-              botao2('Leia os termos de serviço'),
               botao('Cadastrar'),
             ],
           ),
@@ -56,8 +55,6 @@ class _TelaPj2State extends State<TelaPj2> {
         decoration: InputDecoration(
             labelText: rotulo,
             labelStyle: TextStyle(fontSize: 16, color: Colors.blue),
-            hintText: 'Informe Dados',
-            hintStyle: TextStyle(fontSize: 16, color: Colors.blue),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
             )),
@@ -71,21 +68,7 @@ class _TelaPj2State extends State<TelaPj2> {
       width: double.infinity,
       height: 60,
       child: ElevatedButton(
-          style: ElevatedButton.styleFrom(primary: Colors.blue),
-          child: Text(rotulo, style: TextStyle(fontSize: 24)),
-          onPressed: () {
-            setState(() {
-              Navigator.pushNamed(context, '/pj3');
-            });
-          }),
-    );
-  }
-
-  Widget botao2(rotulo) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 6),
-      child: ElevatedButton(
-          style: ElevatedButton.styleFrom(primary: Colors.blue),
+          style: ElevatedButton.styleFrom(primary: Colors.red),
           child: Text(rotulo, style: TextStyle(fontSize: 24)),
           onPressed: () {
             showAlertDialog1(context);

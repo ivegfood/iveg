@@ -32,17 +32,6 @@ class _TelaPj1State extends State<TelaPj1> {
           key: formKey,
           child: Column(
             children: [
-              // Text(
-              //   'Enviamos um código de confirmação para ' +
-              //       msg.conteudo +
-              //       ', por favor insira o codigo abaixo: ',
-              //   style: TextStyle(
-              //     color: Colors.white,
-              //     fontSize: 20,
-              //     fontFamily: 'Goudy Stout',
-              //     fontWeight: FontWeight.bold,
-              //   ),
-              // ),
               SizedBox(height: 5),
               campoTexto(
                   'Insira o código enviado para o seu Email', _txtCodigo),
@@ -64,8 +53,6 @@ class _TelaPj1State extends State<TelaPj1> {
         decoration: InputDecoration(
             labelText: rotulo,
             labelStyle: TextStyle(fontSize: 16, color: Colors.blue),
-            // hintText: 'Informe Dados',
-            // hintStyle: TextStyle(fontSize: 16, color: Colors.green[200]),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
             )),

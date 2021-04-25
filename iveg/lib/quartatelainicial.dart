@@ -5,20 +5,28 @@ import 'package:google_fonts/google_fonts.dart';
 class QuartaTelaInicial extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(30),
-      child: Center(      
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'IVEG',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 40,
+            fontFamily: 'Goudy Stout',
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Colors.green,
+        centerTitle: true,
+      ),
+      backgroundColor: Colors.green[50],    
+    body: Container(
+      margin: EdgeInsets.all(30),      
+      child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Text('IVEG',        
-              style: TextStyle(
-                color: Colors.green,
-                fontSize: 50,
-                fontFamily: 'Goudy Stout',
-                fontWeight: FontWeight.bold,                           
-              ),        
-            ),
+            
             Container(              
               child: Center(child: Image.asset("/imagens/gift.png", height: 250, width: 250,)),
             ),
@@ -30,7 +38,7 @@ class QuartaTelaInicial extends StatelessWidget {
                 fontWeight: FontWeight.bold,           
               ),       
             ),
-            Text('Tudo de melhor para o seu pet você encontra aqui',        
+            Text('Presenteie seu melhor amigo!',        
               style: TextStyle(
                 color: Colors.green,
                 fontSize: 20,
@@ -47,7 +55,7 @@ class QuartaTelaInicial extends StatelessWidget {
                   height: 15,
                   margin: EdgeInsets.all(5),                
                   decoration: BoxDecoration(
-                    color: Colors.grey,
+                    color: Colors.grey[300],
                     borderRadius: BorderRadius.all(Radius.circular(8)),
                   ),
                 ),
@@ -56,16 +64,7 @@ class QuartaTelaInicial extends StatelessWidget {
                   height: 15,
                   margin: EdgeInsets.all(5),                
                   decoration: BoxDecoration(
-                    color: Colors.grey,
-                    borderRadius: BorderRadius.all(Radius.circular(8)),
-                  ),
-                ),
-                Container(
-                  width: 15,
-                  height: 15,
-                  margin: EdgeInsets.all(5),                
-                  decoration: BoxDecoration(
-                    color: Colors.grey,
+                    color: Colors.grey[300],
                     borderRadius: BorderRadius.all(Radius.circular(8)),
                   ),
                 ),
@@ -87,6 +86,15 @@ class QuartaTelaInicial extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(8)),
                   ),
                 ),
+                Container(
+                  width: 15,
+                  height: 15,
+                  margin: EdgeInsets.all(5),                
+                  decoration: BoxDecoration(
+                    color: Colors.grey[300],
+                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                  ),
+                ),
               ],
             ),            
             Row(           
@@ -94,16 +102,20 @@ class QuartaTelaInicial extends StatelessWidget {
               children: [
                 Center(
                   child: ConstrainedBox(
-                    constraints: BoxConstraints.tightFor(width: 150, height: 50),
-                    child: OutlinedButton(                
-                      onPressed: (){}, 
-                      child: Text('Entrar',        
+                    constraints:
+                        BoxConstraints.tightFor(width: 105, height: 50),
+                    child: OutlinedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/criarconta');
+                      },
+                      child: Text(
+                        'Entrar',
                         style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 20,
-                          fontFamily: 'Goudy Stout',
-                          fontWeight: FontWeight.bold,                               
-                        ),
+                            color: Colors.grey,
+                            fontSize: 15,
+                            fontFamily: 'Goudy Stout',
+                            fontWeight: FontWeight.bold,
+                          )
                       ),
                     ),
                   ),
@@ -134,6 +146,6 @@ class QuartaTelaInicial extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ));
   }
 }

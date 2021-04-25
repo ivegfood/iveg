@@ -2,26 +2,33 @@
 
 import 'package:flutter/material.dart';
 
-showAlertDialog1(BuildContext context) {
+showAlertDialog3(BuildContext context) {
   // configura os botões
   Widget aceitarButton = TextButton(
-    child: Text("Aceitar"),
+    child: Text("Salvar"),
     onPressed: () {
-      Navigator.pushNamed(context, '/pj3');
+      Navigator.pushNamed(context, '/menu');
+    },
+  );
+  Widget sairButton = TextButton(
+    child: Text("Sair"),
+    onPressed:  () {
+      Navigator.pushNamed(context, '/inicial');
     },
   );
   Widget cancelaButton = TextButton(
     child: Text("Cancelar"),
     onPressed:  () {
-      Navigator.pushNamed(context, '/inicial');
+      Navigator.pushNamed(context, '/pj3');
     },
   );
 
   // configura o  AlertDialog
   AlertDialog alert = AlertDialog(
     title: Text("Aviso"),
-    content: Text("Aceito os termos de utilizaçao desse aplicativo."),
+    content: Text("Desejo?"),
     actions: [
+      sairButton,
       aceitarButton,
       cancelaButton,  
     ],

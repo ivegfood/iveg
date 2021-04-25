@@ -28,15 +28,7 @@ class _PrimeiraTelaInicialState extends State<PrimeiraTelaInicial>{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Text(
-              'IVEG',
-              style: TextStyle(
-                color: Colors.green,
-                fontSize: 50,
-                fontFamily: 'Goudy Stout',
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            
             Container(
               child: Center(
                   child: Image.asset(
@@ -124,7 +116,7 @@ class _PrimeiraTelaInicialState extends State<PrimeiraTelaInicial>{
                         BoxConstraints.tightFor(width: 105, height: 50),
                     child: OutlinedButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/login');
+                        Navigator.pushNamed(context, '/criarconta');
                       },
                       child: Text(
                         'Entrar',

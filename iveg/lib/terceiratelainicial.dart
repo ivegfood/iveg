@@ -5,20 +5,28 @@ import 'package:google_fonts/google_fonts.dart';
 class TerceiraTelaInicial extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(30),
-      child: Center(      
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'IVEG',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 40,
+            fontFamily: 'Goudy Stout',
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Colors.green,
+        centerTitle: true,
+      ),
+      backgroundColor: Colors.green[50],    
+    body: Container(
+      margin: EdgeInsets.all(30),      
+      child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Text('IVEG',        
-              style: TextStyle(
-                  color: Colors.green,
-                  fontSize: 50,
-                  fontFamily: 'Goudy Stout',
-                  fontWeight: FontWeight.bold,                          
-              ),        
-            ),
+            
             Container(              
               child: Center(child: Image.asset("/imagens/pet.png", height: 250, width: 250,)),
             ),
@@ -32,7 +40,7 @@ class TerceiraTelaInicial extends StatelessWidget {
             ),
             Text('Tudo de melhor para o seu pet você encontra aqui',        
               style: TextStyle(
-                  color: Colors.green,
+                  color: Colors.grey,
                   fontSize: 20,
                   fontFamily: 'Goudy Stout',
                   fontWeight: FontWeight.bold,            
@@ -94,16 +102,20 @@ class TerceiraTelaInicial extends StatelessWidget {
               children: [
                 Center(
                   child: ConstrainedBox(
-                    constraints: BoxConstraints.tightFor(width: 150, height: 50),
-                    child: OutlinedButton(                
-                      onPressed: (){}, 
-                      child: Text('Entrar',        
+                    constraints:
+                        BoxConstraints.tightFor(width: 105, height: 50),
+                    child: OutlinedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/criarconta');
+                      },
+                      child: Text(
+                        'Entrar',
                         style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 20,
-                          fontFamily: 'Goudy Stout',
-                          fontWeight: FontWeight.bold,                                
-                        ),
+                            color: Colors.grey,
+                            fontSize: 15,
+                            fontFamily: 'Goudy Stout',
+                            fontWeight: FontWeight.bold,
+                          )
                       ),
                     ),
                   ),
@@ -134,6 +146,6 @@ class TerceiraTelaInicial extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ));
   }
 }
