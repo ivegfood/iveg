@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/pj/alertdialog2.dart';
 
 class PrimeiraTelaInicio extends StatefulWidget {
@@ -9,53 +8,104 @@ class PrimeiraTelaInicio extends StatefulWidget {
 
 class _PrimeiraTelaInicioState extends State<PrimeiraTelaInicio> {
   @override
-  Widget build(BuildContext context) {
+ Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        margin: EdgeInsets.symmetric(vertical: 70, horizontal: 60),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Text(
-                'IVEG',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 40,
-                    fontFamily: 'Goudy Stout',
-                    fontWeight: FontWeight.bold,
-                ),
-              ),
-              Text(
-                '\n\nantes de achar os melhores\nprodutos veganos do mercado\n\ndeixa eu te conhecer melhor',
-                style: GoogleFonts.staatliches(
-                  fontSize: 24,
-                  color: Color.fromRGBO(61, 70, 54, 100),
-                ),
-              ),
-              Image(
-                  image: AssetImage("/imagens/google.PNG"),
-                  width: double.infinity),
-              Center(
-                child: ConstrainedBox(
-                  constraints: BoxConstraints.tightFor(
-                      width: double.infinity, height: 50),
-                  child: OutlinedButton(
-                    onPressed: () {
-                      setState(() {
-                        Navigator.pushNamed(context, '/login');
-                      });
-                    },
-                    child: Text(
-                      'Criar uma conta',
-                      style: GoogleFonts.oswald(
-                        fontSize: 16,
-                        color: Color.fromRGBO(112, 112, 112, 100),
+      appBar: AppBar(
+        title: Text(
+          'IVEG',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 40,
+            fontFamily: 'Goudy Stout',
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Colors.green,
+        centerTitle: true,
+      ),
+      backgroundColor: Colors.green[50],    
+    body: Container(
+      margin: EdgeInsets.all(30),      
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Center(
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints.tightFor(width: 300, height: 50),
+                    child: ElevatedButton(
+                      onPressed: (){
+                        Navigator.pushNamed(context, '/menu');
+                      },                  
+                      child: Text('Acessar sua conta cliente',        
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontFamily: 'Goudy Stout',
+                          fontWeight: FontWeight.bold,                                
+                        ),                    
+                      ),
+                      style: ElevatedButton.styleFrom(                    
+                        primary: Colors.blue,
                       ),
                     ),
                   ),
                 ),
-              ),
+                
+              Center(
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints.tightFor(width: 300, height: 50),
+                    child: ElevatedButton(
+                      onPressed: (){
+                        Navigator.pushNamed(context, '/pj3');
+                      },                  
+                      child: Text('Acessar sua conta lojista',        
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontFamily: 'Goudy Stout',
+                          fontWeight: FontWeight.bold,                                
+                        ),                    
+                      ),
+                      style: ElevatedButton.styleFrom(                    
+                        primary: Colors.blue,
+                      ),
+                    ),
+                  ),
+                ),
+                Center(
+                    child: TextButton(
+                      onPressed: (){
+                        Navigator.pushNamed(context, '/menu');
+                      },                  
+                      child: Image(
+                        image: AssetImage('assets/imagens/google.png'),
+                        width: double.infinity, 
+                        height: 50,                    
+                      ),
+                    ),
+                  ),
+              Center(
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints.tightFor(width: 300, height: 50),
+                    child: ElevatedButton(
+                      onPressed: (){
+                        Navigator.pushNamed(context, '/login');
+                      },                  
+                      child: Text('Criar uma nova conta',        
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontFamily: 'Goudy Stout',
+                          fontWeight: FontWeight.bold,                                
+                        ),                    
+                      ),
+                      style: ElevatedButton.styleFrom(                    
+                        primary: Colors.red,
+                      ),
+                    ),
+                  ),
+                ),
             ],
           ),
         ),
@@ -103,8 +153,8 @@ class _TelaLoginState extends State<TelaLogin> {
           child: Column(
             children: [
               SizedBox(height: 5),
-              campoTexto('Informe seu Email ou o'
-                          +'\n' 'número de celular', _txtConteudo),
+              campoTexto('Informe seu e-mail ou o'
+                          +'\n' 'número do seu celular', _txtConteudo),
               SizedBox(height: 30),
               botao('Cliente', '/login2'),
               SizedBox(height: 30),
@@ -267,7 +317,6 @@ class _TelaLogin3State extends State<TelaLogin3> {
               campoTexto('Data de Nascimento'),
               campoTexto('Endereço'),
               campoTexto('Telefone'),
-              botao2('Leia os termos de serviço'),
               botao('Cadastrar')
             ],
           ),
@@ -305,23 +354,11 @@ class _TelaLogin3State extends State<TelaLogin3> {
             ElevatedButton.styleFrom(primary: Colors.red),
         child: Text(rotulo, style: TextStyle(fontSize: 24)),
         onPressed: () {
-            setState(() {              
-              Navigator.pushNamed(context, '/Menu');
-            });
-          }),
+            showAlertDialog2(context);
+            }
+          ),
     );
   }  
-    Widget botao2(rotulo) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 6),
-      child: ElevatedButton(
-          style: ElevatedButton.styleFrom(primary: Colors.blue),
-          child: Text(rotulo, style: TextStyle(fontSize: 24)),
-          onPressed: () {
-            showAlertDialog2(context);
-          }),
-    );
-  }
 }
 
 
