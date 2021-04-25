@@ -108,7 +108,7 @@ class _TelaPj3State extends State<TelaPj3> {
               Center(
                   child: ConstrainedBox(
                     constraints:
-                        BoxConstraints.tightFor(width: 105, height: 50),
+                        BoxConstraints.tightFor(width: 105, height: 50,),
                     child: OutlinedButton(
                       onPressed: () {
                         showAlertDialog3(context);
