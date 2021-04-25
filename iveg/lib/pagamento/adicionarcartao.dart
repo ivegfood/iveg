@@ -9,7 +9,7 @@ class AdicionarCartao extends StatefulWidget {
 class _AdicionarCartaoState extends State<AdicionarCartao> {
   @override
   Widget build(BuildContext context) {
-        return MultiProvider(
+    return MultiProvider(
       providers: [
         Provider<Controller>(
           create: (_) => Controller(),
@@ -22,39 +22,56 @@ class _AdicionarCartaoState extends State<AdicionarCartao> {
           accentColor: Colors.blue,
         ),
         home: Scaffold(
-            appBar: AppBar(
-              title: Text('Adicionar Cartão de Crédito',
-                style: TextStyle(
-            color: Colors.white,
-            fontSize: 24,
-            fontFamily: 'Goudy Stout',
-            fontWeight: FontWeight.bold),
+          appBar: AppBar(
+            title: Text(
+              'Adicionar Cartão de Crédito',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontFamily: 'Goudy Stout',
+                  fontWeight: FontWeight.bold),
             ),
             backgroundColor: Colors.green,
-            centerTitle: true,              
-            ),
-            body: ListView(
-              children: [CreditCardWidget(
-                listBand: listBand,
-                onTap: _onTap),
-                
-                ElevatedButton(
+            centerTitle: true,
+          ),
+          body: ListView(
+            children: [
+              CreditCardWidget(listBand: listBand, onTap: _onTap),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  
+                  ElevatedButton(
                   onPressed: () {
                     Navigator.pop(context);
                   },
+                  
                   child: Text('Voltar'),
                 ),
-              ],
-            ),
+                ]
+              )
+            ],
+          ),
         ),
         debugShowCheckedModeBanner: false,
       ),
-      
     );
   }
 
   // Bandeiras disponíveis
-  List<String> listBand = ['visa', 'mastercard', 'amex', 'elo', 'dinersclub', 'discover', 'jcb', 'aura', 'hiper', 'hipercard', 'rupay'];
+  List<String> listBand = [
+    'visa',
+    'mastercard',
+    'amex',
+    'elo',
+    'dinersclub',
+    'discover',
+    'jcb',
+    'aura',
+    'hiper',
+    'hipercard',
+    'rupay'
+  ];
 
   _onTap() async {
     print('Numero do cartão: $creditCardNumber'); // Numero do cartão digitado
