@@ -1,12 +1,13 @@
 import 'dart:ui';
 
-import 'package:iveg/menu/carrinho.dart';
+import 'package:iveg/car_compras/classes/meu_carrinho.dart';
+import 'package:iveg/detalhesProd/TelaDetalhes.dart';
+import 'package:iveg/menu/acessorios/ContainerPet.dart';
 import 'package:iveg/menu/drawer.dart';
 import 'package:iveg/menu/historico.dart';
 import 'package:iveg/menu/pesquisar.dart';
 import 'package:flutter/material.dart';
 import 'package:iveg/menu/promocoes.dart';
-import 'package:iveg/menu/produtoh.dart';
 
 class TelaProdutoP extends StatefulWidget {
   @override
@@ -14,12 +15,6 @@ class TelaProdutoP extends StatefulWidget {
 }
 
 class _TelaProdutoPState extends State<TelaProdutoP> {
-  var formKey = GlobalKey<FormState>();
-  var listaProdutosP = [];
-  var listaLojasP = [];
-  var favorito = Icon(Icons.favorite);
-  var adicionar = Icon(Icons.add_circle_outlined);
-
   int indexSelecionado = 0;
 
   void _onItemTapped(int index) {
@@ -39,27 +34,6 @@ class _TelaProdutoPState extends State<TelaProdutoP> {
             context, MaterialPageRoute(builder: (context) => TelaOfertas()));
       }
     });
-  }
-
-  @override
-  void initState() {
-    listaProdutosP.add(Produtos(
-        nome: 'Ração superpremium',
-        preco: 70.99,
-        imagens: 'assets/icones/racao_icone.png'));
-    listaProdutosP.add(Produtos(
-        nome: 'Raçao premium',
-        preco: 34.99,
-        imagens: 'assets/icones/racao_icone.png'));
-    listaProdutosP.add(Produtos(
-        nome: 'Coleira básica',
-        preco: 15.99,
-        imagens: 'assets/icones/coleira_icone.png'));
-    listaProdutosP.add(Produtos(
-        nome: 'Coleira luxo',
-        preco: 99.99,
-        imagens: 'assets/icones/coleira_icone.png'));
-    super.initState();
   }
 
   @override
@@ -87,55 +61,17 @@ class _TelaProdutoPState extends State<TelaProdutoP> {
             color: Colors.grey[300],
             child: ListView.separated(
               scrollDirection: Axis.vertical,
-              itemCount: listaProdutosP.length,
-              shrinkWrap: true,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  trailing: IconButton(
-                    icon: favorito,
-                    onPressed: () {
-                      setState(() {
-                        favorito = Icon(Icons.favorite, color: Colors.red);
-                      });
-                    },
-                  ),
-                  title: InkWell(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => TelaCarrinho()));
-                      },
-                      child: Container(
-                          child: Row(
-                        children: [
-                          Container(
-                              padding: EdgeInsets.all(1),
-                              height: 30,
-                              width: 30,
-                              child: Image.asset(
-                                  retornaImagem(listaProdutosP[index]))),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 10),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(retornaNome(listaProdutosP[index]),
-                                    style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold)),
-                                Text(
-                                    'R\$ ' +
-                                        retornaPreco(listaProdutosP[index]),
-                                    style: TextStyle(
-                                        fontSize: 10, color: Colors.grey)),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ))),
-                );
-              },
+              itemCount: carCompras.length,
+              itemBuilder: (context, index) => Padding(
+                padding: EdgeInsets.symmetric(vertical: 10),
+                child: ContainerPet(
+                  carCompras: carCompras[index],
+                  press: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => TelaDetalhes())),
+                )                
+              ),
               separatorBuilder: (context, index) {
                 return Divider(
                   color: Colors.blue[100],
@@ -174,18 +110,5 @@ class _TelaProdutoPState extends State<TelaProdutoP> {
             onTap: _onItemTapped,
           )),
     );
-  }
-
-  String retornaImagem(Produtos objeto) {
-    return objeto.imagens;
-  }
-
-  String retornaNome(Produtos objeto) {
-    return objeto.nome;
-  }
-
-  String retornaPreco(Produtos objeto) {
-    String texto = objeto.preco.toString();
-    return texto;
   }
 }

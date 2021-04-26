@@ -5,6 +5,7 @@ class ProdutosPet {
   final String nmProduto, descricao;
   final List<String> imgProduto;
   final double prProduto;
+  final bool favorito;
 
   ProdutosPet({
     @required this.id,
@@ -12,6 +13,7 @@ class ProdutosPet {
     @required this.nmProduto,
     @required this.prProduto,
     @required this.descricao,
+    this.favorito = false,
   });
 }
 
@@ -23,7 +25,8 @@ List<ProdutosPet> ltsProdPets = [
     ],
     nmProduto: "Ração superpremium",
     prProduto: 70.99,
-    descricao: "Pequena descrição sobre o produto apresentado, conter principais informações pertinentes a venda",
+    descricao:
+        "Pequena descrição sobre o produto apresentado, conter principais informações pertinentes a venda",
   ),
   ProdutosPet(
     id: 2,
@@ -32,7 +35,8 @@ List<ProdutosPet> ltsProdPets = [
     ],
     nmProduto: "Raçao premium",
     prProduto: 34.99,
-    descricao: "Pequena descrição sobre o produto apresentado, conter principais informações pertinentes a venda",
+    descricao:
+        "Pequena descrição sobre o produto apresentado, conter principais informações pertinentes a venda",
   ),
   ProdutosPet(
     id: 3,
@@ -41,7 +45,8 @@ List<ProdutosPet> ltsProdPets = [
     ],
     nmProduto: "Coleira básica",
     prProduto: 15.99,
-    descricao: "Pequena descrição sobre o produto apresentado, conter principais informações pertinentes a venda",
+    descricao:
+        "Pequena descrição sobre o produto apresentado, conter principais informações pertinentes a venda",
   ),
   ProdutosPet(
     id: 4,
@@ -50,9 +55,9 @@ List<ProdutosPet> ltsProdPets = [
     ],
     nmProduto: "Coleira luxo",
     prProduto: 99.99,
-    descricao: "Pequena descrição sobre o produto apresentado, conter principais informações pertinentes a venda",
+    descricao:
+        "Pequena descrição sobre o produto apresentado, conter principais informações pertinentes a venda",
   ),
 ];
 
-const String description =
-    "Descrição dos produtos vendidos na IVEG";
+const String description = "Descrição dos produtos vendidos na IVEG";
