@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iveg/car_compras/acessorios/botao_fim_compra.dart';
+import 'package:iveg/pagamento/adicionarcartao.dart';
 
 class BBarCarrinho extends StatelessWidget {
   const BBarCarrinho({
@@ -82,7 +83,10 @@ class BBarCarrinho extends StatelessWidget {
                   width: 190,
                   child: BotaoFimCompra(
                     text: "Pagar",
-                    press: () {},
+                    press: () {
+                      Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => AdicionarCartao()));
+                    },
                   ),
                 ),
               ],

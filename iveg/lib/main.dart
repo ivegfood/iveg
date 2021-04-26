@@ -20,7 +20,7 @@ void main() {
     title: 'Iveg',
 
     //ROTAS DE NAVEGAÇÃO
-    initialRoute: '/inicial',
+    initialRoute: '/menu',
     routes: {
       '/inicial': (context) => TelaInicial(),
       '/inicial1': (context) => TelaInicialv2(),

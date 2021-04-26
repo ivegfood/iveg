@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iveg/menu/fidelidades.dart';
 import 'package:iveg/menu/visualizacupom.dart';
 import 'package:iveg/pagamento/adicionarcartao.dart';
+import 'package:iveg/telaInicialsobre.dart';
 
 class TesteDrawer extends StatefulWidget {
   @override
@@ -44,6 +45,13 @@ class _TesteDrawerState extends State<TesteDrawer> {
             onTap: () {
               Navigator.push(
                 context, MaterialPageRoute(builder: (context) => Fidelidade()));
+            },
+          ),
+          ListTile(
+            title: Text('Sobre'),
+            onTap: () {
+              Navigator.push(
+                context, MaterialPageRoute(builder: (context) => TelaInicialSobre()));
             },
           ),
         ],
