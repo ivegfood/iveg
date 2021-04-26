@@ -34,20 +34,27 @@ class BBarCarrinho extends StatelessWidget {
           children: [
             Row(
               children: [
-                Container(
-                  padding: EdgeInsets.all(10),
-                  height: 40,
-                  width: 40,
-                  decoration: BoxDecoration(
-                    color: Colors.grey[100],
-                    borderRadius: BorderRadius.circular(10),
+                InkWell(
+                  child: Container(
+                    padding: EdgeInsets.all(10),
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[100],
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Icon(Icons.receipt, size: 20)
                   ),
-                  child: Icon(Icons.receipt, size: 20)
+                  onTap: (){
+                    Navigator.pushNamed(context, '/visualizacupom');
+                  },
                 ),
                 Spacer(),
                 InkWell(
-                  onTap: (){},
-                  child: Text("Adicionar cupom de desconto")),
+                  onTap: (){
+                    Navigator.pushNamed(context, '/produtoh');
+                  },
+                  child: Text("Continuar comprando")),
                 const SizedBox(width: 10),
                 Icon(
                   Icons.arrow_forward_ios,
@@ -74,7 +81,7 @@ class BBarCarrinho extends StatelessWidget {
                 SizedBox(
                   width: 190,
                   child: BotaoFimCompra(
-                    text: "Check Out",
+                    text: "Pagar",
                     press: () {},
                   ),
                 ),

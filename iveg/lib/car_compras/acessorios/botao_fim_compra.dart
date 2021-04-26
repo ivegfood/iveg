@@ -17,7 +17,7 @@ class BotaoFimCompra extends StatelessWidget {
       // ignore: deprecated_member_use
       child: FlatButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        color: Colors.orange[400],
+        color: Colors.blue,
         onPressed: press,
         child: Text(
           text,
