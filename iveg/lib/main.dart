@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:iveg/telaInicial/TelaInicialv2.dart';
 
 import 'login.dart';
-import 'primeiratelainicial.dart';
-import 'quartatelainicial.dart';
-import 'segundatelainicial.dart';
 import 'telaInicialsobre.dart';
-import 'terceiratelainicial.dart';
 import 'package:iveg/menu/menu.dart';
 import 'pj/pj1.dart';
 import 'pj/pj2.dart';
@@ -26,11 +23,8 @@ void main() {
     initialRoute: '/inicial',
     routes: {
       '/inicial': (context) => TelaInicial(),
-      '/inicial1': (context) => PrimeiraTelaInicial(),
-      '/inicial2': (context) => SegundaTelaInicial(),
-      '/inicial3': (context) => TerceiraTelaInicial(),
-      '/inicial4': (context) => QuartaTelaInicial(),
-      '/inicial5': (context) => TelaInicialSobre(),
+      '/inicial1': (context) => TelaInicialv2(),
+      '/sobre': (context) => TelaInicialSobre(),
       '/criarconta': (context) => PrimeiraTelaInicio(),
       '/login': (context) => TelaLogin(),
       '/login2': (context) => TelaLogin2(),
