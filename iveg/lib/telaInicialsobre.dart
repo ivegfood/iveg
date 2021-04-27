@@ -126,56 +126,6 @@ class _TelaInicialSobreState extends State<TelaInicialSobre> {
                 ),
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,            
-              children: [
-                Container(
-                  width: 15,
-                  height: 15,
-                  margin: EdgeInsets.all(5),                
-                  decoration: BoxDecoration(
-                    color: Colors.grey[300],
-                    borderRadius: BorderRadius.all(Radius.circular(8)),
-                  ),
-                ),
-                Container(
-                  width: 15,
-                  height: 15,
-                  margin: EdgeInsets.all(5),                
-                  decoration: BoxDecoration(
-                    color: Colors.grey[300],
-                    borderRadius: BorderRadius.all(Radius.circular(8)),
-                  ),
-                ),
-                Container(
-                  width: 15,
-                  height: 15,
-                  margin: EdgeInsets.all(5),                
-                  decoration: BoxDecoration(
-                    color: Colors.grey[300],
-                    borderRadius: BorderRadius.all(Radius.circular(8)),
-                  ),
-                ),
-                Container(
-                  width: 15,
-                  height: 15,
-                  margin: EdgeInsets.all(5),                
-                  decoration: BoxDecoration(
-                    color: Colors.grey[300],
-                    borderRadius: BorderRadius.all(Radius.circular(8)),
-                  ),
-                ),
-                Container(
-                  width: 15,
-                  height: 15,
-                  margin: EdgeInsets.all(5),                
-                  decoration: BoxDecoration(
-                    color: Colors.grey,
-                    borderRadius: BorderRadius.all(Radius.circular(8)),
-                  ),
-                ),
-              ],
-            ),
             Row(           
               mainAxisAlignment: MainAxisAlignment.center,            
               children: [                
@@ -184,9 +134,9 @@ class _TelaInicialSobreState extends State<TelaInicialSobre> {
                     constraints: BoxConstraints.tightFor(width: 300, height: 50),
                     child: ElevatedButton(
                       onPressed: (){
-                        Navigator.pushNamed(context, '/criarconta');
+                        Navigator.pop(context);
                       },                  
-                      child: Text('Entrar',        
+                      child: Text('Voltar',        
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 20,

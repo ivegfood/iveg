@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iveg/car_compras/acessorios/botao_fim_compra.dart';
+import 'package:iveg/menu/menu.dart';
+import 'package:iveg/menu/visualizacupom.dart';
+import 'package:iveg/pagamento/adicionarcartao.dart';
 
 class BBarCarrinho extends StatelessWidget {
   const BBarCarrinho({
@@ -34,20 +37,29 @@ class BBarCarrinho extends StatelessWidget {
           children: [
             Row(
               children: [
-                Container(
-                  padding: EdgeInsets.all(10),
-                  height: 40,
-                  width: 40,
-                  decoration: BoxDecoration(
-                    color: Colors.grey[100],
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Icon(Icons.receipt, size: 20)
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => VisualizaCupom()));
+                  },
+                  child: Container(
+                      padding: EdgeInsets.all(10),
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
+                        color: Colors.grey[100],
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Icon(Icons.receipt, size: 20)),
                 ),
                 Spacer(),
                 InkWell(
-                  onTap: (){},
-                  child: Text("Adicionar cupom de desconto")),
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => TelaMenu()));
+                    },
+                    child: Text("Continuar comprando")),
                 const SizedBox(width: 10),
                 Icon(
                   Icons.arrow_forward_ios,
@@ -75,7 +87,12 @@ class BBarCarrinho extends StatelessWidget {
                   width: 190,
                   child: BotaoFimCompra(
                     text: "Check Out",
-                    press: () {},
+                    press: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AdicionarCartao()));
+                    },
                   ),
                 ),
               ],
