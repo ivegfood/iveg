@@ -103,7 +103,8 @@ class _VisualizaCupomState extends State<VisualizaCupom> {
                     onPressed: () {
                       setState(() {
                         utilizar = Icon(Icons.check, color: Colors.red);
-                      });
+                      }
+                      );
                     },
                   ),
                   title: InkWell(
@@ -111,7 +112,9 @@ class _VisualizaCupomState extends State<VisualizaCupom> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => TelaCarrinho()));
+                                builder: (context) => TelaCarrinho()
+                            )
+                        );
                       },
                       child: Container(
                           child: Row(
@@ -140,7 +143,9 @@ class _VisualizaCupomState extends State<VisualizaCupom> {
                             ),
                           ),
                         ],
-                      ))),
+                      )
+                    )
+                  ),
                 );
               },
               separatorBuilder: (context, index) {

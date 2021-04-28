@@ -33,6 +33,7 @@ dependencies:
   flutter_credit_card_detector: ^1.0.0
   flutter_cart: ^0.0.5+1
   google_maps: ^5.1.0
+  sigepweb: ^2.0.0-beta
 
 dev_dependencies:
   flutter_test:
