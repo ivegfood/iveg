@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iveg/pesquisar/TelaPesquisa.dart';
 import 'package:iveg/telaInicial/TelaInicialv2.dart';
 
 import 'login.dart';
@@ -39,6 +40,7 @@ void main() {
       '/adicionarcartao': (context) => AdicionarCartao(),
       '/visualizacupom': (context) => VisualizaCupom(),
       '/fidelidades': (context) => Fidelidade(),
+      '/pesquisa' : (context) => TelaPesquisav2(),
     },
   ));
 }
