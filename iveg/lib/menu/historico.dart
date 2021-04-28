@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/menu/drawer.dart';
-import 'package:iveg/menu/pesquisar.dart';
+import 'package:iveg/menu/menu.dart';
 import 'package:iveg/menu/promocoes.dart';
+import 'package:iveg/pesquisar/TelaPesquisa.dart';
 
 class TelaHistorico extends StatefulWidget {
   @override
@@ -18,11 +19,13 @@ class _TelaHistoricoState extends State<TelaHistorico> {
       //Como controle do index é feito?
       indexSelecionado = index;
       if (indexSelecionado == 0) {        
-        Navigator.pop(context);        
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => TelaMenu()));        
       }
       if (indexSelecionado == 1) {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => TelaPesquisa()));
+            context, MaterialPageRoute(builder: (context) => TelaPesquisav2()));
+        indexSelecionado = 2;
       }
       if (indexSelecionado == 3) {
         Navigator.push(
