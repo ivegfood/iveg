@@ -37,7 +37,7 @@ void main() {
       '/pj3': (context) => TelaPj3(),
       '/carrinho': (context) => TelaCarrinho(),
       '/produtoh': (context) => TelaProdutoH(),
-      '/produtop': (context) => TelaProdutoP(),
+      /* '/produtop': (context) => TelaProdutoP(), */
       '/telaPet' : (context) => TelaPet(),
       '/adicionarcartao': (context) => AdicionarCartao(),
       '/visualizacupom': (context) => VisualizaCupom(),

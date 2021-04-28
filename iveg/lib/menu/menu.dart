@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:iveg/menu/TelaProdutoPet/TelaPet.dart';
 import 'package:iveg/menu/drawer.dart';
 import 'package:iveg/menu/historico.dart';
 import 'package:flutter/material.dart';
@@ -274,7 +275,7 @@ class _TelaMenuState extends State<TelaMenu> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => TelaProdutoP()));
+                                        builder: (context) => TelaPet()));
                               },
                               child: Container(
                                   child: Row(

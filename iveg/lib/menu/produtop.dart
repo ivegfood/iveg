@@ -1,4 +1,4 @@
-import 'dart:ui';
+/* import 'dart:ui';
 
 import 'package:iveg/menu/carrinho.dart';
 import 'package:iveg/menu/drawer.dart';
@@ -190,3 +190,4 @@ class _TelaProdutoPState extends State<TelaProdutoP> {
     return texto;
   }
 }
+ */
