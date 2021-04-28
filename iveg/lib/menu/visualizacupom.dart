@@ -5,6 +5,7 @@ import 'package:iveg/menu/drawer.dart';
 import 'package:iveg/menu/historico.dart';
 import 'package:iveg/menu/pesquisar.dart';
 import 'package:iveg/menu/promocoes.dart';
+import 'package:iveg/pesquisar/TelaPesquisa.dart';
 
 class VisualizaCupom extends StatefulWidget {
   @override
@@ -33,7 +34,7 @@ class _VisualizaCupomState extends State<VisualizaCupom> {
       indexSelecionado = index;
       if (indexSelecionado == 1) {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => TelaPesquisa()));
+            context, MaterialPageRoute(builder: (context) => TelaPesquisav2()));
         indexSelecionado = 0;
       }
       if (indexSelecionado == 2) {
