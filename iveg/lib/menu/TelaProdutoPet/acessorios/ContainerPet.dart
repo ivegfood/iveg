@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iveg/car_compras/classes/meu_carrinho.dart';
-import 'package:iveg/menu/carrinho.dart';
+import 'package:iveg/menu/TelaDetalhes/TelaDetalhes.dart';
 
 class ContainerPet extends StatelessWidget {
   const ContainerPet({
@@ -15,7 +15,7 @@ class ContainerPet extends StatelessWidget {
     return InkWell(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => TelaCarrinho()));
+            context, MaterialPageRoute(builder: (context) => TelaDetalhes()));
       },
       child: Container(
         decoration: BoxDecoration(

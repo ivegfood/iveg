@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iveg/menu/TelaProdutoPet/BodyTelaPet.dart';
-import 'package:iveg/telaInicial/BotaoEntrar.dart';
+import 'package:iveg/menu/TelaProdutoPet/BottomBarPet.dart';
 
 class TelaPet extends StatelessWidget {
   @override
@@ -9,20 +9,7 @@ class TelaPet extends StatelessWidget {
       backgroundColor: Colors.green,
       appBar: appBarTelaPet(context),
       body: BodyTelaPet(),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(10),
-          child: BotaoEntrar(
-            text: 'Voltar',
-            press: () {
-              Navigator.pop(context);
-            },
-          ),
-        ),
-      ),
+      bottomNavigationBar: BottomBarPet(),
     );
   }
 

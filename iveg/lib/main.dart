@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iveg/menu/TelaDetalhes/TelaDetalhes.dart';
 import 'package:iveg/menu/TelaProdutoPet/TelaPet.dart';
 import 'package:iveg/pesquisar/TelaPesquisa.dart';
 import 'package:iveg/telaInicial/TelaInicialv2.dart';
@@ -43,6 +44,7 @@ void main() {
       '/visualizacupom': (context) => VisualizaCupom(),
       '/fidelidades': (context) => Fidelidade(),
       '/pesquisa' : (context) => TelaPesquisav2(),
+      '/detalhes' : (context) => TelaDetalhes(),
     },
   ));
 }

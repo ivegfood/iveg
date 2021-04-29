@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ProdutosPet {
   final int id;
-  final String nmProduto;
+  final String nmProduto, descricao;
   final List<String> imgProduto;
   final double prProduto;
 
@@ -11,6 +11,7 @@ class ProdutosPet {
     @required this.imgProduto,
     @required this.nmProduto,
     @required this.prProduto,
+    this.descricao,
   });
 }
 
@@ -19,9 +20,11 @@ List<ProdutosPet> ltsProdPets = [
     id: 1,
     imgProduto: [
       "assets/icones/racao_icone.png",
+      "assets/icones/coleira_icone.png",
     ],
     nmProduto: "Ração superpremium",
     prProduto: 70.99,
+    descricao: "Uma descrição mais detalhada sobre o produto, que pode conter informações do fabricante, marca, ingredientes, entre outras informações"
   ),
   ProdutosPet(
     id: 2,
@@ -49,5 +52,4 @@ List<ProdutosPet> ltsProdPets = [
   ),
 ];
 
-const String description =
-    "Descrição dos produtos vendidos na IVEG";
+const String description = "Descrição dos produtos vendidos na IVEG";
