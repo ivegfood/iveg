@@ -1,4 +1,8 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
+import 'package:iveg/menu/TelaCupons/ClasseCupom.dart';
+import 'package:iveg/menu/TelaCupons/TelaCupons.dart';
 import 'package:iveg/menu/TelaDetalhes/TelaDetalhes.dart';
 import 'package:iveg/menu/TelaProdutoPet/TelaPet.dart';
 import 'package:iveg/pesquisar/TelaPesquisa.dart';
@@ -23,7 +27,7 @@ void main() {
     title: 'Iveg',
 
     //ROTAS DE NAVEGAÇÃO
-    initialRoute: '/inicial',
+    initialRoute: '/cupons',
     routes: {
       '/inicial': (context) => TelaInicial(),
       '/inicial1': (context) => TelaInicialv2(),
@@ -41,10 +45,11 @@ void main() {
       /* '/produtop': (context) => TelaProdutoP(), */
       '/telaPet' : (context) => TelaPet(),
       '/adicionarcartao': (context) => AdicionarCartao(),
-      '/visualizacupom': (context) => VisualizaCupom(),
+      /* '/visualizacupom': (context) => VisualizaCupom(), */
       '/fidelidades': (context) => Fidelidade(),
       '/pesquisa' : (context) => TelaPesquisav2(),
       '/detalhes' : (context) => TelaDetalhes(),
+      '/cupons' : (context) => TelaCupons(),
     },
   ));
 }
