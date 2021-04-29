@@ -19,8 +19,10 @@ List<ProdutosPet> ltsProdPets = [
   ProdutosPet(
     id: 1,
     imgProduto: [
-      "assets/icones/racao_icone.png",
-      "assets/icones/coleira_icone.png",
+      "assets/imagens/dogUM.png",
+      "assets/imagens/dogDois.png",
+      "assets/imagens/dogTres.png",
+      "assets/imagens/dogQuatro.png",
     ],
     nmProduto: "Ração superpremium",
     prProduto: 70.99,
