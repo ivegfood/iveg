@@ -1,4 +1,4 @@
-import 'dart:ui';
+/* import 'dart:ui';
 
 import 'package:iveg/menu/carrinho.dart';
 import 'package:iveg/menu/drawer.dart';
@@ -7,6 +7,7 @@ import 'package:iveg/menu/pesquisar.dart';
 import 'package:flutter/material.dart';
 import 'package:iveg/menu/promocoes.dart';
 import 'package:iveg/menu/produtoh.dart';
+import 'package:iveg/pesquisar/TelaPesquisa.dart';
 
 class TelaProdutoP extends StatefulWidget {
   @override
@@ -27,7 +28,7 @@ class _TelaProdutoPState extends State<TelaProdutoP> {
       indexSelecionado = index;
       if (indexSelecionado == 1) {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => TelaPesquisa()));
+            context, MaterialPageRoute(builder: (context) => TelaPesquisav2()));
         indexSelecionado = 0;
       }
       if (indexSelecionado == 2) {
@@ -189,3 +190,4 @@ class _TelaProdutoPState extends State<TelaProdutoP> {
     return texto;
   }
 }
+ */

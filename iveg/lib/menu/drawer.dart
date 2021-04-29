@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iveg/menu/TelaCupons/TelaCupons.dart';
 import 'package:iveg/menu/fidelidades.dart';
 import 'package:iveg/menu/visualizacupom.dart';
 import 'package:iveg/pagamento/adicionarcartao.dart';
@@ -37,7 +38,7 @@ class _TesteDrawerState extends State<TesteDrawer> {
             title: Text('Visualizar Cupons de Desconto'),
             onTap: () {
               Navigator.push(
-                context, MaterialPageRoute(builder: (context) => VisualizaCupom()));
+                context, MaterialPageRoute(builder: (context) => TelaCupons()));
             },
           ),
           ListTile(

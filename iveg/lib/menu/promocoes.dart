@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:imagebutton/imagebutton.dart';
 import 'package:iveg/menu/drawer.dart';
 import 'package:iveg/menu/historico.dart';
+import 'package:iveg/menu/menu.dart';
 
-import 'package:iveg/menu/pesquisar.dart';
+import 'package:iveg/pesquisar/TelaPesquisa.dart';
 
 class TelaOfertas extends StatefulWidget {
   @override
@@ -16,16 +17,16 @@ class _TelaOfertasState extends State<TelaOfertas> {
 
   void _onItemTapped(int index) {
     setState(() {
-      //Estudar como ocorre a navegação entre as telas da bottomBar
-      //Como controle do index é feito?
       indexSelecionado = index;
       if (indexSelecionado == 0) {
-        Navigator.pop(context);
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => TelaMenu()));
       }
       if (indexSelecionado == 1) {
         Navigator.push(
             context, 
-            MaterialPageRoute(builder: (context) => TelaPesquisa()));
+            MaterialPageRoute(builder: (context) => TelaPesquisav2()));
+        indexSelecionado = 3;
       }
       if (indexSelecionado == 2) {
         Navigator.push(

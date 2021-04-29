@@ -1,4 +1,11 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
+import 'package:iveg/menu/TelaCupons/ClasseCupom.dart';
+import 'package:iveg/menu/TelaCupons/TelaCupons.dart';
+import 'package:iveg/menu/TelaDetalhes/TelaDetalhes.dart';
+import 'package:iveg/menu/TelaProdutoPet/TelaPet.dart';
+import 'package:iveg/pesquisar/TelaPesquisa.dart';
 import 'package:iveg/telaInicial/TelaInicialv2.dart';
 
 import 'login.dart';
@@ -35,10 +42,14 @@ void main() {
       '/pj3': (context) => TelaPj3(),
       '/carrinho': (context) => TelaCarrinho(),
       '/produtoh': (context) => TelaProdutoH(),
-      '/produtop': (context) => TelaProdutoP(),
+      /* '/produtop': (context) => TelaProdutoP(), */
+      '/telaPet' : (context) => TelaPet(),
       '/adicionarcartao': (context) => AdicionarCartao(),
-      '/visualizacupom': (context) => VisualizaCupom(),
+      /* '/visualizacupom': (context) => VisualizaCupom(), */
       '/fidelidades': (context) => Fidelidade(),
+      '/pesquisa' : (context) => TelaPesquisav2(),
+      '/detalhes' : (context) => TelaDetalhes(),
+      '/cupons' : (context) => TelaCupons(),
     },
   ));
 }

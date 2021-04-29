@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/* import 'package:flutter/material.dart';
 
 class SegundaTelaInicial extends StatelessWidget {
   @override
@@ -155,3 +155,4 @@ class SegundaTelaInicial extends StatelessWidget {
         ));
   }
 }
+ */

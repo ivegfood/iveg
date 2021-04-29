@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/* import 'package:flutter/material.dart';
 
 class PrimeiraTelaInicial extends StatefulWidget {
   @override
@@ -161,3 +161,4 @@ class _PrimeiraTelaInicialState extends State<PrimeiraTelaInicial>{
     ));
   }
 }
+ */

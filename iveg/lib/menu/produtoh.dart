@@ -6,6 +6,7 @@ import 'package:iveg/menu/historico.dart';
 import 'package:iveg/menu/pesquisar.dart';
 import 'package:flutter/material.dart';
 import 'package:iveg/menu/promocoes.dart';
+import 'package:iveg/pesquisar/TelaPesquisa.dart';
 
 class TelaProdutoH extends StatefulWidget {
   @override
@@ -34,7 +35,7 @@ class _TelaProdutoHState extends State<TelaProdutoH> {
       indexSelecionado = index;
       if (indexSelecionado == 1) {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => TelaPesquisa()));
+            context, MaterialPageRoute(builder: (context) => TelaPesquisav2()));
         indexSelecionado = 0;
       }
       if (indexSelecionado == 2) {

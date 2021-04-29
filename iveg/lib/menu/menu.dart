@@ -1,12 +1,13 @@
 import 'dart:ui';
 
+import 'package:iveg/menu/TelaProdutoPet/TelaPet.dart';
 import 'package:iveg/menu/drawer.dart';
 import 'package:iveg/menu/historico.dart';
-import 'package:iveg/menu/pesquisar.dart';
 import 'package:flutter/material.dart';
 import 'package:iveg/menu/promocoes.dart';
 import 'package:iveg/menu/produtoh.dart';
 import 'package:iveg/menu/produtop.dart';
+import 'package:iveg/pesquisar/TelaPesquisa.dart';
 
 class TelaMenu extends StatefulWidget {
   @override
@@ -36,7 +37,7 @@ class _TelaMenuState extends State<TelaMenu> {
       indexSelecionado = index;
       if (indexSelecionado == 1) {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => TelaPesquisa()));
+            context, MaterialPageRoute(builder: (context) => TelaPesquisav2()));
         indexSelecionado = 0;
       }
       if (indexSelecionado == 2) {
@@ -274,7 +275,7 @@ class _TelaMenuState extends State<TelaMenu> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => TelaProdutoP()));
+                                        builder: (context) => TelaPet()));
                               },
                               child: Container(
                                   child: Row(
