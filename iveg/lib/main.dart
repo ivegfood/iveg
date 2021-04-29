@@ -27,7 +27,7 @@ void main() {
     title: 'Iveg',
 
     //ROTAS DE NAVEGAÇÃO
-    initialRoute: '/cupons',
+    initialRoute: '/inicial',
     routes: {
       '/inicial': (context) => TelaInicial(),
       '/inicial1': (context) => TelaInicialv2(),
