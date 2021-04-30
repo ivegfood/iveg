@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iveg/BottomBarApp.dart';
+import 'package:iveg/NavBNBar.dart';
 import 'package:iveg/menu/drawer.dart';
 import 'package:iveg/menu/menu.dart';
 import 'package:iveg/menu/promocoes.dart';
@@ -11,28 +13,6 @@ class TelaHistorico extends StatefulWidget {
 }
 
 class _TelaHistoricoState extends State<TelaHistorico> {
-  int indexSelecionado = 2;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      //Estudar como ocorre a navegação entre as telas da bottomBar
-      //Como controle do index é feito?
-      indexSelecionado = index;
-      if (indexSelecionado == 0) {        
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => TelaMenu()));        
-      }
-      if (indexSelecionado == 1) {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => TelaPesquisav2()));
-        indexSelecionado = 2;
-      }
-      if (indexSelecionado == 3) {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => TelaOfertas()));                 
-      }
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -168,34 +148,7 @@ class _TelaHistoricoState extends State<TelaHistorico> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-            backgroundColor: Colors.green,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Pesquisar',
-            backgroundColor: Colors.green,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list_alt),
-            label: 'Pedidos',
-            backgroundColor: Colors.green,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.free_breakfast),
-            label: 'Ofertas',
-            backgroundColor: Colors.green,
-          ),
-        ],
-        currentIndex: indexSelecionado,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.grey,
-        onTap: _onItemTapped,
-      ),
+      bottomNavigationBar: BottomBarApp(menuSelecionado: StatusBBar.historico)
     );
   }
 }

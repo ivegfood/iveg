@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:imagebutton/imagebutton.dart';
+import 'package:iveg/BottomBarApp.dart';
+import 'package:iveg/NavBNBar.dart';
 import 'package:iveg/menu/drawer.dart';
 import 'package:iveg/menu/historico.dart';
 import 'package:iveg/menu/menu.dart';
@@ -12,28 +14,7 @@ class TelaOfertas extends StatefulWidget {
 }
 
 class _TelaOfertasState extends State<TelaOfertas> {
-  int indexSelecionado = 3;
   var cor = Icon(Icons.favorite);
-
-  void _onItemTapped(int index) {
-    setState(() {
-      indexSelecionado = index;
-      if (indexSelecionado == 0) {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => TelaMenu()));
-      }
-      if (indexSelecionado == 1) {
-        Navigator.push(
-            context, 
-            MaterialPageRoute(builder: (context) => TelaPesquisav2()));
-        indexSelecionado = 3;
-      }
-      if (indexSelecionado == 2) {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => TelaHistorico()));
-      }
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -117,34 +98,7 @@ class _TelaOfertasState extends State<TelaOfertas> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-            backgroundColor: Colors.green,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Pesquisar',
-            backgroundColor: Colors.green,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list_alt),
-            label: 'Pedidos',
-            backgroundColor: Colors.green,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.free_breakfast),
-            label: 'Ofertas',
-            backgroundColor: Colors.green,
-          ),
-        ],
-        currentIndex: indexSelecionado,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.grey,
-        onTap: _onItemTapped,
-      ),
+      bottomNavigationBar: BottomBarApp(menuSelecionado: StatusBBar.promocao)
     );
   }
 
