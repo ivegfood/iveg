@@ -1,7 +1,7 @@
-import 'dart:js';
+// import 'dart:js';
 
 import 'package:flutter/material.dart';
-import 'package:iveg/menu/TelaCupons/ClasseCupom.dart';
+// import 'package:iveg/menu/TelaCupons/ClasseCupom.dart';
 import 'package:iveg/menu/TelaCupons/TelaCupons.dart';
 import 'package:iveg/menu/TelaDetalhes/TelaDetalhes.dart';
 import 'package:iveg/menu/TelaProdutoPet/TelaPet.dart';
@@ -16,8 +16,8 @@ import 'pj/pj2.dart';
 import 'pj/pj3.dart';
 import 'package:iveg/menu/carrinho.dart';
 import 'package:iveg/menu/produtoh.dart';
-import 'package:iveg/menu/produtop.dart';
-import 'menu/visualizacupom.dart';
+// import 'package:iveg/menu/produtop.dart';
+// import 'menu/visualizacupom.dart';
 import 'menu/fidelidades.dart';
 import 'pagamento/adicionarcartao.dart';
 

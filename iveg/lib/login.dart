@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/pj/alertdialog2.dart';
 
 class PrimeiraTelaInicio extends StatefulWidget {
@@ -13,10 +14,9 @@ class _PrimeiraTelaInicioState extends State<PrimeiraTelaInicio> {
       appBar: AppBar(
         title: Text(
           'IVEG',
-          style: TextStyle(
+          style: GoogleFonts.openSans(
             color: Colors.white,
             fontSize: 40,
-            fontFamily: 'Goudy Stout',
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -38,12 +38,11 @@ class _PrimeiraTelaInicioState extends State<PrimeiraTelaInicio> {
                         Navigator.pushNamed(context, '/menu');
                       },                  
                       child: Text('Acessar sua conta cliente',        
-                        style: TextStyle(
+                        style: GoogleFonts.openSans(
                           color: Colors.white,
                           fontSize: 20,
-                          fontFamily: 'Goudy Stout',
-                          fontWeight: FontWeight.bold,                                
-                        ),                    
+                          fontWeight: FontWeight.bold,
+                        ),                   
                       ),
                       style: ElevatedButton.styleFrom(                    
                         primary: Colors.blue,
@@ -60,11 +59,10 @@ class _PrimeiraTelaInicioState extends State<PrimeiraTelaInicio> {
                         Navigator.pushNamed(context, '/pj3');
                       },                  
                       child: Text('Acessar sua conta lojista',        
-                        style: TextStyle(
+                        style: GoogleFonts.openSans(
                           color: Colors.white,
                           fontSize: 20,
-                          fontFamily: 'Goudy Stout',
-                          fontWeight: FontWeight.bold,                                
+                          fontWeight: FontWeight.bold,
                         ),                    
                       ),
                       style: ElevatedButton.styleFrom(                    
@@ -93,11 +91,10 @@ class _PrimeiraTelaInicioState extends State<PrimeiraTelaInicio> {
                         Navigator.pushNamed(context, '/login');
                       },                  
                       child: Text('Criar uma nova conta',        
-                        style: TextStyle(
+                        style: GoogleFonts.openSans(
                           color: Colors.white,
                           fontSize: 20,
-                          fontFamily: 'Goudy Stout',
-                          fontWeight: FontWeight.bold,                                
+                          fontWeight: FontWeight.bold,
                         ),                    
                       ),
                       style: ElevatedButton.styleFrom(                    
@@ -135,10 +132,9 @@ class _TelaLoginState extends State<TelaLogin> {
       appBar: AppBar(
         title: Text(
           'IVEG',
-          style: TextStyle(
+          style: GoogleFonts.openSans(
             color: Colors.white,
             fontSize: 40,
-            fontFamily: 'Goudy Stout',
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -217,10 +213,9 @@ class _TelaLogin2State extends State<TelaLogin2> {
       appBar: AppBar(
         title: Text(
           'IVEG',
-          style: TextStyle(
+          style: GoogleFonts.openSans(
             color: Colors.white,
             fontSize: 40,
-            fontFamily: 'Goudy Stout',
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -295,10 +290,9 @@ class _TelaLogin3State extends State<TelaLogin3> {
       appBar: AppBar(
         title: Text(
           'IVEG',
-          style: TextStyle(
+          style: GoogleFonts.openSans(
             color: Colors.white,
             fontSize: 40,
-            fontFamily: 'Goudy Stout',
             fontWeight: FontWeight.bold,
           ),
         ),
