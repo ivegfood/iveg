@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:iveg/menu/carrinho.dart';
 import 'package:iveg/menu/drawer.dart';
 import 'package:iveg/menu/historico.dart';
-import 'package:iveg/menu/pesquisar.dart';
+// import 'package:iveg/menu/pesquisar.dart';
 import 'package:flutter/material.dart';
 import 'package:iveg/menu/promocoes.dart';
 import 'package:iveg/pesquisar/TelaPesquisa.dart';

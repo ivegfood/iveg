@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iveg/car_compras/acessorios/botao_fim_compra.dart';
 import 'package:iveg/menu/TelaCupons/TelaCupons.dart';
 import 'package:iveg/menu/menu.dart';
-import 'package:iveg/menu/visualizacupom.dart';
+// import 'package:iveg/menu/visualizacupom.dart';
 import 'package:iveg/pagamento/adicionarcartao.dart';
 
 class BBarCarrinho extends StatelessWidget {

@@ -1,7 +1,8 @@
-import 'dart:js';
+// import 'dart:js';
 
 import 'package:flutter/material.dart';
-import 'package:iveg/menu/TelaCupons/ClasseCupom.dart';
+import 'package:google_fonts/google_fonts.dart';
+// import 'package:iveg/menu/TelaCupons/ClasseCupom.dart';
 import 'package:iveg/menu/TelaCupons/TelaCupons.dart';
 import 'package:iveg/menu/TelaDetalhes/TelaDetalhes.dart';
 import 'package:iveg/menu/TelaProdutoPet/TelaPet.dart';
@@ -16,8 +17,8 @@ import 'pj/pj2.dart';
 import 'pj/pj3.dart';
 import 'package:iveg/menu/carrinho.dart';
 import 'package:iveg/menu/produtoh.dart';
-import 'package:iveg/menu/produtop.dart';
-import 'menu/visualizacupom.dart';
+// import 'package:iveg/menu/produtop.dart';
+// import 'menu/visualizacupom.dart';
 import 'menu/fidelidades.dart';
 import 'pagamento/adicionarcartao.dart';
 
@@ -63,12 +64,11 @@ class TelaInicial extends StatelessWidget {
         child: TextButton(
           child: Text(
             'IVEG',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 57,
-              fontFamily: 'Goudy Stout',
-              fontWeight: FontWeight.bold,
-            ),
+            style: GoogleFonts.openSans(
+            color: Colors.white,
+            fontSize: 50,
+            fontWeight: FontWeight.bold,
+          ),
           ),
           onPressed: () {
             Navigator.pushNamed(context, '/inicial1');

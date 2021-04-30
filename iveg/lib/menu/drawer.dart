@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iveg/menu/TelaCupons/TelaCupons.dart';
 import 'package:iveg/menu/fidelidades.dart';
-import 'package:iveg/menu/visualizacupom.dart';
+// import 'package:iveg/menu/visualizacupom.dart';
 import 'package:iveg/pagamento/adicionarcartao.dart';
 import 'package:iveg/telaInicialsobre.dart';
 
