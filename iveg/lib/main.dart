@@ -44,15 +44,13 @@ void main() {
       '/pj3': (context) => TelaPj3(),
       '/carrinho': (context) => TelaCarrinho(),
       '/produtoh': (context) => TelaProdutoH(),
-      /* '/produtop': (context) => TelaProdutoP(), */
-      '/telaPet' : (context) => TelaPet(),
+      '/telaPet': (context) => TelaPet(),
       '/adicionarcartao': (context) => AdicionarCartao(),
-      /* '/visualizacupom': (context) => VisualizaCupom(), */
       '/fidelidades': (context) => Fidelidade(),
-      '/pesquisa' : (context) => TelaPesquisav2(),
-      '/detalhes' : (context) => TelaDetalhes(),
-      '/cupons' : (context) => TelaCupons(),
-      '/perfil' : (context) => TelaPerfil(),
+      '/pesquisa': (context) => TelaPesquisav2(),
+      '/detalhes': (context) => TelaDetalhes(),
+      '/cupons': (context) => TelaCupons(),
+      '/perfil': (context) => TelaPerfil(),
     },
   ));
 }
@@ -61,22 +59,21 @@ class TelaInicial extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green[400],
-      body: Center(
-        child: TextButton(
-          child: Text(
-            'VEG',
-            style: GoogleFonts.openSans(
-              color: Colors.white,
-              fontSize: 50,
-              fontWeight: FontWeight.bold,
+        backgroundColor: Colors.green[400],
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,            
+            children: [GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/inicial1');
+              },
+              child: Image.network(
+                'assets/imagens/veg_logo.png',
+                height: 80,
             ),
-          ),
-          onPressed: () {
-            Navigator.pushNamed(context, '/inicial1');
-          },
-        ),
-      ),
+          )
+        ])
+        )
     );
   }
 }
