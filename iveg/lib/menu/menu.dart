@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:iveg/BottomBarApp.dart';
+import 'package:iveg/NavBNBar.dart';
 import 'package:iveg/menu/TelaProdutoPet/TelaPet.dart';
 import 'package:iveg/menu/drawer.dart';
 import 'package:iveg/menu/historico.dart';
@@ -29,27 +31,6 @@ class _TelaMenuState extends State<TelaMenu> {
   final catH = ['alimentos', 'bebidas', 'perfumaria', 'acessórios'];
   final catP = ['alimentos', 'acessórios'];
   var favorito = Icon(Icons.favorite);
-
-  int indexSelecionado = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      indexSelecionado = index;
-      if (indexSelecionado == 1) {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => TelaPesquisav2()));
-        indexSelecionado = 0;
-      }
-      if (indexSelecionado == 2) {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => TelaHistorico()));
-      }
-      if (indexSelecionado == 3) {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => TelaOfertas()));
-      }
-    });
-  }
 
   @override
   void initState() {
@@ -316,34 +297,7 @@ class _TelaMenuState extends State<TelaMenu> {
               ]),
             ]),
             //Rodapé
-            bottomNavigationBar: BottomNavigationBar(
-              items: const <BottomNavigationBarItem>[
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.home),
-                  label: 'Home',
-                  backgroundColor: Colors.green,
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.search),
-                  label: 'Pesquisar',
-                  backgroundColor: Colors.green,
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.list_alt),
-                  label: 'Pedidos',
-                  backgroundColor: Colors.green,
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.free_breakfast),
-                  label: 'Ofertas',
-                  backgroundColor: Colors.green,
-                ),
-              ],
-              currentIndex: indexSelecionado,
-              selectedItemColor: Colors.white,
-              unselectedItemColor: Colors.grey,
-              onTap: _onItemTapped,
-            ),
+            bottomNavigationBar: BottomBarApp(menuSelecionado: StatusBBar.menu)
           )),
     );
   }

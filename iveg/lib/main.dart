@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iveg/Perfil/TelaPerfil.dart';
 // import 'package:iveg/menu/TelaCupons/ClasseCupom.dart';
 import 'package:iveg/menu/TelaCupons/TelaCupons.dart';
 import 'package:iveg/menu/TelaDetalhes/TelaDetalhes.dart';
@@ -51,6 +52,7 @@ void main() {
       '/pesquisa' : (context) => TelaPesquisav2(),
       '/detalhes' : (context) => TelaDetalhes(),
       '/cupons' : (context) => TelaCupons(),
+      '/perfil' : (context) => TelaPerfil(),
     },
   ));
 }
