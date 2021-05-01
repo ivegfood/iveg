@@ -5,7 +5,7 @@ showAlertDialog4(BuildContext context) {
   Widget aceitarButton = TextButton(
     child: Text("Nova compra"),
     onPressed: () {
-      Navigator.pushNamed(context, '/pj3');
+      Navigator.pushNamed(context, '/menu');
     },
   );
   Widget cancelaButton = TextButton(
