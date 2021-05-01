@@ -24,7 +24,7 @@ class _AdicionarCartaoState extends State<AdicionarCartao> {
         home: Scaffold(
           appBar: AppBar(
             title: Text(
-              'Adicionar Cartão de Crédito',
+              'IVEG',
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 24,

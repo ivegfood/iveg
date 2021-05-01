@@ -65,10 +65,10 @@ class TelaInicial extends StatelessWidget {
           child: Text(
             'IVEG',
             style: GoogleFonts.openSans(
-            color: Colors.white,
-            fontSize: 50,
-            fontWeight: FontWeight.bold,
-          ),
+              color: Colors.white,
+              fontSize: 50,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           onPressed: () {
             Navigator.pushNamed(context, '/inicial1');
