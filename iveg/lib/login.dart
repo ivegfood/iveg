@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iveg/login/BodyLogin.dart';
 import 'package:iveg/pj/alertdialog2.dart';
 
 class PrimeiraTelaInicio extends StatefulWidget {
@@ -9,104 +10,27 @@ class PrimeiraTelaInicio extends StatefulWidget {
 
 class _PrimeiraTelaInicioState extends State<PrimeiraTelaInicio> {
   @override
- Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'IVEG',
-          style: GoogleFonts.openSans(
-            color: Colors.white,
-            fontSize: 40,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        backgroundColor: Colors.green,
-        centerTitle: true,
-      ),
-      backgroundColor: Colors.green[50],    
-    body: Container(
-      margin: EdgeInsets.all(30),      
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Center(
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints.tightFor(width: 300, height: 50),
-                    child: ElevatedButton(
-                      onPressed: (){
-                        Navigator.pushNamed(context, '/menu');
-                      },                  
-                      child: Text('Acessar sua conta cliente',        
-                        style: GoogleFonts.openSans(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),                   
-                      ),
-                      style: ElevatedButton.styleFrom(                    
-                        primary: Colors.blue,
-                      ),
-                    ),
-                  ),
-                ),
-                
-              Center(
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints.tightFor(width: 300, height: 50),
-                    child: ElevatedButton(
-                      onPressed: (){
-                        Navigator.pushNamed(context, '/pj3');
-                      },                  
-                      child: Text('Acessar sua conta lojista',        
-                        style: GoogleFonts.openSans(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),                    
-                      ),
-                      style: ElevatedButton.styleFrom(                    
-                        primary: Colors.blue,
-                      ),
-                    ),
-                  ),
-                ),
-                Center(
-                    child: TextButton(
-                      onPressed: (){
-                        Navigator.pushNamed(context, '/menu');
-                      },                  
-                      child: Image(
-                        image: AssetImage('assets/imagens/google.png'),
-                        width: double.infinity, 
-                        height: 50,                    
-                      ),
-                    ),
-                  ),
-              Center(
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints.tightFor(width: 300, height: 50),
-                    child: ElevatedButton(
-                      onPressed: (){
-                        Navigator.pushNamed(context, '/login');
-                      },                  
-                      child: Text('Criar uma nova conta',        
-                        style: GoogleFonts.openSans(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),                    
-                      ),
-                      style: ElevatedButton.styleFrom(                    
-                        primary: Colors.red,
-                      ),
-                    ),
-                  ),
-                ),
-            ],
-          ),
+      appBar: buildAppBar(),
+      backgroundColor: Colors.green,
+      body: BodyLogin(),
+    );
+  }
+
+  AppBar buildAppBar() {
+    return AppBar(
+      elevation: 0,
+      title: Text(
+        'IVEG',
+        style: GoogleFonts.openSans(
+          color: Colors.white,
+          fontSize: 40,
+          fontWeight: FontWeight.bold,
         ),
       ),
+      backgroundColor: Colors.green,
+      centerTitle: true,
     );
   }
 }
@@ -149,8 +73,9 @@ class _TelaLoginState extends State<TelaLogin> {
           child: Column(
             children: [
               SizedBox(height: 5),
-              campoTexto('Informe seu e-mail ou o'
-                          +'\n' 'número do seu celular', _txtConteudo),
+              campoTexto(
+                  'Informe seu e-mail ou o' + '\n' 'número do seu celular',
+                  _txtConteudo),
               SizedBox(height: 30),
               botao('Cliente', '/login2'),
               SizedBox(height: 30),
@@ -230,8 +155,10 @@ class _TelaLogin2State extends State<TelaLogin2> {
           child: Column(
             children: [
               SizedBox(height: 5),
-              campoTexto('Insira o código enviado para'
-                          +'\n' 'seu email ou telefone', _txtCodigo,),
+              campoTexto(
+                'Insira o código enviado para' + '\n' 'seu email ou telefone',
+                _txtCodigo,
+              ),
               SizedBox(height: 30),
               botao('Continuar', '/login3')
             ],
@@ -267,7 +194,7 @@ class _TelaLogin2State extends State<TelaLogin2> {
               ElevatedButton.styleFrom(primary: Theme.of(context).primaryColor),
           child: Text(rotulo, style: TextStyle(fontSize: 24)),
           onPressed: () {
-            setState(() {              
+            setState(() {
               Navigator.pushNamed(context, tela);
             });
           }),
@@ -326,14 +253,13 @@ class _TelaLogin3State extends State<TelaLogin3> {
         controller: null,
         style: TextStyle(fontSize: 18),
         decoration: InputDecoration(
-          labelText: rotulo,
-          labelStyle: TextStyle(fontSize: 16, color: Colors.blue),
-          hintText: 'Informe Dados',
-          hintStyle: TextStyle(fontSize: 16, color: Colors.blue),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-          )
-        ),
+            labelText: rotulo,
+            labelStyle: TextStyle(fontSize: 16, color: Colors.blue),
+            hintText: 'Informe Dados',
+            hintStyle: TextStyle(fontSize: 16, color: Colors.blue),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+            )),
       ),
     );
   }
@@ -344,15 +270,11 @@ class _TelaLogin3State extends State<TelaLogin3> {
       width: double.infinity,
       height: 60,
       child: ElevatedButton(
-        style:
-            ElevatedButton.styleFrom(primary: Colors.red),
-        child: Text(rotulo, style: TextStyle(fontSize: 24)),
-        onPressed: () {
+          style: ElevatedButton.styleFrom(primary: Colors.red),
+          child: Text(rotulo, style: TextStyle(fontSize: 24)),
+          onPressed: () {
             showAlertDialog2(context);
-            }
-          ),
+          }),
     );
-  }  
+  }
 }
-
-
