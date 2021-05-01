@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iveg/menu/TelaCupons/TelaCupons.dart';
 import 'package:iveg/menu/fidelidades.dart';
 // import 'package:iveg/menu/visualizacupom.dart';
-import 'package:iveg/pagamento/adicionarcartao.dart';
+//import 'package:iveg/pagamento/adicionarcartao.dart';
 import 'package:iveg/telaInicialsobre.dart';
 
 class TesteDrawer extends StatefulWidget {
@@ -27,13 +27,13 @@ class _TesteDrawerState extends State<TesteDrawer> {
               color: Theme.of(context).primaryColor,
             ),
           ),
-          ListTile(
+          /*ListTile(
             title: Text('Adicionar Cartão de Crédito'),
             onTap: () {
               Navigator.push(
                 context, MaterialPageRoute(builder: (context) => AdicionarCartao()));
             },
-          ),
+          ),*/
           ListTile(
             title: Text('Visualizar Cupons de Desconto'),
             onTap: () {

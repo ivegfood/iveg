@@ -20,7 +20,7 @@ import 'package:iveg/menu/produtoh.dart';
 // import 'package:iveg/menu/produtop.dart';
 // import 'menu/visualizacupom.dart';
 import 'menu/fidelidades.dart';
-import 'pagamento/adicionarcartao.dart';
+//import 'pagamento/adicionarcartao.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -45,7 +45,7 @@ void main() {
       '/produtoh': (context) => TelaProdutoH(),
       /* '/produtop': (context) => TelaProdutoP(), */
       '/telaPet' : (context) => TelaPet(),
-      '/adicionarcartao': (context) => AdicionarCartao(),
+      //'/adicionarcartao': (context) => AdicionarCartao(),
       /* '/visualizacupom': (context) => VisualizaCupom(), */
       '/fidelidades': (context) => Fidelidade(),
       '/pesquisa' : (context) => TelaPesquisav2(),
