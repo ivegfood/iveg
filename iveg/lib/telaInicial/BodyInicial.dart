@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/telaInicial/BotaoEntrar.dart';
 import 'package:iveg/telaInicial/ContainerInicial.dart';
 
@@ -39,14 +40,13 @@ class _BodyInicialState extends State<BodyInicial> {
               child: Padding(
                 padding: const EdgeInsets.only(top: 10),
                 child: Text(
-                  "IVEG",
-                  style: TextStyle(
-                    fontSize: 36,
-                    fontFamily: 'Goudy Stout',
+                  'VEG',
+                  style: GoogleFonts.openSans(
                     color: Colors.green,
+                    fontSize: 30,
                     fontWeight: FontWeight.bold,
                   ),
-                ),
+                        ),
               ),
             ),
             Expanded(

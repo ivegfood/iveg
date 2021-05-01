@@ -8,7 +8,7 @@ class TelaCupons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: Colors.green[50],
       appBar: buildAppBar(),
       body: BodyCupons(),
       bottomNavigationBar:BottomBarCupom(),

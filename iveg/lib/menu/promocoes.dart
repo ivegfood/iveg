@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:imagebutton/imagebutton.dart';
 import 'package:iveg/BottomBarApp.dart';
 import 'package:iveg/NavBNBar.dart';
 import 'package:iveg/menu/drawer.dart';
-import 'package:iveg/menu/historico.dart';
-import 'package:iveg/menu/menu.dart';
-
-import 'package:iveg/pesquisar/TelaPesquisa.dart';
 
 class TelaOfertas extends StatefulWidget {
   @override
@@ -21,13 +18,12 @@ class _TelaOfertasState extends State<TelaOfertas> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'IVEG',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 40,
-            fontFamily: 'Goudy Stout',
-            fontWeight: FontWeight.bold,
-          ),
+          'VEG',
+            style: GoogleFonts.openSans(
+              color: Colors.white,
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+            ),
         ),
         backgroundColor: Colors.green,
         centerTitle: true,
@@ -60,11 +56,11 @@ class _TelaOfertasState extends State<TelaOfertas> {
               ),
               SizedBox(height: 10),
               Text('Famosos no Iveg',
-                  style: TextStyle(
-                    color: Colors.black,
+                  style: GoogleFonts.openSans(
+                    color: Colors.white,
                     fontSize: 20,
-                    fontFamily: 'Goudy Stout',
-                    fontWeight: FontWeight.bold,)),
+                    fontWeight: FontWeight.bold,
+                  )),
               SizedBox(height: 10),
               SingleChildScrollView(
                 scrollDirection: Axis.vertical,
@@ -78,11 +74,11 @@ class _TelaOfertasState extends State<TelaOfertas> {
               ),
               SizedBox(height: 15),
               Text('Descontos especias para você',
-                style: TextStyle(
-                    color: Colors.black,
+                style: GoogleFonts.openSans(
+                    color: Colors.white,
                     fontSize: 20,
-                    fontFamily: 'Goudy Stout',
-                    fontWeight: FontWeight.bold,)),
+                    fontWeight: FontWeight.bold,
+                  )),
               SizedBox(height: 10),
               bannerLojasPequena("/imagens/lojaUm.png"),
               SizedBox(height: 10),
@@ -150,10 +146,6 @@ class _TelaOfertasState extends State<TelaOfertas> {
             child: Container(
               width: 20,
               height: 90,            
-              // decoration: BoxDecoration(
-              //   color: Colors.grey[100],
-              //   borderRadius: BorderRadius.circular(45)
-              // ),
               child: IconButton(          
                 icon: cor,
                 onPressed: () {

@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/menu/carrinho.dart';
 import 'package:iveg/menu/drawer.dart';
 import 'package:iveg/menu/historico.dart';
@@ -78,11 +79,10 @@ class _TelaProdutoHState extends State<TelaProdutoH> {
       home: Scaffold(
           appBar: AppBar(
             title: Text(
-              'IVEG',
-              style: TextStyle(
+              'VEG',
+              style: GoogleFonts.openSans(
                 color: Colors.white,
                 fontSize: 30,
-                fontFamily: 'Goudy Stout',
                 fontWeight: FontWeight.bold,
               ),
             ),

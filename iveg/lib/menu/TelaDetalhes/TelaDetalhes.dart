@@ -7,11 +7,11 @@ class TelaDetalhes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: Colors.green[50],
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.green,
-        title: Center(child: Text(ltsProdPets[0].nmProduto, style: TextStyle(fontSize: 24),)),
+        title: Center(child: Text(ltsProdPets[0].nmProduto, style: TextStyle(fontSize: 20),)),
       ),
       body: BodyDetalhes(produto: ltsProdPets[0]),
       bottomNavigationBar: BottomBarDetalhes(),

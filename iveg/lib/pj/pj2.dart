@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/pj/alertdialog1.dart';
 
 class TelaPj2 extends StatefulWidget {
@@ -15,11 +16,10 @@ class _TelaPj2State extends State<TelaPj2> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'IVEG',
-          style: TextStyle(
+          'VEG',
+          style: GoogleFonts.openSans(
             color: Colors.white,
-            fontSize: 40,
-            fontFamily: 'Goudy Stout',
+            fontSize: 30,
             fontWeight: FontWeight.bold,
           ),
         ),

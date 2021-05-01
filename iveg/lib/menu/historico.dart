@@ -3,10 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/BottomBarApp.dart';
 import 'package:iveg/NavBNBar.dart';
 import 'package:iveg/menu/drawer.dart';
-import 'package:iveg/menu/menu.dart';
-import 'package:iveg/menu/promocoes.dart';
-import 'package:iveg/pesquisar/TelaPesquisa.dart';
-
 class TelaHistorico extends StatefulWidget {
   @override
   _TelaHistoricoState createState() => _TelaHistoricoState();
@@ -19,23 +15,24 @@ class _TelaHistoricoState extends State<TelaHistorico> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'IVEG',
-          style: GoogleFonts.staatliches(
-            fontSize: 40,
+          'VEG',
+          style: GoogleFonts.openSans(
             color: Colors.white,
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Colors.green,
         centerTitle: true,
       ),
       drawer: TesteDrawer(),
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Colors.green[50],
       body: Column(
         children: [
           Column(
             children: [
               SizedBox(height: 6),
-              Text('Histórico de Compras'),
+              Text('Histórico de Compras')
             ],
           ),
           SizedBox(height: 15),

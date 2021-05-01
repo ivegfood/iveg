@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/car_compras/classes/meu_carrinho.dart';
 import 'package:iveg/menu/TelaProdutoPet/acessorios/ContainerPet.dart';
 
@@ -28,10 +29,11 @@ class BodyTelaPet extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text('Produtos',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold)),
+                  style: GoogleFonts.openSans(
+                    color: Colors.green,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  )),
             ),
             SizedBox(height: 10),
             Column(

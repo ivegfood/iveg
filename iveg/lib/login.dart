@@ -22,10 +22,10 @@ class _PrimeiraTelaInicioState extends State<PrimeiraTelaInicio> {
     return AppBar(
       elevation: 0,
       title: Text(
-        'IVEG',
+        'VEG',
         style: GoogleFonts.openSans(
           color: Colors.white,
-          fontSize: 40,
+          fontSize: 30,
           fontWeight: FontWeight.bold,
         ),
       ),
@@ -55,10 +55,10 @@ class _TelaLoginState extends State<TelaLogin> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'IVEG',
+          'VEG',
           style: GoogleFonts.openSans(
             color: Colors.white,
-            fontSize: 40,
+            fontSize: 30,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -137,10 +137,10 @@ class _TelaLogin2State extends State<TelaLogin2> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'IVEG',
+          'VEG',
           style: GoogleFonts.openSans(
             color: Colors.white,
-            fontSize: 40,
+            fontSize: 30,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -216,10 +216,10 @@ class _TelaLogin3State extends State<TelaLogin3> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'IVEG',
+          'VEG',
           style: GoogleFonts.openSans(
             color: Colors.white,
-            fontSize: 40,
+            fontSize: 30,
             fontWeight: FontWeight.bold,
           ),
         ),

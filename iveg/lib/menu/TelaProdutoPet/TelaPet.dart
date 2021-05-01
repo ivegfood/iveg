@@ -6,7 +6,7 @@ class TelaPet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: Colors.green[50],
       appBar: appBarTelaPet(context),
       body: BodyTelaPet(),
       bottomNavigationBar: BottomBarPet(),

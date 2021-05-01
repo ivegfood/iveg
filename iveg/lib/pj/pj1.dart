@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TelaPj1 extends StatefulWidget {
   @override
@@ -14,11 +15,10 @@ class _TelaPj1State extends State<TelaPj1> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'IVEG',
-          style: TextStyle(
+          'VEG',
+          style: GoogleFonts.openSans(
             color: Colors.white,
-            fontSize: 40,
-            fontFamily: 'Goudy Stout',
+            fontSize: 30,
             fontWeight: FontWeight.bold,
           ),
         ),

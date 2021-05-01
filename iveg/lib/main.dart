@@ -20,13 +20,13 @@ import 'package:iveg/menu/carrinho.dart';
 import 'package:iveg/menu/produtoh.dart';
 // import 'package:iveg/menu/produtop.dart';
 // import 'menu/visualizacupom.dart';
-import 'menu/fidelidades.dart';
-import 'pagamento/adicionarcartao.dart';
+import 'package:iveg/menu/fidelidades.dart';
+import 'package:iveg/pagamento/adicionarcartao.dart';
 
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    title: 'Iveg',
+    title: 'Veg',
 
     //ROTAS DE NAVEGAÇÃO
     initialRoute: '/inicial',
@@ -65,7 +65,7 @@ class TelaInicial extends StatelessWidget {
       body: Center(
         child: TextButton(
           child: Text(
-            'IVEG',
+            'VEG',
             style: GoogleFonts.openSans(
               color: Colors.white,
               fontSize: 50,

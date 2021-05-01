@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card_detector/flutter_credit_card_detector.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:iveg/pagamento/alertdialog4.dart';
 
 class AdicionarCartao extends StatefulWidget {
   @override
@@ -24,12 +26,12 @@ class _AdicionarCartaoState extends State<AdicionarCartao> {
         home: Scaffold(
           appBar: AppBar(
             title: Text(
-              'IVEG',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontFamily: 'Goudy Stout',
-                  fontWeight: FontWeight.bold),
+              'VEG',
+              style: GoogleFonts.openSans(
+                color: Colors.white,
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             backgroundColor: Colors.green,
             centerTitle: true,
@@ -37,19 +39,20 @@ class _AdicionarCartaoState extends State<AdicionarCartao> {
           body: ListView(
             children: [
               CreditCardWidget(listBand: listBand, onTap: _onTap),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  
-                  ElevatedButton(
+              Row(children: [
+                ElevatedButton(
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  
                   child: Text('Voltar'),
                 ),
-                ]
-              )
+                ElevatedButton(
+                  onPressed: () {
+                    showAlertDialog4(context);
+                  },
+                  child: Text('Finalizar'),
+                ),
+              ])
             ],
           ),
         ),

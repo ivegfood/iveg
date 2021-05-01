@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class BotaoEntrar extends StatelessWidget {
   const BotaoEntrar({
@@ -18,13 +19,12 @@ class BotaoEntrar extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         color: Colors.green,
         onPressed: press,
-        child: Text(
-          text,
-          style: TextStyle(
-            fontSize: 18,
-            color: Colors.white,
-          ),
-        ),
+        child: Text(text,
+            style: GoogleFonts.openSans(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            )),
       ),
     );
   }

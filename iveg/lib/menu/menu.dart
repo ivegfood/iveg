@@ -1,15 +1,12 @@
 import 'dart:ui';
 
+import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/BottomBarApp.dart';
 import 'package:iveg/NavBNBar.dart';
 import 'package:iveg/menu/TelaProdutoPet/TelaPet.dart';
 import 'package:iveg/menu/drawer.dart';
-import 'package:iveg/menu/historico.dart';
 import 'package:flutter/material.dart';
-import 'package:iveg/menu/promocoes.dart';
 import 'package:iveg/menu/produtoh.dart';
-// import 'package:iveg/menu/produtop.dart';
-import 'package:iveg/pesquisar/TelaPesquisa.dart';
 
 class TelaMenu extends StatefulWidget {
   @override
@@ -84,11 +81,10 @@ class _TelaMenuState extends State<TelaMenu> {
                 ],
               ),
               title: Text(
-                'IVEG',
-                style: TextStyle(
+                'VEG',
+                style: GoogleFonts.openSans(
                   color: Colors.white,
                   fontSize: 30,
-                  fontFamily: 'Goudy Stout',
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -96,7 +92,7 @@ class _TelaMenuState extends State<TelaMenu> {
               centerTitle: true,
             ),
             drawer: TesteDrawer(),
-            backgroundColor: Colors.green,
+            backgroundColor: Colors.green[50],
             body: TabBarView(children: [
               //Aba humano
               Column(children: [
@@ -105,26 +101,27 @@ class _TelaMenuState extends State<TelaMenu> {
                     Navigator.pushNamed(context, '/produtoh');
                   },
                   child: Container(
-                    padding: EdgeInsets.all(15),
-                    color: Colors.grey[300],
-                    height: 200,
+                    padding: EdgeInsets.all(10),
+                    color: Colors.white,
+                    height: 150,
                     child: Scrollbar(
                       child: ListView.builder(
                           scrollDirection: Axis.horizontal,
-                          itemCount: 4,
+                          itemCount: listaCategoriaH.length,
                           itemBuilder: (context, index) {
                             return Container(
-                              width: 200,
-                              height: 200,
-                              margin: EdgeInsets.all(15),
+                              width: 100,
+                              height: 100,
+                              margin: EdgeInsets.all(10),
                               child: new Stack(
                                 children: [
                                   Positioned(
                                       child: Image.network(
                                           listaCategoriaH[index],
-                                          height: 100)),
+                                          height: 80)),
                                   Positioned(
-                                    bottom: 20,
+                                    bottom: 10,
+                                    left: 15,
                                     child: Text(catH[index]),
                                   ),
                                 ],
@@ -137,10 +134,10 @@ class _TelaMenuState extends State<TelaMenu> {
                 Expanded(
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 5),
-                    color: Colors.grey[300],
+                    color: Colors.grey[50],
                     child: ListView.separated(
                       scrollDirection: Axis.vertical,
-                      itemCount: 4,
+                      itemCount: listaLojasP.length,
                       itemBuilder: (context, index) {
                         return ListTile(
                             trailing: IconButton(
@@ -204,26 +201,27 @@ class _TelaMenuState extends State<TelaMenu> {
                     Navigator.pushNamed(context, '/produtop');
                   },
                   child: Container(
-                    padding: EdgeInsets.all(15),
-                    color: Colors.grey[300],
-                    height: 200,
+                    padding: EdgeInsets.all(10),
+                    color: Colors.white,
+                    height: 150,
                     child: Scrollbar(
                       child: ListView.builder(
                           scrollDirection: Axis.horizontal,
                           itemCount: 2,
                           itemBuilder: (context, index) {
                             return Container(
-                              width: 200,
-                              height: 200,
-                              margin: EdgeInsets.all(15),
+                              width: 100,
+                              height: 100,
+                              margin: EdgeInsets.all(10),
                               child: new Stack(
                                 children: [
                                   Positioned(
                                       child: Image.network(
                                           listaCategoriaP[index],
-                                          height: 100)),
+                                          height: 80)),
                                   Positioned(
-                                    bottom: 20,
+                                    bottom: 10,
+                                    left: 15,
                                     child: Text(catP[index]),
                                   ),
                                 ],
@@ -236,7 +234,7 @@ class _TelaMenuState extends State<TelaMenu> {
                 Expanded(
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 5),
-                    color: Colors.grey[300],
+                    color: Colors.grey[50],
                     child: ListView.separated(
                       scrollDirection: Axis.vertical,
                       itemCount: 4,

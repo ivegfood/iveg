@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
  class TelaInicialSobre extends StatefulWidget {
   @override
@@ -11,11 +12,10 @@ class _TelaInicialSobreState extends State<TelaInicialSobre> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'IVEG',
-          style: TextStyle(
+          'VEG',
+          style: GoogleFonts.openSans(
             color: Colors.white,
-            fontSize: 40,
-            fontFamily: 'Goudy Stout',
+            fontSize: 30,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -43,19 +43,17 @@ class _TelaInicialSobreState extends State<TelaInicialSobre> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [                    
                     Text('Jander Raul',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontFamily: 'Goudy Stout',
-                          fontWeight: FontWeight.bold,
+                      style: GoogleFonts.openSans(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
                       ), 
                     ),
                     SizedBox(height: 10),
                     Text('Algumas Informações sobre o aluno',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 12,
-                          fontFamily: 'Goudy Stout',
+                      style: GoogleFonts.openSans(
+                        color: Colors.black,
+                        fontSize: 12,
                       ),               
                     ),
                   ],
@@ -75,19 +73,17 @@ class _TelaInicialSobreState extends State<TelaInicialSobre> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [                    
                     Text('Marcelo Claro',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontFamily: 'Goudy Stout',
-                          fontWeight: FontWeight.bold,
+                      style: GoogleFonts.openSans(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
                       ), 
                     ),
                     SizedBox(height: 10),
                     Text('Algumas Informações sobre o aluno',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 12,
-                          fontFamily: 'Goudy Stout',
+                      style: GoogleFonts.openSans(
+                        color: Colors.black,
+                        fontSize: 12,
                       ),               
                     ),
                   ],
@@ -107,19 +103,17 @@ class _TelaInicialSobreState extends State<TelaInicialSobre> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [                    
                     Text('Marcelo Giacomini',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontFamily: 'Goudy Stout',
-                          fontWeight: FontWeight.bold,
+                      style: GoogleFonts.openSans(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
                       ), 
                     ),
                     SizedBox(height: 10),
                     Text('Algumas Informações sobre o aluno',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 12,
-                          fontFamily: 'Goudy Stout',
+                      style: GoogleFonts.openSans(
+                        color: Colors.black,
+                        fontSize: 12,
                       ),               
                     ),
                   ],
@@ -137,10 +131,10 @@ class _TelaInicialSobreState extends State<TelaInicialSobre> {
                         Navigator.pop(context);
                       },                  
                       child: Text('Voltar',        
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontFamily: 'Goudy Stout',                               
+                        style: GoogleFonts.openSans(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
                         ),
                       ),
                       style: ElevatedButton.styleFrom(                    

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/menu/TelaCupons/TelaCupons.dart';
 import 'package:iveg/menu/fidelidades.dart';
 // import 'package:iveg/menu/visualizacupom.dart';
@@ -21,39 +22,47 @@ class _TesteDrawerState extends State<TesteDrawer> {
             child: Center(
                 child: Text(
               'Menu',
-              style: TextStyle(fontSize: 24, color: Colors.white),
+              style: GoogleFonts.openSans(
+                color: Colors.white,
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
             )),
             decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor,
+              color: Colors.green,
             ),
           ),
-          ListTile(
-            title: Text('Adicionar Cartão de Crédito'),
-            onTap: () {
-              Navigator.push(
-                context, MaterialPageRoute(builder: (context) => AdicionarCartao()));
-            },
-          ),
-          ListTile(
-            title: Text('Visualizar Cupons de Desconto'),
-            onTap: () {
-              Navigator.push(
-                context, MaterialPageRoute(builder: (context) => TelaCupons()));
-            },
-          ),
-          ListTile(
-            title: Text('Fidelidades'),
-            onTap: () {
-              Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Fidelidade()));
-            },
-          ),
-          ListTile(
-            title: Text('Sobre'),
-            onTap: () {
-              Navigator.push(
-                context, MaterialPageRoute(builder: (context) => TelaInicialSobre()));
-            },
+          Column(
+            children: [
+              ListTile(
+                title: Text('Adicionar Cartão de Crédito'),
+                onTap: () {
+                  Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => AdicionarCartao()));
+                },
+              ),
+              ListTile(
+                title: Text('Visualizar Cupons de Desconto'),
+                onTap: () {
+                  Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => TelaCupons()));
+                },
+              ),
+              ListTile(
+                title: Text('Fidelidades'),
+                onTap: () {
+                  Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Fidelidade()));
+                },
+              ),
+              ListTile(
+                title: Text('Sobre'),
+                onTap: () {
+                  Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => TelaInicialSobre()));
+                },
+              ),
+            ],
           ),
         ],
       ),

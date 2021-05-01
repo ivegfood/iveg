@@ -24,12 +24,17 @@ class _FidelidadeState extends State<Fidelidade> {
                   height: 250,
                   width: 250,
                 )),
-                Text(
-                  'Veja aqui seus descontos de fidelidade!',
-                  style: GoogleFonts.staatliches(
-                    fontSize: 36,
-                    color: Color.fromRGBO(63, 168, 94, 100),
-                  ),
+                Row(
+                  children: [
+                    Text(
+                      'Fidelidades!',
+                      style: GoogleFonts.openSans(
+                        color: Colors.green,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      ),
+                  ],
                 ),
                 ElevatedButton(
                   onPressed: () {

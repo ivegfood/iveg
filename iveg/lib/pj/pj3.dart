@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/pj/alertdialog3.dart';
 
 class TelaPj3 extends StatefulWidget {
@@ -18,11 +19,10 @@ class _TelaPj3State extends State<TelaPj3> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'IVEG',
-          style: TextStyle(
+          'VEG',
+          style: GoogleFonts.openSans(
             color: Colors.white,
-            fontSize: 40,
-            fontFamily: 'Goudy Stout',
+            fontSize: 30,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -115,20 +115,18 @@ class _TelaPj3State extends State<TelaPj3> {
                       },
                       child: Text(
                         'Salvar',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 15,
-                            fontFamily: 'Goudy Stout',
-                            fontWeight: FontWeight.bold,
-                          )
-                      ),
+                        style: GoogleFonts.openSans(
+                          color: Colors.green,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
                     ),
                   ),
                 ),
 
-            ]),
-          ),
-      );
+            ),
+          ],
+      )));
   }
   Widget botao(rotulo) {
     return Container(
