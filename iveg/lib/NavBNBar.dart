@@ -1,1 +1,1 @@
-enum StatusBBar { menu , pesquisa , historico, promocao, perfil }
+enum StatusBBar { menu , pesquisa , historico, carrinho, perfil }

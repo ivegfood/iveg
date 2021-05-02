@@ -103,7 +103,7 @@ class BotaoGoogle extends StatelessWidget {
                     borderRadius: BorderRadius.circular(4)),
                 child: Padding(
                   padding: const EdgeInsets.all(4),
-                  child: Image.asset('assets\imagens\logoGoogle.png'),
+                  child: Image.asset('assets/imagens/logoGoogle.png'),
                 )),
             SizedBox(width: 10),
             Text(texto, style: TextStyle(color: Colors.white)),

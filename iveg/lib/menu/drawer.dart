@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/menu/TelaCupons/TelaCupons.dart';
 import 'package:iveg/menu/fidelidades.dart';
+import 'package:iveg/menu/promocoes.dart';
 // import 'package:iveg/menu/visualizacupom.dart';
 import 'package:iveg/pagamento/adicionarcartao.dart';
 import 'package:iveg/telaInicialsobre.dart';
@@ -56,10 +57,10 @@ class _TesteDrawerState extends State<TesteDrawer> {
                 },
               ),
               ListTile(
-                title: Text('Sobre'),
+                title: Text('Promoções'),
                 onTap: () {
                   Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => TelaInicialSobre()));
+                    context, MaterialPageRoute(builder: (context) => TelaOfertas()));
                 },
               ),
             ],

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:iveg/NavBNBar.dart';
 import 'package:iveg/Perfil/TelaPerfil.dart';
+import 'package:iveg/menu/carrinho.dart';
 import 'package:iveg/menu/historico.dart';
 import 'package:iveg/menu/menu.dart';
-import 'package:iveg/menu/promocoes.dart';
 import 'package:iveg/pesquisar/TelaPesquisa.dart';
 
 class BottomBarApp extends StatelessWidget {
@@ -69,14 +69,14 @@ class BottomBarApp extends StatelessWidget {
                   }),
               IconButton(
                   icon: Icon(
-                    Icons.free_breakfast_outlined,
-                    color: StatusBBar.promocao == menuSelecionado
+                    Icons.shopping_cart_outlined,
+                    color: StatusBBar.carrinho == menuSelecionado
                         ? Colors.green
                         : menuInativo,
                   ),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => TelaOfertas()));
+                        MaterialPageRoute(builder: (context) => TelaCarrinho()));
                   }),
               IconButton(
                   icon: Icon(

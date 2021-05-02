@@ -1,5 +1,7 @@
 // import 'dart:js';
 
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/Perfil/TelaPerfil.dart';
@@ -58,22 +60,14 @@ void main() {
 class TelaInicial extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Future.delayed(Duration(seconds: 2)).then((_) => Navigator.pushNamed(context, '/inicial1'));
     return Scaffold(
         backgroundColor: Colors.green[400],
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,            
-            children: [GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, '/inicial1');
-              },
-              child: Image.network(
-                'assets/imagens/veg_logo.png',
-                height: 80,
-            ),
-          )
-        ])
-        )
-    );
+          child: Image.network(
+            'assets/imagens/veg_logo.png',
+            height: 80,
+          ),
+        ));
   }
 }
