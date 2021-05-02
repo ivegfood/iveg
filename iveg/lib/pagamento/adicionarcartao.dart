@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:flutter_credit_card_detector/flutter_credit_card_detector.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/pagamento/alertdialog4.dart';
@@ -84,4 +84,4 @@ class _AdicionarCartaoState extends State<AdicionarCartao> {
     print('Bandeira: $creditCardBand'); // Bandeira do cartão
     print('CPF: $creditCardCPF'); // CPF do Titular
   }
-}
+}*/
