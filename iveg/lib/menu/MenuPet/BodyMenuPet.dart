@@ -3,6 +3,7 @@ import 'package:iveg/menu/MenuPet/classes/ClasseLojas.dart';
 import 'package:iveg/menu/MenuPet/classes/ClassesProdutos.dart';
 import 'package:iveg/menu/MenuPet/acessorios/ContainerTipos.dart';
 import 'package:iveg/menu/MenuPet/acessorios/ContainerLojas.dart';
+import 'package:iveg/menu/TelaProdutoPet/TelaPet.dart';
 
 class BodyMenuPet extends StatelessWidget {
   const BodyMenuPet({Key key, this.tipos, this.lojas}) : super(key: key);
@@ -38,7 +39,13 @@ class BodyMenuPet extends StatelessWidget {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             ),
             ...List.generate(ltsLojas.length,
-                (index) => ContainerLojas(lojas: lojas[index])),
+                (index) => InkWell(
+                  onTap: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => TelaPet()));
+                  },
+                  child: ContainerLojas(lojas: lojas[index]))),
           ],
         ),
       ),
