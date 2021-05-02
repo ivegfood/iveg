@@ -29,11 +29,11 @@ void main() {
     title: 'Veg',
 
     //ROTAS DE NAVEGAÇÃO
-    initialRoute: '/inicial',
+    initialRoute: '/sobre',
     routes: {
       '/inicial': (context) => TelaInicial(),
       '/inicial1': (context) => TelaInicialv2(),
-      '/inicial5': (context) => TelaInicialSobre(),
+      '/sobre': (context) => TelaInicialSobre(),
       '/criarconta': (context) => PrimeiraTelaInicio(),
       '/login': (context) => TelaLogin(),
       '/login2': (context) => TelaLogin2(),
