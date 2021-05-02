@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/menu/TelaCupons/TelaCupons.dart';
 import 'package:iveg/menu/fidelidades.dart';
 import 'package:iveg/menu/promocoes.dart';
+import 'package:iveg/pagamento/adicionarcartao.dart';
 // import 'package:iveg/menu/visualizacupom.dart';
 //import 'package:iveg/pagamento/adicionarcartao.dart';
 import 'package:iveg/telaInicialsobre.dart';
@@ -33,7 +34,6 @@ class _TesteDrawerState extends State<TesteDrawer> {
               color: Colors.green,
             ),
           ),
-<<<<<<< HEAD
           Column(
             children: [
               ListTile(
@@ -65,35 +65,6 @@ class _TesteDrawerState extends State<TesteDrawer> {
                 },
               ),
             ],
-=======
-          /*ListTile(
-            title: Text('Adicionar Cartão de Crédito'),
-            onTap: () {
-              Navigator.push(
-                context, MaterialPageRoute(builder: (context) => AdicionarCartao()));
-            },
-          ),*/
-          ListTile(
-            title: Text('Visualizar Cupons de Desconto'),
-            onTap: () {
-              Navigator.push(
-                context, MaterialPageRoute(builder: (context) => TelaCupons()));
-            },
-          ),
-          ListTile(
-            title: Text('Fidelidades'),
-            onTap: () {
-              Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Fidelidade()));
-            },
-          ),
-          ListTile(
-            title: Text('Sobre'),
-            onTap: () {
-              Navigator.push(
-                context, MaterialPageRoute(builder: (context) => TelaInicialSobre()));
-            },
->>>>>>> 3706d061d38f54e96fd634c2b85ec35c8da8ac8c
           ),
         ],
       ),

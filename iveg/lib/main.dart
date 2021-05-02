@@ -22,13 +22,8 @@ import 'package:iveg/menu/carrinho.dart';
 import 'package:iveg/menu/produtoh.dart';
 // import 'package:iveg/menu/produtop.dart';
 // import 'menu/visualizacupom.dart';
-<<<<<<< HEAD
 import 'package:iveg/menu/fidelidades.dart';
 import 'package:iveg/pagamento/adicionarcartao.dart';
-=======
-import 'menu/fidelidades.dart';
-//import 'pagamento/adicionarcartao.dart';
->>>>>>> 3706d061d38f54e96fd634c2b85ec35c8da8ac8c
 
 void main() {
   runApp(MaterialApp(
@@ -51,15 +46,8 @@ void main() {
       '/pj3': (context) => TelaPj3(),
       '/carrinho': (context) => TelaCarrinho(),
       '/produtoh': (context) => TelaProdutoH(),
-<<<<<<< HEAD
       '/telaPet': (context) => TelaPet(),
       '/adicionarcartao': (context) => AdicionarCartao(),
-=======
-      /* '/produtop': (context) => TelaProdutoP(), */
-      '/telaPet' : (context) => TelaPet(),
-      //'/adicionarcartao': (context) => AdicionarCartao(),
-      /* '/visualizacupom': (context) => VisualizaCupom(), */
->>>>>>> 3706d061d38f54e96fd634c2b85ec35c8da8ac8c
       '/fidelidades': (context) => Fidelidade(),
       '/pesquisa': (context) => TelaPesquisav2(),
       '/detalhes': (context) => TelaDetalhes(),
