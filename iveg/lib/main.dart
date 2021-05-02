@@ -29,7 +29,7 @@ void main() {
     title: 'Veg',
 
     //ROTAS DE NAVEGAÇÃO
-    initialRoute: '/sobre',
+    initialRoute: '/inicial',
     routes: {
       '/inicial': (context) => TelaInicial(),
       '/inicial1': (context) => TelaInicialv2(),

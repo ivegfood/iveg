@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/pesquisar/CardPesquisa.dart';
+import 'package:iveg/pesquisar/acessorios/Categorias.dart';
 
 class BodyPesquisar extends StatelessWidget {
   const BodyPesquisar({
@@ -22,14 +23,14 @@ class BodyPesquisar extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Text(
             'Categorias',
-          style: GoogleFonts.openSans(
-            color: Colors.white,
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
+            style: GoogleFonts.openSans(
+              color: Colors.white,
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
-
-      ),
+        Categorias(),
     ]);
   }
 }

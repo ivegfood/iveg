@@ -26,12 +26,12 @@ List<Cupom> ltsCupom = [
       imgProduto: 'assets/icones/cupom_icone.png',
       valorCupom: 15),
   Cupom(
-      id: 2,
+      id: 3,
       nmCupom: 'Cupom para seu Pet',
       imgProduto: 'assets/icones/cupom_icone.png',
       valorCupom: 8),
   Cupom(
-      id: 2,
+      id: 4,
       nmCupom: 'Cupom de Sucos',
       imgProduto: 'assets/icones/cupom_icone.png',
       valorCupom: 25),
