@@ -3,6 +3,9 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/BottomBarApp.dart';
 import 'package:iveg/NavBNBar.dart';
+import 'package:iveg/menu/MenuPet/BodyMenuPet.dart';
+import 'package:iveg/menu/MenuPet/classes/ClasseLojas.dart';
+import 'package:iveg/menu/MenuPet/classes/ClassesProdutos.dart';
 import 'package:iveg/menu/TelaProdutoPet/TelaPet.dart';
 import 'package:iveg/menu/drawer.dart';
 import 'package:flutter/material.dart';
@@ -195,104 +198,7 @@ class _TelaMenuState extends State<TelaMenu> {
               ]),
 
               //Aba Pet
-              Column(children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/produtop');
-                  },
-                  child: Container(
-                    padding: EdgeInsets.all(10),
-                    color: Colors.white,
-                    height: 150,
-                    child: Scrollbar(
-                      child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: 2,
-                          itemBuilder: (context, index) {
-                            return Container(
-                              width: 100,
-                              height: 100,
-                              margin: EdgeInsets.all(10),
-                              child: new Stack(
-                                children: [
-                                  Positioned(
-                                      child: Image.network(
-                                          listaCategoriaP[index],
-                                          height: 80)),
-                                  Positioned(
-                                    bottom: 10,
-                                    left: 15,
-                                    child: Text(catP[index]),
-                                  ),
-                                ],
-                              ),
-                            );
-                          }),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 5),
-                    color: Colors.grey[50],
-                    child: ListView.separated(
-                      scrollDirection: Axis.vertical,
-                      itemCount: 4,
-                      itemBuilder: (context, index) {
-                        return ListTile(
-                          trailing: IconButton(
-                            icon: favorito,
-                            onPressed: () {
-                              setState(() {
-                                favorito =
-                                    Icon(Icons.favorite, color: Colors.red);
-                              });
-                            },
-                          ),
-                          title: InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => TelaPet()));
-                              },
-                              child: Container(
-                                  child: Row(
-                                children: [
-                                  Container(
-                                      padding: EdgeInsets.all(1),
-                                      height: 30,
-                                      width: 30,
-                                      child: Image.asset(retornaImagem(
-                                          listaLojasP[index]))),
-                                  Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 10),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(retornaNome(listaLojasP[index]),
-                                            style: TextStyle(
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.bold)),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ))),
-                        );
-                      },
-                      separatorBuilder: (context, index) {
-                        return Divider(
-                          color: Colors.blue[100],
-                          thickness: 1,
-                        );
-                      },
-                    ),
-                  ),
-                ),
-              ]),
+              BodyMenuPet(tipos: ltsTipos, lojas: ltsLojas),
             ]),
             //Rodapé
             bottomNavigationBar: BottomBarApp(menuSelecionado: StatusBBar.menu)
