@@ -64,6 +64,13 @@ class _TesteDrawerState extends State<TesteDrawer> {
                     context, MaterialPageRoute(builder: (context) => TelaOfertas()));
                 },
               ),
+              ListTile(
+                title: Text('Sobre'),
+                onTap: () {
+                  Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => TelaInicialSobre()));
+                },
+              ),
             ],
           ),
         ],
