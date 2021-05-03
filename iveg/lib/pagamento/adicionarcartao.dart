@@ -39,19 +39,14 @@ class _AdicionarCartaoState extends State<AdicionarCartao> {
           body: ListView(
             children: [
               CreditCardWidget(listBand: listBand, onTap: _onTap),
-              Row(children: [
+              Column(children: [
                 ElevatedButton(
                   onPressed: () {
                     Navigator.pop(context);
                   },
                   child: Text('Voltar'),
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    showAlertDialog4(context);
-                  },
-                  child: Text('Finalizar'),
-                ),
+                
               ])
             ],
           ),
@@ -77,11 +72,12 @@ class _AdicionarCartaoState extends State<AdicionarCartao> {
   ];
 
   _onTap() async {
-    print('Numero do cartão: $creditCardNumber'); // Numero do cartão digitado
-    print('Nome no cartão: $creditCardName'); // Nome no cartão digitado
-    print('Valido até: $creditCardExpData'); // Validade do cartão
-    print('CVV: $creditCardCVV'); // Código de segurança
-    print('Bandeira: $creditCardBand'); // Bandeira do cartão
-    print('CPF: $creditCardCPF'); // CPF do Titular
+    // print('Numero do cartão: $creditCardNumber'); // Numero do cartão digitado
+    // print('Nome no cartão: $creditCardName'); // Nome no cartão digitado
+    // print('Valido até: $creditCardExpData'); // Validade do cartão
+    // print('CVV: $creditCardCVV'); // Código de segurança
+    // print('Bandeira: $creditCardBand'); // Bandeira do cartão
+    // print('CPF: $creditCardCPF'); // CPF do Titular
+    showAlertDialog4(context);
   }
 }
