@@ -16,7 +16,7 @@ class BodyCupons extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-              height: 400,
+              height: 300,
               width: double.infinity,
               decoration: BoxDecoration(
                 color: Colors.white,

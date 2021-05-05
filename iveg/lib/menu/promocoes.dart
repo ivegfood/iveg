@@ -1,12 +1,7 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:imagebutton/imagebutton.dart';
-import 'package:iveg/BottomBarApp.dart';
-import 'package:iveg/NavBNBar.dart';
 import 'package:iveg/menu/TelaDetalhes/acessorios/BotaoVoltar.dart';
-import 'package:iveg/menu/drawer.dart';
 
 class TelaOfertas extends StatefulWidget {
   @override
@@ -62,7 +57,7 @@ class _TelaOfertasState extends State<TelaOfertas> {
                 SizedBox(height: 10),
                 Text('Famosos no Iveg',
                     style: GoogleFonts.openSans(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     )),
@@ -80,7 +75,7 @@ class _TelaOfertasState extends State<TelaOfertas> {
                 SizedBox(height: 15),
                 Text('Descontos especias para você',
                     style: GoogleFonts.openSans(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     )),

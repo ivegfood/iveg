@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card_detector/flutter_credit_card_detector.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iveg/TelaFinal/TelaFinal.dart';
 import 'package:iveg/pagamento/alertdialog4.dart';
 
 class AdicionarCartao extends StatefulWidget {
@@ -45,6 +46,13 @@ class _AdicionarCartaoState extends State<AdicionarCartao> {
                     Navigator.pop(context);
                   },
                   child: Text('Voltar'),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context, new MaterialPageRoute(
+                      builder: (context) => new TelaFinal()));
+                  },
+                  child: Text('Finalizar'),
                 ),
                 
               ])

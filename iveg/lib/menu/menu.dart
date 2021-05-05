@@ -6,7 +6,6 @@ import 'package:iveg/NavBNBar.dart';
 import 'package:iveg/menu/MenuPet/BodyMenuPet.dart';
 import 'package:iveg/menu/MenuPet/classes/ClasseLojas.dart';
 import 'package:iveg/menu/MenuPet/classes/ClassesProdutos.dart';
-import 'package:iveg/menu/TelaProdutoPet/TelaPet.dart';
 import 'package:iveg/menu/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:iveg/menu/produtoh.dart';
