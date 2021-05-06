@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/sobre/ContainerAnimado.dart';
 import 'package:iveg/sobre/ContainerInfos.dart';
 import 'package:iveg/sobre/classes/classes_pessoas.dart';

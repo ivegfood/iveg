@@ -1,28 +1,22 @@
 import 'package:flutter/material.dart';
 
+import 'adicionarcartao.dart';
+
 showAlertDialog4(BuildContext context) {
   // configura os botões
   Widget aceitarButton = TextButton(
-    child: Text("Nova compra"),
+    child: Text("OK"),
     onPressed: () {
-      Navigator.pushNamed(context, '/menu');
+      Navigator.push(context,
+          new MaterialPageRoute(builder: (context) => new AdicionarCartao()));
     },
   );
-  Widget cancelaButton = TextButton(
-    child: Text("Sair"),
-    onPressed:  () {
-      Navigator.pushNamed(context, '/inicial');
-    },
-  );
-
   // configura o  AlertDialog
   AlertDialog alert = AlertDialog(
     title: Text("Aviso"),
-    content: Text("Obrigado por adquirir nossos produtos." 
-        + "\n" + "Sua encomenda será entregue no endereço cadastrado."),
+    content: Text("Pagamento confirmado."),
     actions: [
       aceitarButton,
-      cancelaButton,  
     ],
   );
   // exibe o dialogo
