@@ -55,7 +55,7 @@ class _TelaOfertasState extends State<TelaOfertas> {
                   ),
                 ),
                 SizedBox(height: 10),
-                Text('Famosos no Iveg',
+                Text('Famosos no Veg',
                     style: GoogleFonts.openSans(
                       color: Colors.black,
                       fontSize: 20,

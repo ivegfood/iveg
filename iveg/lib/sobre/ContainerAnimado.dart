@@ -44,20 +44,6 @@ class ContainerMaior extends StatelessWidget {
                 fontSize: 12,
               ),
             ),
-            SizedBox(height: 5),
-            Habilidades(
-                texto: 'Força:', valor: pessoa.forca, icone: Icons.star),
-            Habilidades(
-                texto: 'Destreza:', valor: pessoa.destreza, icone: Icons.star),
-            Habilidades(
-              texto: 'Agilidade:',
-              valor: pessoa.agilidade,
-              icone: Icons.star,
-            ),
-            Habilidades(
-                texto: 'Inteligência:',
-                valor: pessoa.inteligencia,
-                icone: Icons.star),
           ],
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/sobre/ContainerAnimado.dart';
 import 'package:iveg/sobre/ContainerInfos.dart';
 import 'package:iveg/sobre/classes/classes_pessoas.dart';
@@ -43,9 +44,38 @@ class _BodySobreState extends State<BodySobre> {
                   });
                 },
                 child: selecao == 2 ? ContainerMaior(pessoa: ltsPessoas[2]) : ContainerInfos(pessoa: ltsPessoas[2])),
+
+            Container (
+              decoration: BoxDecoration(
+                color: Colors.white,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      'Tema: Veg - aplicativo de vendas \n',
+                      style: GoogleFonts.openSans(
+                        color: Colors.black,
+                        fontSize: 10,
+                      ),
+                    ),
+                    Text(
+                      'Objetivo: Desenvolver um aplicativo para venda de produtos vegetarianos e veganos destinados aos seres humanos e pets em geral.',
+                      style: GoogleFonts.openSans(
+                        color: Colors.black,
+                        fontSize: 10,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),            
           ],
+          ),
         ),
-      ),
-    );
+        
+      );
   }
 }
