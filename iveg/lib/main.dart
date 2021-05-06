@@ -54,7 +54,7 @@ void main() {
 class TelaInicial extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Future.delayed(Duration(seconds: 5)).then((_) => Navigator.pushNamed(context, '/inicial1'));
+    Future.delayed(Duration(seconds: 3)).then((_) => Navigator.pushNamed(context, '/inicial1'));
     return Scaffold(
         backgroundColor: Colors.green[400],
         body: Center(
