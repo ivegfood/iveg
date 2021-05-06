@@ -9,9 +9,11 @@ import 'package:iveg/menu/MenuPet/classes/ClassesProdutos.dart';
 import 'package:iveg/menu/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:iveg/menu/produtoh.dart';
+import 'package:flutter/scheduler.dart' show timeDilation;
 
 class TelaMenu extends StatefulWidget {
   @override
+  const TelaMenu({Key key}) : super(key: key);
   _TelaMenuState createState() => _TelaMenuState();
 }
 class Lojas {
@@ -20,6 +22,7 @@ class Lojas {
 
   Lojas({this.imagens, this.nome});
 }
+
 
 class _TelaMenuState extends State<TelaMenu> {
   var formKey = GlobalKey<FormState>();
@@ -141,16 +144,13 @@ class _TelaMenuState extends State<TelaMenu> {
                       scrollDirection: Axis.vertical,
                       itemCount: listaLojasP.length,
                       itemBuilder: (context, index) {
-                        return ListTile(
-                            trailing: IconButton(
-                            icon: favorito,
-                            onPressed: () {
+                        return CheckboxListTile(
+                          value: timeDilation != 1.0,
+                          onChanged: (bool value) {
                               setState(() {
-                                favorito =
-                                    Icon(Icons.favorite, color: Colors.red);
+                                timeDilation = value ? 10.0 : 1.0;
                               });
                             },
-                          ),
                           title: InkWell(
                               onTap: () {
                                 Navigator.push(
