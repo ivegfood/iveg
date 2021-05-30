@@ -17,10 +17,11 @@ class BodyMenuPet extends StatefulWidget {
 class _BodyMenuPetState extends State<BodyMenuPet> {
   late CollectionReference ltsLojas;
   @override
-  void initState(){
+  void initState() {
     super.initState();
     ltsLojas = FirebaseFirestore.instance.collection('ltsLojas');
   }
+
   Widget containerLojas(item) {
     LojasPet lojas = LojasPet.fromJson(item.data(), item.id);
     return Column(
@@ -31,8 +32,7 @@ class _BodyMenuPetState extends State<BodyMenuPet> {
             height: 100,
             width: double.infinity,
             decoration: BoxDecoration(
-                color: Colors.white, 
-                borderRadius: BorderRadius.circular(20)),
+                color: Colors.white, borderRadius: BorderRadius.circular(20)),
             child: Row(
               children: [
                 Container(
@@ -88,7 +88,7 @@ class _BodyMenuPetState extends State<BodyMenuPet> {
     );
   }
 
-  Widget build(BuildContext context) {    
+  Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 20),
       child: Column(
@@ -114,37 +114,39 @@ class _BodyMenuPetState extends State<BodyMenuPet> {
             child: Text('Lojas',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
           ),
-          StreamBuilder<QuerySnapshot>(
-            stream: ltsLojas.snapshots(),
-            builder: (context, snapshot) {
-              switch (snapshot.connectionState) {
-                case ConnectionState.none:
-                  return Center(
-                      child: Text('Erro ao conectar ao Firestore'));
+          Expanded(
+            child: StreamBuilder<QuerySnapshot>(
+                stream: ltsLojas.snapshots(),
+                builder: (context, snapshot) {
+                  switch (snapshot.connectionState) {
+                    case ConnectionState.none:
+                      return Center(
+                          child: Text('Erro ao conectar ao Firestore'));
 
-                case ConnectionState.waiting:
-                  return Center(child: CircularProgressIndicator());
+                    case ConnectionState.waiting:
+                      return Center(child: CircularProgressIndicator());
 
-                default:
-                  final dados = snapshot.requireData;
+                    default:
+                      final dados = snapshot.requireData;
 
-                  return ListView.builder(
-                    shrinkWrap: true,                    
-                      scrollDirection: Axis.vertical,
-                      itemCount: dados.size,
-                      itemBuilder: (context, index) {
-                        return InkWell(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => TelaPet()));
-                          },
-                          child: containerLojas(dados.docs[index]),
-                        );
-                      });
-              }
-            }),
+                      return ListView.builder(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.vertical,
+                          itemCount: dados.size,
+                          itemBuilder: (context, index) {
+                            return InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => TelaPet()));
+                              },
+                              child: containerLojas(dados.docs[index]),
+                            );
+                          });
+                  }
+                }),
+          ),
         ],
       ),
     );
