@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class FotoPerfil extends StatelessWidget {
   const FotoPerfil({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

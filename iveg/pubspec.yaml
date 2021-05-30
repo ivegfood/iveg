@@ -19,13 +19,12 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^2.0.0
-  imagebutton: ^0.0.6
   search_widget: ^1.0.2
 
   # The following adds the Cupertino Icons font to your application.
@@ -34,7 +33,6 @@ dependencies:
   flutter_cart: ^0.0.5+1
   google_maps: ^5.1.0
   sigepweb: ^2.0.0-beta
-  flutter_credit_card_detector: ^1.0.0
   cloud_firestore: ^2.1.0
   firebase_core: ^1.1.1
 

@@ -1,14 +1,12 @@
-import 'package:flutter/cupertino.dart';
-
 class Pessoas {
   final String nome;
   final String foto;
   final String descricao;
 
   Pessoas({
-    @required this.nome,
-    @required this.foto,
-    @required this.descricao,
+    required this.nome,
+    required this.foto,
+    required this.descricao,
   });
 }
 

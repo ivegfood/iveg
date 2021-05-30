@@ -5,8 +5,8 @@ import 'package:iveg/pesquisar/acessorios/Categorias.dart';
 
 class BodyPesquisar extends StatelessWidget {
   const BodyPesquisar({
-    Key key,
-    @required this.txtPesquisa,
+    Key? key,
+    required this.txtPesquisa,
   }) : super(key: key);
 
   final TextEditingController txtPesquisa;

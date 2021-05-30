@@ -59,8 +59,8 @@ class _BodyInicialState extends State<BodyInicial> {
                 },
                 itemCount: listaImagens.length,
                 itemBuilder: (context, index) => ContainerInicial(
-                  image: listaImagens[index]["imagem"],
-                  text: listaImagens[index]['texto'],
+                  image: listaImagens[index]["imagem"]!,
+                  text: listaImagens[index]['texto']!,
                 ),
               ),
             ),
@@ -97,7 +97,7 @@ class _BodyInicialState extends State<BodyInicial> {
     );
   }
 
-  AnimatedContainer scrollAnimado({int index}) {
+  AnimatedContainer scrollAnimado({int? index}) {
     return AnimatedContainer(
       duration: Duration(milliseconds: 200),
       margin: EdgeInsets.only(right: 5),

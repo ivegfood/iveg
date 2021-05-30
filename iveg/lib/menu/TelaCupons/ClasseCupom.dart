@@ -7,10 +7,10 @@ class Cupom {
   final double valorCupom;
 
   Cupom({
-    @required this.id,
-    @required this.nmCupom,
-    @required this.imgProduto,
-    @required this.valorCupom,
+    required this.id,
+    required this.nmCupom,
+    required this.imgProduto,
+    required this.valorCupom,
   });
 }
 

@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:iveg/Perfil/TelaPerfil.dart';
 import 'package:iveg/TelaFinal/TelaFinal.dart';
@@ -18,7 +19,11 @@ import 'package:iveg/menu/produtoh.dart';
 import 'package:iveg/menu/fidelidades.dart';
 import 'package:iveg/pagamento/adicionarcartao.dart';
 
-void main() {
+Future<void> main() async {
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     title: 'Veg',

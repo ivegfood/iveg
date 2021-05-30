@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class BotaoVoltar extends StatelessWidget {
   const BotaoVoltar({
-    Key key,
+    Key? key,
     this.text,
     this.press,
   }) : super(key: key);
-  final String text;
-  final Function press;
+  final String? text;
+  final Function()? press;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class BotaoVoltar extends StatelessWidget {
         color: Colors.red,
         onPressed: press,
         child: Text(
-          text,
+          text!,
           style: TextStyle(
             fontSize: 18,
             color: Colors.white,

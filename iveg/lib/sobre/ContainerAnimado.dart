@@ -4,8 +4,8 @@ import 'package:iveg/sobre/classes/classes_pessoas.dart';
 
 class ContainerMaior extends StatelessWidget {
   const ContainerMaior({
-    Key key,
-    @required this.pessoa,
+    Key? key,
+    required this.pessoa,
   }) : super(key: key);
 
   final Pessoas pessoa;
@@ -53,10 +53,10 @@ class ContainerMaior extends StatelessWidget {
 
 class Habilidades extends StatelessWidget {
   const Habilidades({
-    Key key,
-    @required this.texto,
-    @required this.valor,
-    @required this.icone,
+    Key? key,
+    required this.texto,
+    required this.valor,
+    required this.icone,
   }) : super(key: key);
 
   final String texto;

@@ -13,9 +13,9 @@ class TelaProdutoH extends StatefulWidget {
 }
 
 class Produtos {
-  String imagens;
-  String nome;
-  double preco;
+  String? imagens;
+  String? nome;
+  double? preco;
 
   Produtos({this.imagens, this.nome, this.preco});
 }
@@ -137,11 +137,11 @@ class _TelaProdutoHState extends State<TelaProdutoH> {
   }
 
   String retornaImagem(Produtos objeto) {
-    return objeto.imagens;
+    return objeto.imagens!;
   }
 
   String retornaNome(Produtos objeto) {
-    return objeto.nome;
+    return objeto.nome!;
   }
 
   String retornaPreco(Produtos objeto) {

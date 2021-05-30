@@ -8,15 +8,15 @@ import 'package:iveg/pesquisar/TelaPesquisa.dart';
 
 class BottomBarApp extends StatelessWidget {
   const BottomBarApp({
-    Key key,
-    @required this.menuSelecionado,
+    Key? key,
+    required this.menuSelecionado,
   }) : super(key: key);
 
   final StatusBBar menuSelecionado;
 
   @override
   Widget build(BuildContext context) {
-    final Color menuInativo = Colors.grey[300];
+    final Color? menuInativo = Colors.grey[300];
     return Container(
         padding: EdgeInsets.symmetric(vertical: 14),
         decoration: BoxDecoration(
@@ -27,7 +27,7 @@ class BottomBarApp extends StatelessWidget {
               BoxShadow(
                 offset: Offset(0, -15),
                 blurRadius: 20,
-                color: Colors.grey[200].withOpacity(0.15),
+                color: Colors.grey[200]!.withOpacity(0.15),
               )
             ]),
         child: SafeArea(

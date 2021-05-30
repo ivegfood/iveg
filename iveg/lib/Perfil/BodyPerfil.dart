@@ -4,7 +4,7 @@ import 'package:iveg/main.dart';
 
 class BodyPerfil extends StatelessWidget {
   const BodyPerfil({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -45,14 +45,14 @@ class BodyPerfil extends StatelessWidget {
 
 class BotoesPerfil extends StatelessWidget {
   const BotoesPerfil({
-    Key key,
-    @required this.texto,
-    @required this.press,
-    @required this.icone,
+    Key? key,
+    required this.texto,
+    required this.press,
+    required this.icone,
   }) : super(key: key);
 
   final String texto;
-  final Function press;
+  final Function() press;
   final IconData icone;
 
   @override
@@ -82,14 +82,14 @@ class BotoesPerfil extends StatelessWidget {
 
 class BotaoSair extends StatelessWidget {
   const BotaoSair({
-    Key key,
-    @required this.texto,
-    @required this.press,
-    @required this.icone,
+    Key? key,
+    required this.texto,
+    required this.press,
+    required this.icone,
   }) : super(key: key);
 
   final String texto;
-  final Function press;
+  final Function() press;
   final IconData icone;
 
   @override

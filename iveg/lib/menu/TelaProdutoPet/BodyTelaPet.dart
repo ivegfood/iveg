@@ -5,7 +5,7 @@ import 'package:iveg/menu/TelaProdutoPet/acessorios/ContainerPet.dart';
 
 class BodyTelaPet extends StatelessWidget {
   const BodyTelaPet({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

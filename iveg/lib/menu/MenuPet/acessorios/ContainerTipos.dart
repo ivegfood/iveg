@@ -3,11 +3,11 @@ import 'package:iveg/menu/MenuPet/classes/ClassesProdutos.dart';
 
 class ContainerTipos extends StatelessWidget {
   const ContainerTipos({
-    Key key,
-    @required this.tipo,
+    Key? key,
+    required this.tipo,
   }) : super(key: key);
 
-  final TipoProdutos tipo;
+  final TipoProdutos? tipo;
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +24,9 @@ class ContainerTipos extends StatelessWidget {
                   decoration: BoxDecoration(color: Colors.grey[300], borderRadius: BorderRadius.circular(20)),
                   child: Padding(
                     padding: const EdgeInsets.all(15),
-                    child: Image.asset(tipo.imgTipo))),
+                    child: Image.asset(tipo!.imgTipo))),
                 SizedBox(width: 10),                    
-                Text(tipo.texto),
+                Text(tipo!.texto),
               ],
             ),
           ),

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class CardPesquisa extends StatelessWidget {
   const CardPesquisa({
-    Key key, 
-    @required this.vartexto
+    Key? key, 
+    required this.vartexto
   }) : super(key: key);
 
   final TextEditingController vartexto;
