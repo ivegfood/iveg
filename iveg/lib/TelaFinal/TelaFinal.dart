@@ -14,7 +14,7 @@ class TelaFinal extends StatelessWidget {
 
 class BodyFinal extends StatelessWidget {
   const BodyFinal({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

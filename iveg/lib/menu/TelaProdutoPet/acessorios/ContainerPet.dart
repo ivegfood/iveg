@@ -4,8 +4,8 @@ import 'package:iveg/menu/TelaDetalhes/TelaDetalhes.dart';
 
 class ContainerPet extends StatelessWidget {
   const ContainerPet({
-    Key key,
-    @required this.carrinho,
+    Key? key,
+    required this.carrinho,
   }) : super(key: key);
 
   final MeuCarrinho carrinho;

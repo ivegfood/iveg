@@ -4,7 +4,7 @@ class TipoProdutos {
   final String imgTipo;
   final String texto;
 
-  TipoProdutos({@required this.imgTipo, @required this.texto});
+  TipoProdutos({required this.imgTipo, required this.texto});
 }
 
 List<TipoProdutos> ltsTipos = [

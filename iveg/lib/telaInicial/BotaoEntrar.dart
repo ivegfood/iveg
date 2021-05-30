@@ -3,12 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 class BotaoEntrar extends StatelessWidget {
   const BotaoEntrar({
-    Key key,
+    Key? key,
     this.text,
     this.press,
   }) : super(key: key);
-  final String text;
-  final Function press;
+  final String? text;
+  final Function()? press;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class BotaoEntrar extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         color: Colors.green,
         onPressed: press,
-        child: Text(text,
+        child: Text(text!,
             style: GoogleFonts.openSans(
               color: Colors.white,
               fontSize: 18,

@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class ContainerInicial extends StatelessWidget {
   const ContainerInicial({
-    Key key,
+    Key? key,
     this.text,
     this.image,
   }) : super(key: key);
-  final String text, image;
+  final String? text, image;
 
   @override
   Widget build(BuildContext context) {
@@ -14,13 +14,13 @@ class ContainerInicial extends StatelessWidget {
       children: <Widget>[
         Spacer(),        
         Image.asset(
-          image,
+          image!,
           height: 265,
           width: 235,
         ),        
         Spacer(flex: 2),
         Text(
-          text,
+          text!,
           textAlign: TextAlign.center,
         ),
       ],

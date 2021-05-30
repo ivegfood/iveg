@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iveg/menu/TelaCupons/ClasseSeusCupons.dart';
 
 class ContainerCupons extends StatefulWidget {
-  const ContainerCupons({Key key, @required this.cupons}) : super(key: key);
+  const ContainerCupons({Key? key, required this.cupons}) : super(key: key);
   final SeusCupons cupons;
 
   @override

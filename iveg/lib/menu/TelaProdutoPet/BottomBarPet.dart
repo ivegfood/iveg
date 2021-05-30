@@ -3,7 +3,7 @@ import 'package:iveg/telaInicial/BotaoEntrar.dart';
 
 class BottomBarPet extends StatelessWidget {
   const BottomBarPet({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_credit_card_detector/flutter_credit_card_detector.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/TelaFinal/TelaFinal.dart';
 import 'package:iveg/pagamento/alertdialog4.dart';
@@ -12,56 +11,7 @@ class AdicionarCartao extends StatefulWidget {
 class _AdicionarCartaoState extends State<AdicionarCartao> {
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        Provider<Controller>(
-          create: (_) => Controller(),
-          dispose: (_, controler) => controler.dispose(),
-        )
-      ],
-      child: MaterialApp(
-        title: 'Adicionar Cartão de Crédito',
-        theme: ThemeData(
-          accentColor: Colors.blue,
-        ),
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text(
-              'VEG',
-              style: GoogleFonts.openSans(
-                color: Colors.white,
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            backgroundColor: Colors.green,
-            centerTitle: true,
-          ),
-          body: ListView(
-            children: [
-              CreditCardWidget(listBand: listBand, onTap: _onTap),
-              Column(children: [
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: Text('Voltar'),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context, new MaterialPageRoute(
-                      builder: (context) => new TelaFinal()));
-                  },
-                  child: Text('Finalizar'),
-                ),
-                
-              ])
-            ],
-          ),
-        ),
-        debugShowCheckedModeBanner: false,
-      ),
-    );
+    return Scaffold();
   }
 
   // Bandeiras disponíveis

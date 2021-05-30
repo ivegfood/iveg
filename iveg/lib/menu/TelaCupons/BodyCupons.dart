@@ -5,7 +5,7 @@ import 'package:iveg/menu/TelaCupons/ContainerCupons.dart';
 
 class BodyCupons extends StatelessWidget {
   const BodyCupons({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

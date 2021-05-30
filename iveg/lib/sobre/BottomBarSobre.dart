@@ -3,7 +3,7 @@ import 'package:iveg/menu/TelaDetalhes/acessorios/BotaoVoltar.dart';
 
 class BottomBarSobre extends StatelessWidget {
   const BottomBarSobre({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

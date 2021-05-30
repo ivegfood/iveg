@@ -4,8 +4,8 @@ import 'package:iveg/sobre/classes/classes_pessoas.dart';
 
 class ContainerInfos extends StatelessWidget {
   const ContainerInfos({
-    Key key,
-    @required this.pessoa,
+    Key? key,
+    required this.pessoa,
   }) : super(key: key);
 
   final Pessoas pessoa;

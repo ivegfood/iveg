@@ -13,12 +13,12 @@ import 'package:flutter/scheduler.dart' show timeDilation;
 
 class TelaMenu extends StatefulWidget {
   @override
-  const TelaMenu({Key key}) : super(key: key);
+  const TelaMenu({Key? key}) : super(key: key);
   _TelaMenuState createState() => _TelaMenuState();
 }
 class Lojas {
-  String nome;
-  String imagens;
+  String? nome;
+  String? imagens;
 
   Lojas({this.imagens, this.nome});
 }
@@ -146,9 +146,9 @@ class _TelaMenuState extends State<TelaMenu> {
                       itemBuilder: (context, index) {
                         return CheckboxListTile(
                           value: timeDilation != 1.0,
-                          onChanged: (bool value) {
+                          onChanged: (bool? value) {
                               setState(() {
-                                timeDilation = value ? 10.0 : 1.0;
+                                timeDilation = value! ? 10.0 : 1.0;
                               });
                             },
                           title: InkWell(
@@ -197,7 +197,7 @@ class _TelaMenuState extends State<TelaMenu> {
               ]),
 
               //Aba Pet
-              BodyMenuPet(tipos: ltsTipos, lojas: ltsLojas),
+              BodyMenuPet(tipos: ltsTipos),
             ]),
             //Rodapé
             bottomNavigationBar: BottomBarApp(menuSelecionado: StatusBBar.menu)
@@ -206,10 +206,10 @@ class _TelaMenuState extends State<TelaMenu> {
   }
 
   String retornaImagem(Lojas objeto) {
-    return objeto.imagens;
+    return objeto.imagens!;
   }
 
   String retornaNome(Lojas objeto) {
-    return objeto.nome;
+    return objeto.nome!;
   }
 }

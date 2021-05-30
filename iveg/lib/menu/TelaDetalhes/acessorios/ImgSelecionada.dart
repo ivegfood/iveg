@@ -3,8 +3,8 @@ import 'package:iveg/car_compras/classes/produtos_pet.dart';
 
 class ImagensProduto extends StatefulWidget {
   const ImagensProduto({
-    Key key,
-    @required this.produto,
+    Key? key,
+    required this.produto,
   }) : super(key: key);
 
   final ProdutosPet produto;

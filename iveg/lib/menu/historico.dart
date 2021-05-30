@@ -55,7 +55,7 @@ class _TelaHistoricoState extends State<TelaHistorico> {
                               margin: EdgeInsets.only(bottom: 15),
                               decoration: BoxDecoration(
                                   border: Border.all(
-                                      width: 1, color: Colors.grey[200]),
+                                      width: 1, color: Colors.grey[200]!),
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(20)),
                               child: Padding(

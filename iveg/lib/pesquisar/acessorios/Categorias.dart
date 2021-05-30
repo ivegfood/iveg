@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Categorias extends StatelessWidget {
   const Categorias({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -50,12 +50,12 @@ class Categorias extends StatelessWidget {
 
 class UmaLinha extends StatelessWidget {
   const UmaLinha({
-    Key key,
+    Key? key,
     this.cardUM,
     this.cardDOIS,
   }) : super(key: key);
-  final UmCard cardUM;
-  final UmCard cardDOIS;
+  final UmCard? cardUM;
+  final UmCard? cardDOIS;
 
   @override
   Widget build(BuildContext context) {
@@ -63,9 +63,9 @@ class UmaLinha extends StatelessWidget {
       children: [
         Row(
           children: [
-            cardUM,
+            cardUM!,
             Spacer(),
-            cardDOIS,
+            cardDOIS!,
           ],
         ),
         SizedBox(height: 10)
@@ -76,9 +76,9 @@ class UmaLinha extends StatelessWidget {
 
 class UmCard extends StatelessWidget {
   const UmCard({
-    Key key,
-    @required this.icone,
-    @required this.texto,
+    Key? key,
+    required this.icone,
+    required this.texto,
   }) : super(key: key);
   final IconData icone;
   final String texto;
@@ -92,10 +92,10 @@ class UmCard extends StatelessWidget {
             width: 140,
             decoration: BoxDecoration(
                 border: Border(
-                    top: BorderSide(width: 1.0, color: Colors.grey[300]),
-                    left: BorderSide(width: 1.0, color: Colors.grey[300]),
-                    right: BorderSide(width: 1.0, color: Colors.grey[300]),
-                    bottom: BorderSide(width: 1.0, color: Colors.grey[300])),
+                    top: BorderSide(width: 1.0, color: Colors.grey[300]!),
+                    left: BorderSide(width: 1.0, color: Colors.grey[300]!),
+                    right: BorderSide(width: 1.0, color: Colors.grey[300]!),
+                    bottom: BorderSide(width: 1.0, color: Colors.grey[300]!)),
                 borderRadius: BorderRadius.circular(15)),
             child: Center(
                 child: Padding(

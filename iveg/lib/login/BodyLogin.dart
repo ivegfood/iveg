@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class BodyLogin extends StatelessWidget {
   const BodyLogin({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -43,14 +43,14 @@ class BodyLogin extends StatelessWidget {
 
 class BotoesLogin extends StatelessWidget {
   const BotoesLogin({
-    Key key,
-    @required this.texto,
-    @required this.press,
-    @required this.icone,
+    Key? key,
+    required this.texto,
+    required this.press,
+    required this.icone,
   }) : super(key: key);
 
   final String texto;
-  final Function press;
+  final Function() press;
   final IconData icone;
 
   @override
@@ -74,14 +74,14 @@ class BotoesLogin extends StatelessWidget {
 
 class BotaoGoogle extends StatelessWidget {
   const BotaoGoogle({
-    Key key,
-    @required this.texto,
-    @required this.press,
-    @required this.icone,
+    Key? key,
+    required this.texto,
+    required this.press,
+    required this.icone,
   }) : super(key: key);
 
   final String texto;
-  final Function press;
+  final Function() press;
   final IconData icone;
 
   @override
@@ -116,14 +116,14 @@ class BotaoGoogle extends StatelessWidget {
 
 class BotaoCriar extends StatelessWidget {
   const BotaoCriar({
-    Key key,
-    @required this.texto,
-    @required this.press,
-    @required this.icone,
+    Key? key,
+    required this.texto,
+    required this.press,
+    required this.icone,
   }) : super(key: key);
 
   final String texto;
-  final Function press;
+  final Function() press;
   final IconData icone;
 
   @override

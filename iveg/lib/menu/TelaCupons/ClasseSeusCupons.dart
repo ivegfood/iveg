@@ -5,7 +5,7 @@ class SeusCupons {
   final Cupom cupom;
   final int qtdCupom;
 
-  SeusCupons({@required this.cupom, @required this.qtdCupom});
+  SeusCupons({required this.cupom, required this.qtdCupom});
 }
 
 List<SeusCupons> seusCupons = [

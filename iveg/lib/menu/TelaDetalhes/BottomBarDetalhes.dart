@@ -5,7 +5,7 @@ import 'package:iveg/telaInicial/BotaoEntrar.dart';
 
 class BottomBarDetalhes extends StatelessWidget {
   const BottomBarDetalhes({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

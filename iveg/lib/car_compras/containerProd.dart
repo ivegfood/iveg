@@ -3,8 +3,8 @@ import 'package:iveg/car_compras/classes/meu_carrinho.dart';
 
 class ContainerProd extends StatelessWidget {
   const ContainerProd({
-    Key key,
-    @required this.carrinho,
+    Key? key,
+    required this.carrinho,
   }) : super(key: key);
 
   final MeuCarrinho carrinho;

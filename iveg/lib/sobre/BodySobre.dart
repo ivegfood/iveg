@@ -6,7 +6,7 @@ import 'package:iveg/sobre/classes/classes_pessoas.dart';
 
 class BodySobre extends StatefulWidget {
   const BodySobre({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

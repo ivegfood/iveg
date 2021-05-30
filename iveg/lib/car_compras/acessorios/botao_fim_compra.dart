@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class BotaoFimCompra extends StatelessWidget {
   const BotaoFimCompra({
-    Key key,
-    this.text,
+    Key? key,
+    required this.text,
     this.press,
   }) : super(key: key);
   final String text;
-  final Function press;
+  final Function()? press;
 
   @override
   Widget build(BuildContext context) {
