@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:iveg/Perfil/TelaPerfil.dart';
 import 'package:iveg/TelaFinal/TelaFinal.dart';
 import 'package:iveg/login/BodyLogin.dart';
+import 'package:iveg/login/entrar.dart';
+import 'package:iveg/login/entrarPJ.dart';
 import 'package:iveg/menu/TelaCupons/TelaCupons.dart';
 import 'package:iveg/menu/TelaDetalhes/TelaDetalhes.dart';
 import 'package:iveg/menu/TelaProdutoPet/TelaPet.dart';
 import 'package:iveg/pesquisar/TelaPesquisa.dart';
 import 'package:iveg/telaInicial/TelaInicialv2.dart';
-
 import 'login.dart';
 import 'telaInicialsobre.dart';
 import 'package:iveg/menu/menu.dart';
@@ -40,6 +41,8 @@ Future<void> main() async {
       '/login2': (context) => TelaLogin2(),
       '/login3': (context) => TelaLogin3(),
       '/bodylogin': (context) => BodyLogin(),
+      '/entrar': (context) => TelaEntrar(),
+      '/entrarpj': (context) => TelaEntrarPJ(),
       '/menu': (context) => TelaMenu(),
       '/pj1': (context) => TelaPj1(),
       '/pj2': (context) => TelaPj2(),
