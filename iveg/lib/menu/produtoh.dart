@@ -1,9 +1,11 @@
 import 'dart:ui';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/BottomBarApp.dart';
 import 'package:iveg/NavBNBar.dart';
 import 'package:iveg/menu/carrinho.dart';
+import 'package:iveg/menu/classes/ProdHumanos.dart';
 import 'package:iveg/menu/drawer.dart';
 import 'package:flutter/material.dart';
 
@@ -27,8 +29,11 @@ class _TelaProdutoHState extends State<TelaProdutoH> {
   var favorito = Icon(Icons.favorite);
   var adicionar = Icon(Icons.add_circle_outlined);
 
+  late CollectionReference prodHumano;
+
   @override
   void initState() {
+    prodHumano = FirebaseFirestore.instance.collection('prodHumano');
     //Humano
     listaProdutosH.add(Produtos(
         nome: 'Suco de laranja',
@@ -54,98 +59,98 @@ class _TelaProdutoHState extends State<TelaProdutoH> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          appBar: AppBar(
-            title: Text(
-              'VEG',
-              style: GoogleFonts.openSans(
-                color: Colors.white,
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
+        appBar: AppBar(
+          title: Text(
+            'VEG',
+            style: GoogleFonts.openSans(
+              color: Colors.white,
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
             ),
-            backgroundColor: Colors.green,
-            centerTitle: true,
           ),
-          drawer: TesteDrawer(),
           backgroundColor: Colors.green,
-          body: Container(
+          centerTitle: true,
+        ),
+        drawer: TesteDrawer(),
+        backgroundColor: Colors.green,
+        body: Container(
             padding: EdgeInsets.symmetric(horizontal: 5),
             color: Colors.grey[300],
-            child: ListView.separated(
-              scrollDirection: Axis.vertical,
-              itemCount: listaProdutosH.length,
-              shrinkWrap: true,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  trailing: IconButton(
-                    icon: favorito,
-                    onPressed: () {
-                      setState(() {
-                        favorito = Icon(Icons.favorite, color: Colors.red);
-                      });
-                    },
-                  ),
-                  title: InkWell(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => TelaCarrinho()));
-                      },
-                      child: Container(
-                          child: Row(
-                        children: [
-                          Container(
-                              padding: EdgeInsets.all(1),
-                              height: 30,
-                              width: 30,
-                              child: Image.asset(
-                                  retornaImagem(listaProdutosH[index]))),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 10),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(retornaNome(listaProdutosH[index]),
-                                    style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold)),
-                                Text(
-                                    'R\$ ' +
-                                        retornaPreco(listaProdutosH[index]),
-                                    style: TextStyle(
-                                        fontSize: 10, color: Colors.grey)),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ))),
-                );
-              },
-              separatorBuilder: (context, index) {
-                return Divider(
-                  color: Colors.blue[100],
-                  thickness: 1,
-                );
-              },
-            ),
-          ),
-          //Rodapé
-          bottomNavigationBar: BottomBarApp(menuSelecionado: StatusBBar.menu),
+            child: StreamBuilder<QuerySnapshot>(
+                stream: prodHumano.snapshots(),
+                builder: (context, snapshot) {
+                  switch (snapshot.connectionState) {
+                    case ConnectionState.none:
+                      return Center(
+                          child: Text('Erro ao conectar ao Firestore'));
+
+                    case ConnectionState.waiting:
+                      return Center(child: CircularProgressIndicator());
+
+                    default:
+                      final dados = snapshot.requireData;
+
+                      return ListView.separated(
+                        scrollDirection: Axis.vertical,
+                        itemCount: dados.size,
+                        shrinkWrap: true,
+                        itemBuilder: (context, index) {
+                          return buildListTile(dados.docs[index]);
+                        },
+                        separatorBuilder: (context, index) {
+                          return Divider(
+                            color: Colors.blue[100],
+                            thickness: 1,
+                          );
+                        },
+                      );
+                  }
+                })),
+        //Rodapé
+        bottomNavigationBar: BottomBarApp(menuSelecionado: StatusBBar.menu),
       ),
     );
   }
 
-  String retornaImagem(Produtos objeto) {
-    return objeto.imagens!;
-  }
-
-  String retornaNome(Produtos objeto) {
-    return objeto.nome!;
-  }
-
-  String retornaPreco(Produtos objeto) {
-    String texto = objeto.preco.toString();
-    return texto;
+  Widget buildListTile(item) {
+    ProdHumanos produto = ProdHumanos.fromJson(item.data(), item.id);
+    return ListTile(
+      trailing: IconButton(
+        icon: favorito,
+        onPressed: () {
+          setState(() {
+            favorito = Icon(Icons.favorite, color: Colors.red);
+          });
+        },
+      ),
+      title: InkWell(
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => TelaCarrinho()));
+          },
+          child: Container(
+              child: Row(
+            children: [
+              Container(
+                  padding: EdgeInsets.all(1),
+                  height: 30,
+                  width: 30,
+                  child: Image.asset(produto.imagem)),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(produto.nome,
+                        style: TextStyle(
+                            fontSize: 12, fontWeight: FontWeight.bold)),
+                    Text('R\$ ' + produto.preco,
+                        style: TextStyle(fontSize: 10, color: Colors.grey)),
+                  ],
+                ),
+              ),
+            ],
+          ))),
+    );
   }
 }
