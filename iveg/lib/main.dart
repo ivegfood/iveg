@@ -29,7 +29,7 @@ Future<void> main() async {
     title: 'Veg',
 
     //ROTAS DE NAVEGAÇÃO
-    initialRoute: '/telaPet',
+    initialRoute: '/inicial',
     routes: {
       '/inicial': (context) => TelaInicial(),
       '/inicial1': (context) => TelaInicialv2(),
