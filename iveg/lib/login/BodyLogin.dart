@@ -14,21 +14,15 @@ class BodyLogin extends StatelessWidget {
           BotoesLogin(
               texto: 'Acessar sua conta cliente',
               press: () {
-                Navigator.pushNamed(context, '/menu');
+                Navigator.pushNamed(context, '/entrar');
               },
               icone: Icons.arrow_forward_rounded),
           BotoesLogin(
               texto: 'Acessar sua conta lojista',
               press: () {
-                Navigator.pushNamed(context, '/pj3');
+                Navigator.pushNamed(context, '/entrarpj');
               },
               icone: Icons.arrow_forward_rounded),
-          BotaoGoogle(
-              texto: 'Acessar com conta Google',
-              press: () {
-                Navigator.pushNamed(context, '/menu');
-              },
-              icone: Icons.login_outlined),
           BotaoCriar(
               texto: 'Criar uma nova conta',
               press: () {
