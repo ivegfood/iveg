@@ -5,7 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/BottomBarApp.dart';
 import 'package:iveg/NavBNBar.dart';
 import 'package:iveg/menu/MenuPet/BodyMenuPet.dart';
-import 'package:iveg/menu/MenuPet/classes/ClasseLojas.dart';
 import 'package:iveg/menu/MenuPet/classes/ClassesProdutos.dart';
 import 'package:iveg/menu/classes/LojasMenu.dart';
 import 'package:iveg/menu/drawer.dart';
@@ -174,7 +173,7 @@ class _TelaMenuState extends State<TelaMenu> {
                                                   context,
                                                   MaterialPageRoute(
                                                       builder: (context) =>
-                                                          TelaProdutoH()));
+                                                          TelaProdutosh()));
                                             },
                                             child: buildContainer(
                                                 dados.docs[index])),

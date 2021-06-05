@@ -7,7 +7,7 @@ showAlertDialog3(BuildContext context) {
   Widget aceitarButton = TextButton(
     child: Text("Salvar"),
     onPressed: () {
-      Navigator.pushNamed(context, '/menu');
+      Navigator.pushNamed(context, '/pj3');
     },
   );
   Widget sairButton = TextButton(

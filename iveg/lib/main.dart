@@ -13,7 +13,6 @@ import 'package:iveg/telaInicial/TelaInicialv2.dart';
 import 'login.dart';
 import 'telaInicialsobre.dart';
 import 'package:iveg/menu/menu.dart';
-import 'pj/pj1.dart';
 import 'pj/pj2.dart';
 import 'pj/pj3.dart';
 import 'package:iveg/menu/carrinho.dart';
@@ -38,17 +37,15 @@ Future<void> main() async {
       '/sobre': (context) => TelaInicialSobre(),
       '/criarconta': (context) => PrimeiraTelaInicio(),
       '/login': (context) => TelaLogin(),
-      '/login2': (context) => TelaLogin2(),
       '/login3': (context) => TelaLogin3(),
       '/bodylogin': (context) => BodyLogin(),
       '/entrar': (context) => TelaEntrar(),
       '/entrarpj': (context) => TelaEntrarPJ(),
       '/menu': (context) => TelaMenu(),
-      '/pj1': (context) => TelaPj1(),
       '/pj2': (context) => TelaPj2(),
       '/pj3': (context) => TelaPj3(),
       '/carrinho': (context) => TelaCarrinho(),
-      '/produtoh': (context) => TelaProdutoH(),
+      '/produtosh': (context) => TelaProdutosh(),
       '/telaPet': (context) => TelaPet(),
       '/adicionarcartao': (context) => AdicionarCartao(),
       '/fidelidades': (context) => Fidelidade(),

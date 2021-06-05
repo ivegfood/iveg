@@ -1,156 +1,93 @@
-import 'dart:ui';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:iveg/BottomBarApp.dart';
-import 'package:iveg/NavBNBar.dart';
-import 'package:iveg/menu/carrinho.dart';
-import 'package:iveg/menu/classes/ProdHumanos.dart';
-import 'package:iveg/menu/drawer.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:iveg/model/Veg.dart';
 
-class TelaProdutoH extends StatefulWidget {
+//
+// TELA PRINCIPAL
+//
+class TelaProdutosh extends StatefulWidget {
   @override
-  _TelaProdutoHState createState() => _TelaProdutoHState();
+  _TelaProdutoshState createState() => _TelaProdutoshState();
 }
 
-class Produtos {
-  String? imagens;
-  String? nome;
-  double? preco;
+class _TelaProdutoshState extends State<TelaProdutosh> {
 
-  Produtos({this.imagens, this.nome, this.preco});
-}
-
-class _TelaProdutoHState extends State<TelaProdutoH> {
-  var formKey = GlobalKey<FormState>();
-  var listaProdutosH = [];
-  var listaLojasH = [];
-  var favorito = Icon(Icons.favorite);
-  var adicionar = Icon(Icons.add_circle_outlined);
-
-  late CollectionReference prodHumano;
+  //Referenciar a coleção nomeada "cafes"
+  late CollectionReference prodhumano;
 
   @override
-  void initState() {
-    prodHumano = FirebaseFirestore.instance.collection('prodHumano');
-    //Humano
-    listaProdutosH.add(Produtos(
-        nome: 'Suco de laranja',
-        preco: 24.99,
-        imagens: 'assets/icones/suco_icone.png'));
-    listaProdutosH.add(Produtos(
-        nome: 'Perfume Vegano',
-        preco: 34.99,
-        imagens: 'assets/icones/perfumaria_icone.png'));
-    listaProdutosH.add(Produtos(
-        nome: 'Mix de vegetais',
-        preco: 44.99,
-        imagens: 'assets/icones/vegetables_icone.png'));
-    listaProdutosH.add(Produtos(
-        nome: 'Kit jantar ecológico',
-        preco: 99.99,
-        imagens: 'assets/icones/acessorios_icone.png'));
+  void initState(){
     super.initState();
+    prodhumano = FirebaseFirestore.instance.collection('prodHumano');
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'VEG',
-            style: GoogleFonts.openSans(
-              color: Colors.white,
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          backgroundColor: Colors.green,
-          centerTitle: true,
-        ),
-        drawer: TesteDrawer(),
-        backgroundColor: Colors.green,
-        body: Container(
-            padding: EdgeInsets.symmetric(horizontal: 5),
-            color: Colors.grey[300],
-            child: StreamBuilder<QuerySnapshot>(
-                stream: prodHumano.snapshots(),
-                builder: (context, snapshot) {
-                  switch (snapshot.connectionState) {
-                    case ConnectionState.none:
-                      return Center(
-                          child: Text('Erro ao conectar ao Firestore'));
-
-                    case ConnectionState.waiting:
-                      return Center(child: CircularProgressIndicator());
-
-                    default:
-                      final dados = snapshot.requireData;
-
-                      return ListView.separated(
-                        scrollDirection: Axis.vertical,
-                        itemCount: dados.size,
-                        shrinkWrap: true,
-                        itemBuilder: (context, index) {
-                          return buildListTile(dados.docs[index]);
-                        },
-                        separatorBuilder: (context, index) {
-                          return Divider(
-                            color: Colors.blue[100],
-                            thickness: 1,
-                          );
-                        },
-                      );
-                  }
-                })),
-        //Rodapé
-        bottomNavigationBar: BottomBarApp(menuSelecionado: StatusBBar.menu),
+  //Aparência do item do ListView
+  Widget exibirDocumento(item){
+    //Converter um DOCUMENTO em um OBJETO
+    Veg veg = Veg.fromJson(item.data(), item.id);
+    return Container(
+      padding: EdgeInsets.all(5),
+      child: ListTile(
+        title: Text(veg.nome, style: TextStyle(fontSize: 24)),
+        subtitle: Text('R\$ ${veg.preco}', style: TextStyle(fontSize: 22)),
       ),
     );
   }
 
-  Widget buildListTile(item) {
-    ProdHumanos produto = ProdHumanos.fromJson(item.data(), item.id);
-    return ListTile(
-      trailing: IconButton(
-        icon: favorito,
-        onPressed: () {
-          setState(() {
-            favorito = Icon(Icons.favorite, color: Colors.red);
-          });
-        },
-      ),
-      title: InkWell(
-          onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => TelaCarrinho()));
-          },
-          child: Container(
-              child: Row(
-            children: [
-              Container(
-                  padding: EdgeInsets.all(1),
-                  height: 30,
-                  width: 30,
-                  child: Image.asset(produto.imagem)),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(produto.nome,
-                        style: TextStyle(
-                            fontSize: 12, fontWeight: FontWeight.bold)),
-                    Text('R\$ ' + produto.preco,
-                        style: TextStyle(fontSize: 10, color: Colors.grey)),
-                  ],
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+                title: Text(
+                  'VEG',
+                  style: GoogleFonts.openSans(
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
+                backgroundColor: Colors.green,
+                centerTitle: true,
               ),
-            ],
-          ))),
+      //
+      // EXIBIR os documentos da coleção de "cafes"
+      //
+      body: Container(
+        padding: EdgeInsets.all(30),
+        
+        child: StreamBuilder<QuerySnapshot>(
+
+          //fonte de dados
+          stream: prodhumano.snapshots(),
+
+          //definir a aparência dos documentos que serão exibidos
+          builder: (context,snapshot){
+
+            switch(snapshot.connectionState){
+
+              case ConnectionState.none:
+                return Center(child:Text('Erro ao conectar ao Firestore'));
+
+              case ConnectionState.waiting:
+                return Center(child: CircularProgressIndicator());
+
+              default:
+                final dados = snapshot.requireData;
+
+                return ListView.builder(
+                  itemCount: dados.size,
+                  itemBuilder: (context, index){
+                    return exibirDocumento(dados.docs[index]);
+                  }
+                );
+            }
+          }
+        ),
+
+      ),
     );
   }
 }
