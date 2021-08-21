@@ -1,5 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:iveg/login.dart';
+import 'package:iveg/login/componentes/textfieldcontainer.dart';
+import 'package:iveg/login/componentes/textfieldsenha.dart';
 
 class TelaEntrar extends StatefulWidget {
   @override
@@ -7,52 +10,89 @@ class TelaEntrar extends StatefulWidget {
 }
 
 class _TelaEntrarState extends State<TelaEntrar> {
-
   var txtEmail = TextEditingController();
   var txtSenha = TextEditingController();
   bool isLoading = false;
 
   @override
   Widget build(BuildContext context) {
-return Scaffold(
-      appBar: AppBar(
-          title: Text('VEG'),
-          centerTitle: true,
-          backgroundColor: Colors.green),
+    return Scaffold(
       backgroundColor: Colors.green[50],
       body: Container(
-        padding: EdgeInsets.all(50),
-        child: ListView(
+        width: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextField(
-              controller: txtEmail,
-              style:
-                  TextStyle(color: Colors.brown, fontWeight: FontWeight.w300),
-              decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.email), labelText: 'E-mail'),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              obscureText: true,
-              controller: txtSenha,
-              style:
-                  TextStyle(color: Colors.lightGreen, fontWeight: FontWeight.w300),
-              decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.lock), labelText: 'Senha'),
-            ),
-            SizedBox(height: 40),
-            Container(
-              width: 150,
-              child: OutlinedButton(
-                child: Text('Entrar'),
-                onPressed: () {
-                  setState(() {
-                    isLoading = true;
-                  });
-                  login(txtEmail.text, txtSenha.text);
-                },
+            Text(
+              'LOGIN',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
               ),
             ),
+            SizedBox(height: 20),
+            Image.asset(
+              'assets/imagens/imgEntrar.png',
+              height: MediaQuery.of(context).size.height * 0.40,
+            ),
+            SizedBox(height: 20),
+            TextFieldEmail(
+              controller: txtEmail,
+              hintText: 'Email',
+              icon: Icons.email,
+            ),
+            SizedBox(height: 10),
+            TextFieldSenha(
+              controller: txtSenha,
+              hintText: 'Senha',
+              icon: Icons.lock,
+            ),
+            SizedBox(height: 20),
+            TextButton(
+              child: Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width * 0.75,
+                  decoration: BoxDecoration(
+                    color: Colors.blue[800],
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Center(
+                      child: Text(
+                    'Entrar',
+                    style: TextStyle(color: Colors.white),
+                  ))),
+              onPressed: () {
+                setState(() {
+                  isLoading = true;
+                });
+                login(txtEmail.text, txtSenha.text);
+              },
+            ),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Não possui uma conta?  ",
+                  style: TextStyle(color: Colors.green[500]),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return TelaLogin();
+                    }));
+                  },
+                  child: Text(
+                    "Cadastre-se",
+                    style: TextStyle(
+                      color: Colors.red,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                )
+              ],
+            )
           ],
         ),
       ),
@@ -62,32 +102,25 @@ return Scaffold(
   //
   // LOGIN com o Firebase Auth
   //
-  void login(email, senha){
-
-    FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: email, password: senha).then((resultado){
-        isLoading = false;
-        Navigator.pushReplacementNamed(context, '/menu');
-        
-    }).catchError((erro){
-
+  void login(email, senha) {
+    FirebaseAuth.instance
+        .signInWithEmailAndPassword(email: email, password: senha)
+        .then((resultado) {
+      isLoading = false;
+      Navigator.pushReplacementNamed(context, '/menu');
+    }).catchError((erro) {
       var mensagem = '';
-      if (erro.code == 'user-not-found'){
+      if (erro.code == 'user-not-found') {
         mensagem = 'ERRO: Usuário não encontrado.';
-      }else if (erro.code == 'wrong-password'){
+      } else if (erro.code == 'wrong-password') {
         mensagem = 'ERRO: Senha incorreta.';
-      }else if (erro.code == 'invalid-email'){
+      } else if (erro.code == 'invalid-email') {
         mensagem = 'ERRO: Email inválido.';
-      }else{
+      } else {
         mensagem = 'ERRO: ${erro.message}';
       }
       ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('$mensagem'),
-            duration: Duration(seconds: 2)
-          )
-        );
+          SnackBar(content: Text('$mensagem'), duration: Duration(seconds: 2)));
     });
-
   }
 }

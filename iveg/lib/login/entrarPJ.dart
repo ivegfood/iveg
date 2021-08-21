@@ -1,5 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:iveg/login/componentes/textfieldcontainer.dart';
+import 'package:iveg/login/componentes/textfieldsenha.dart';
+import 'package:iveg/pj/pj2.dart';
 
 class TelaEntrarPJ extends StatefulWidget {
   @override
@@ -15,44 +18,89 @@ class _TelaEntrarPJState extends State<TelaEntrarPJ> {
   @override
   Widget build(BuildContext context) {
 return Scaffold(
-      appBar: AppBar(
-          title: Text('VEG'),
-          centerTitle: true,
-          backgroundColor: Colors.green),
       backgroundColor: Colors.green[50],
       body: Container(
-        padding: EdgeInsets.all(50),
-        child: ListView(
+        width: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextField(
-              controller: txtEmail,
-              style:
-                  TextStyle(color: Colors.brown, fontWeight: FontWeight.w300),
-              decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.email), labelText: 'E-mail'),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              obscureText: true,
-              controller: txtSenha,
-              style:
-                  TextStyle(color: Colors.lightGreen, fontWeight: FontWeight.w300),
-              decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.lock), labelText: 'Senha'),
-            ),
-            SizedBox(height: 40),
-            Container(
-              width: 150,
-              child: OutlinedButton(
-                child: Text('Entrar'),
-                onPressed: () {
-                  setState(() {
-                    isLoading = true;
-                  });
-                  login(txtEmail.text, txtSenha.text);
-                },
+            Text(
+              'Parceiro',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
               ),
             ),
+            Text(
+              'VEG',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+            ),
+            SizedBox(height: 20),
+            Image.asset(
+              'assets/imagens/parceiro.png',
+              height: MediaQuery.of(context).size.height * 0.40,
+            ),
+            SizedBox(height: 20),
+            TextFieldEmail(
+              controller: txtEmail,
+              hintText: 'Email',
+              icon: Icons.email,
+            ),
+            SizedBox(height: 10),
+            TextFieldSenha(
+              controller: txtSenha,
+              hintText: 'Senha',
+              icon: Icons.lock,
+            ),
+            SizedBox(height: 20),
+            TextButton(
+              child: Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width * 0.75,
+                  decoration: BoxDecoration(
+                    color: Colors.blue[800],
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Center(
+                      child: Text(
+                    'Entrar',
+                    style: TextStyle(color: Colors.white),
+                  ))),
+              onPressed: () {
+                setState(() {
+                  isLoading = true;
+                });
+                login(txtEmail.text, txtSenha.text);
+              },
+            ),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Ainda não é nosso parceiro?  ",
+                  style: TextStyle(color: Colors.green[500]),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return TelaPj2();
+                    }));
+                  },
+                  child: Text(
+                    "Cadastre-se",
+                    style: TextStyle(
+                      color: Colors.red,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                )
+              ],
+            )
           ],
         ),
       ),

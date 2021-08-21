@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../login.dart';
+
 class TelaPj2 extends StatefulWidget {
   @override
   _TelaPj2State createState() => _TelaPj2State();
@@ -20,99 +22,95 @@ class _TelaPj2State extends State<TelaPj2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: Text('VEG'), centerTitle: true, backgroundColor: Colors.green),
-      backgroundColor: Colors.green[50],
       body: Container(
-        padding: EdgeInsets.all(50),
-        child: ListView(
-          children: [
-            TextField(
-              controller: txtNomeFantasia,
-              style:
-                  TextStyle(color: Colors.green, fontWeight: FontWeight.w300),
-              decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.person), labelText: 'Nome Fantasia'),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              controller: txtRazaoSocial,
-              style:
-                  TextStyle(color: Colors.green, fontWeight: FontWeight.w300),
-              decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.assignment_ind), labelText: 'Razão Social'),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              controller: txtCNPJ,
-              style:
-                  TextStyle(color: Colors.green, fontWeight: FontWeight.w300),
-              decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.assignment_ind), labelText: 'CNPJ'),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              controller: txtEndereco,
-              style:
-                  TextStyle(color: Colors.green, fontWeight: FontWeight.w300),
-              decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.map_outlined), labelText: 'Endereço'),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              controller: txtTelefone,
-              style:
-                  TextStyle(color: Colors.green, fontWeight: FontWeight.w300),
-              decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.date_range_outlined),
-                  labelText: 'Telefone'),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              controller: txtEmail,
-              style:
-                  TextStyle(color: Colors.green, fontWeight: FontWeight.w300),
-              decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.email), labelText: 'E-mail'),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              obscureText: true,
-              controller: txtSenha,
-              style:
-                  TextStyle(color: Colors.green, fontWeight: FontWeight.w300),
-              decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.lock), labelText: 'Senha'),
-            ),
-            SizedBox(height: 40),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: 100,
-                  child: OutlinedButton(
-                    child: Text('Criar'),
-                    onPressed: () {
+          width: double.infinity,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Resgistrar \nNovo Parceiro',
+                    style: TextStyle(
+                      fontSize: 36,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey[800],
+                    ),
+                  ),
+                  SizedBox(height: 40),
+                  TextFieldLogin(
+                    controller: txtNomeFantasia,
+                    hintText: 'Nome Fantasia',
+                    suffixIcon: Icons.person,
+                  ),
+                  TextFieldLogin(
+                    controller: txtRazaoSocial,
+                    hintText: 'Razão Social',
+                    suffixIcon: Icons.assignment_ind,
+                  ),
+                  TextFieldLogin(
+                    controller: txtCNPJ,
+                    hintText: 'CNPJ',
+                    suffixIcon: Icons.assignment_ind,
+                  ),
+                  TextFieldLogin(
+                    controller: txtEndereco,
+                    hintText: 'Endereço',
+                    suffixIcon: Icons.map_outlined,
+                  ),
+                  TextFieldLogin(
+                    controller: txtTelefone,
+                    hintText: 'Telefone',
+                    suffixIcon: Icons.date_range_outlined,
+                  ),
+                  SizedBox(height: 40),
+                  TextFieldLogin(
+                    controller: txtEmail,
+                    hintText: 'E-mail',
+                    suffixIcon: Icons.email,
+                  ),
+                  TextFieldLogin(
+                    controller: txtSenha,
+                    hintText: 'Senha',
+                    suffixIcon: Icons.lock,
+                  ),
+                  SizedBox(height: 40),
+                  GestureDetector(
+                    onTap: () {
                       criarConta(txtNomeFantasia.text, txtRazaoSocial.text, txtCNPJ.text,
                           txtEndereco.text, txtTelefone.text, txtEmail.text, txtSenha.text);
                     },
+                    child: BotaoEnviar(),
                   ),
-                ),
-                Container(
-                  width: 100,
-                  child: OutlinedButton(
-                    child: Text('Cancelar'),
-                    onPressed: () {
+                  SizedBox(height: 10),
+                  GestureDetector(
+                    onTap: () {
                       Navigator.pop(context);
                     },
+                    child: Container(
+                      width: double.infinity,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Center(
+                          child: Text(
+                        'Cancelar',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 18,
+                        ),
+                      )),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-            SizedBox(height: 60),
-          ],
-        ),
-      ),
+          )),
     );
   }
 

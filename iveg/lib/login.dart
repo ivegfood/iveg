@@ -1,9 +1,15 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/login/BodyLogin.dart';
+import 'package:iveg/login/componentes/textfieldcontainer.dart';
+import 'package:iveg/login/componentes/textfieldsenha.dart';
 import 'package:iveg/pj/alertdialog2.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:iveg/pj/pj2.dart';
+import 'package:date_field/date_field.dart';
 
 class PrimeiraTelaInicio extends StatefulWidget {
   @override
@@ -55,31 +61,55 @@ class _TelaLoginState extends State<TelaLogin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'VEG',
-          style: GoogleFonts.openSans(
-            color: Colors.white,
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        backgroundColor: Colors.green,
-        centerTitle: true,
-      ),
-      backgroundColor: Colors.green[50],
+      
       body: Container(
-        padding: EdgeInsets.all(40),
-        child: Form(
-          key: formKey,
-          child: Column(
-            children: [
-              SizedBox(height: 30),
-              botao('Cliente', '/login3'),
-              SizedBox(height: 30),
-              botao('Lojista', '/pj2')
-            ],
-          ),
+        width: double.infinity,
+        height: MediaQuery.of(context).size.height,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [  
+            Image.asset(
+              'assets/imagens/vegetal.png',
+              height: MediaQuery.of(context).size.height * 0.40,
+            ),
+            SizedBox(height: 20),
+            Container(
+              width: double.infinity,
+              child:
+                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                ClienteParceiro(
+                  imagem: 'assets/imagens/imgEntrar.png',
+                  texto: 'Clientes',
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return TelaLogin3();
+                    }));
+                  },
+                ),
+                SizedBox(width: 20),
+                ClienteParceiro(
+                  imagem: 'assets/imagens/parceiro.png',
+                  texto: 'Parceiro',
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return TelaPj2();
+                    }));
+                  },
+                ),
+              ]),
+            ),
+            SizedBox(height: 20),
+            Text(
+              'Toque para começar',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w500,
+                color: Colors.green[300],
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -120,6 +150,59 @@ class _TelaLoginState extends State<TelaLogin> {
   }
 }
 
+class ClienteParceiro extends StatelessWidget {
+  const ClienteParceiro({
+    Key? key,
+    required this.imagem,
+    required this.texto,
+    required this.onTap,
+  }) : super(key: key);
+
+  final String imagem;
+  final String texto;
+  final Function() onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+        onTap: onTap,
+        child: Container(
+          height: MediaQuery.of(context).size.height * 0.3,
+          width: MediaQuery.of(context).size.width * 0.3,
+          decoration: BoxDecoration(
+            color: Colors.green[300],
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 2,
+                spreadRadius: 1,
+                offset: Offset(2, 2),
+              ),
+            ],
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                imagem,
+                height: MediaQuery.of(context).size.height * 0.15,
+              ),
+              SizedBox(height: 20),
+              Text(
+                texto,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                ),
+              )
+            ],
+          ),
+        ));
+  }
+}
+
 //Proxima tela
 class TelaLogin3 extends StatefulWidget {
   @override
@@ -138,89 +221,90 @@ class _TelaLogin3State extends State<TelaLogin3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: Text('VEG'), centerTitle: true, backgroundColor: Colors.green),
-      backgroundColor: Colors.green[50],
       body: Container(
-        padding: EdgeInsets.all(50),
-        child: ListView(
-          children: [
-            TextField(
-              controller: txtNome,
-              style:
-                  TextStyle(color: Colors.green, fontWeight: FontWeight.w300),
-              decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.person), labelText: 'Nome'),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              controller: txtCPF,
-              style:
-                  TextStyle(color: Colors.green, fontWeight: FontWeight.w300),
-              decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.assignment_ind), labelText: 'CPF'),
-            ),
-             SizedBox(height: 20),
-            TextField(
-              controller: txtEndereco,
-              style:
-                  TextStyle(color: Colors.green, fontWeight: FontWeight.w300),
-              decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.map_outlined), labelText: 'Endereço'),
-            ),
-             SizedBox(height: 20),
-            TextField(
-              controller: txtDataNascimento,
-              style:
-                  TextStyle(color: Colors.green, fontWeight: FontWeight.w300),
-              decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.date_range_outlined), labelText: 'Data de Nascimento'),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              controller: txtEmail,
-              style:
-                  TextStyle(color: Colors.green, fontWeight: FontWeight.w300),
-              decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.email), labelText: 'Email'),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              obscureText: true,
-              controller: txtSenha,
-              style:
-                  TextStyle(color: Colors.green, fontWeight: FontWeight.w300),
-              decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.lock), labelText: 'Senha'),
-            ),
-            SizedBox(height: 40),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: 100,
-                  child: OutlinedButton(
-                    child: Text('Criar'),
-                    onPressed: () {
-                      criarConta(txtNome.text, txtCPF.text, txtEndereco.text, txtDataNascimento.text, txtEmail.text, txtSenha.text);
-                    },
+          width: double.infinity,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Resgistrar \nNova Conta',
+                    style: TextStyle(
+                      fontSize: 36,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey[800],
+                    ),
                   ),
-                ),
-                Container(
-                  width: 100,
-                  child: OutlinedButton(
-                    child: Text('Cancelar'),
-                    onPressed: () {
+                  SizedBox(height: 40),
+                  TextFieldLogin(
+                    controller: txtNome,
+                    hintText: 'Nome',
+                    suffixIcon: Icons.person,
+                  ),
+                  TextFieldLogin(
+                    controller: txtCPF,
+                    hintText: 'CPF',
+                    suffixIcon: Icons.assignment_ind,
+                  ),
+                  TextFieldLogin(
+                    controller: txtEndereco,
+                    hintText: 'Endereco',
+                    suffixIcon: Icons.map_outlined,
+                  ),
+                  TextFieldLogin(
+                    controller: txtDataNascimento,
+                    hintText: 'Data de Nascimento',
+                    suffixIcon: Icons.date_range_outlined,
+                  ),
+                  SizedBox(height: 40),
+                  TextFieldLogin(
+                    controller: txtEmail,
+                    hintText: 'Email',
+                    suffixIcon: Icons.email_outlined,
+                  ),
+                  TextFieldLogin(
+                    controller: txtSenha,
+                    hintText: 'Senha',
+                    suffixIcon: Icons.lock,
+                  ),
+                  SizedBox(height: 40),
+                  GestureDetector(
+                    onTap: () {
+                      criarConta(txtNome.text, txtCPF.text, txtEndereco.text,
+                          txtDataNascimento.text, txtEmail.text, txtSenha.text);
+                    },
+                    child: BotaoEnviar(),
+                  ),
+                  SizedBox(height: 10),
+                  GestureDetector(
+                    onTap: () {
                       Navigator.pop(context);
                     },
+                    child: Container(
+                      width: double.infinity,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Center(
+                          child: Text(
+                        'Cancelar',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 18,
+                        ),
+                      )),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-            SizedBox(height: 60),
-          ],
-        ),
-      ),
+          )),
     );
   }
 
@@ -256,5 +340,55 @@ class _TelaLogin3State extends State<TelaLogin3> {
             duration: Duration(seconds: 2)));
       }
     });
+  }
+}
+
+class BotaoEnviar extends StatelessWidget {
+  const BotaoEnviar({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      height: 50,
+      decoration: BoxDecoration(
+        color: Colors.green,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Center(
+          child: Text(
+        'Enviar',
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
+          fontSize: 18,
+        ),
+      )),
+    );
+  }
+}
+
+class TextFieldLogin extends StatelessWidget {
+  const TextFieldLogin({
+    Key? key,
+    required this.controller,
+    required this.hintText,
+    required this.suffixIcon,
+  }) : super(key: key);
+
+  final TextEditingController controller;
+  final String hintText;
+  final IconData suffixIcon;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+        controller: controller,
+        decoration: InputDecoration(
+          hintText: hintText,
+          suffixIcon: Icon(suffixIcon),
+        ));
   }
 }
