@@ -115,7 +115,7 @@ return Scaffold(
     FirebaseAuth.instance.signInWithEmailAndPassword(
       email: email, password: senha).then((resultado){
         isLoading = false;
-        Navigator.pushReplacementNamed(context, '/pj3');
+        Navigator.pushReplacementNamed(context, '/paineladm');
         
     }).catchError((erro){
 
