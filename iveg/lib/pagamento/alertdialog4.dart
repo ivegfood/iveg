@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'adicionarcartao.dart';
-
 showAlertDialog4(BuildContext context) {
   // configura os botões
   Widget aceitarButton = TextButton(
     child: Text("OK"),
     onPressed: () {
-      Navigator.push(context,
-          new MaterialPageRoute(builder: (context) => new AdicionarCartao()));
+      Navigator.pushNamed(context, '/final');
     },
   );
   // configura o  AlertDialog

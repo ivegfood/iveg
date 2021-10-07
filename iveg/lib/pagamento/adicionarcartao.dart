@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/TelaFinal/TelaFinal.dart';
 import 'package:iveg/pagamento/alertdialog4.dart';
-// import 'package:flutter_credit_card_brazilian/credit_card_form.dart';
-// import 'package:flutter_credit_card_brazilian/credit_card_model.dart';
 import 'package:flutter_credit_card_brazilian/flutter_credit_card.dart';
 
 
