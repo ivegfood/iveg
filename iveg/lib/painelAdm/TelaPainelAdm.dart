@@ -56,10 +56,12 @@ class TelaPainelAdm extends StatelessWidget {
                       text: 'Adicionar',
                       icon: Icons.add,
                       color: Colors.green,
-                      press: () {},
+                      press: () {
+                        Navigator.pushNamed(context, '/cadastroprod');
+                      },
                     ),
                     GerenciarProdutos(
-                      text: 'Remoner',
+                      text: 'Remover',
                       icon: Icons.delete,
                       color: Colors.red,
                       press: () {},
@@ -81,11 +83,50 @@ class TelaPainelAdm extends StatelessWidget {
                 ),
               ),
               Divider(),
-              HistoricoDeVendas()
+              HistoricoDeVendas(),
+              SizedBox(height: 20),
+              Text(
+                'Visualizar Produtos',
+                style: TextStyle(
+                  fontWeight: FontWeight.w300,
+                ),
+              ),
+              Divider(),
+              GestureDetector(
+                onTap: (){
+                  Navigator.pushNamed(context, '/produtoh');
+                },
+                child: BotaoProdutos()
+              ),
             ],
           ),
         ),
       )),
+    );
+  }
+}
+
+class BotaoProdutos extends StatelessWidget {
+  const BotaoProdutos({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 50,
+      width: MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+        color: Colors.green[500],
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Center(
+        child: Text(
+          'Todos os seus Produtos',
+          style: TextStyle(
+              color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+      ),
     );
   }
 }
@@ -129,12 +170,12 @@ class _HistoricoDeVendasState extends State<HistoricoDeVendas> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 20),
-                    child: Text('Expandir'),
+                    child: expandir ? Text('Expandir') : Text('Diminuir'),
                   ),
                   Spacer(),
                   Padding(
                     padding: const EdgeInsets.only(right: 20),
-                    child: Icon(Icons.arrow_downward),
+                    child: expandir ? Icon(Icons.arrow_downward) : Icon(Icons.cancel_outlined),
                   ),
                 ],
               ),
@@ -158,8 +199,11 @@ class _HistoricoDeVendasState extends State<HistoricoDeVendas> {
                       ),
                       Spacer(),
                       Center(
-                        child: Text('R\$ 25,00', style: TextStyle(fontSize: 20, color: Colors.blue),),
-                      )                  
+                        child: Text(
+                          'R\$ 25,00',
+                          style: TextStyle(fontSize: 20, color: Colors.blue),
+                        ),
+                      )
                     ],
                   ),
                 ),

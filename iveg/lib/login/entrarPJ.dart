@@ -115,7 +115,7 @@ return Scaffold(
         .signInWithEmailAndPassword(email: email, password: senha)
         .then((resultado){
       isLoading = false;
-      Navigator.pushReplacementNamed(context, '/produtoh');
+      Navigator.pushReplacementNamed(context, '/paineladm');
         
     }).catchError((erro){
 

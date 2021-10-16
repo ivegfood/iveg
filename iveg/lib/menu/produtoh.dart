@@ -12,18 +12,17 @@ class TelaProdutoh extends StatefulWidget {
 }
 
 class _TelaProdutohState extends State<TelaProdutoh> {
-
   //Referenciar a coleção nomeada "cafes"
   late CollectionReference prodhumano;
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     prodhumano = FirebaseFirestore.instance.collection('prodHumano');
   }
 
   //Aparência do item do ListView
-  Widget exibirDocumento(item){
+  Widget exibirDocumento(item) {
     //Converter um DOCUMENTO em um OBJETO
     Veg veg = Veg.fromJson(item.data(), item.id);
     return Container(
@@ -39,58 +38,47 @@ class _TelaProdutohState extends State<TelaProdutoh> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-                title: Text(
-                  'VEG',
-                  style: GoogleFonts.openSans(
-                    color: Colors.white,
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                backgroundColor: Colors.green,
-                centerTitle: true,
-                actions: <Widget>[
-                new IconButton(
-                  icon: new Icon(Icons.close),
-                    onPressed: () => Navigator.pushNamed(context, '/criarconta'),
-                  ),
-                ],
-              ),
+        title: Text(
+          'VEG',
+          style: GoogleFonts.openSans(
+            color: Colors.white,
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Colors.green,
+        centerTitle: true,
+      ),
       //
       // EXIBIR os documentos da coleção de "produtos"
       //
       body: Container(
         padding: EdgeInsets.all(30),
-        
         child: StreamBuilder<QuerySnapshot>(
 
-          //fonte de dados
-          stream: prodhumano.snapshots(),
+            //fonte de dados
+            stream: prodhumano.snapshots(),
 
-          //definir a aparência dos documentos que serão exibidos
-          builder: (context,snapshot){
+            //definir a aparência dos documentos que serão exibidos
+            builder: (context, snapshot) {
+              switch (snapshot.connectionState) {
+                case ConnectionState.none:
+                  return Center(child: Text('Erro ao conectar ao Firestore'));
 
-            switch(snapshot.connectionState){
+                case ConnectionState.waiting:
+                  return Center(child: CircularProgressIndicator());
 
-              case ConnectionState.none:
-                return Center(child:Text('Erro ao conectar ao Firestore'));
+                default:
+                  final dados = snapshot.requireData;
 
-              case ConnectionState.waiting:
-                return Center(child: CircularProgressIndicator());
-
-              default:
-                final dados = snapshot.requireData;
-
-                return ListView.builder(
-                  itemCount: dados.size,
-                  itemBuilder: (context, index){
-                    return exibirDocumento(dados.docs[index]);
-                  }
-                );
-            }
-          }
-        ),      
-        ),
+                  return ListView.builder(
+                      itemCount: dados.size,
+                      itemBuilder: (context, index) {
+                        return exibirDocumento(dados.docs[index]);
+                      });
+              }
+            }),
+      ),
       floatingActionButton: FloatingActionButton(
         foregroundColor: Colors.white,
         backgroundColor: Colors.green,
