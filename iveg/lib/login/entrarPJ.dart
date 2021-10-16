@@ -111,11 +111,11 @@ return Scaffold(
   // LOGIN com o Firebase Auth
   //
   void login(email, senha){
-
-    FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: email, password: senha).then((resultado){
-        isLoading = false;
-        Navigator.pushReplacementNamed(context, '/paineladm');
+    FirebaseAuth.instance
+        .signInWithEmailAndPassword(email: email, password: senha)
+        .then((resultado){
+      isLoading = false;
+      Navigator.pushReplacementNamed(context, '/produtoh');
         
     }).catchError((erro){
 

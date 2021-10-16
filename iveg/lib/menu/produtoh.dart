@@ -8,12 +8,12 @@ import 'package:iveg/model/Veg.dart';
 //
 // TELA PRINCIPAL
 //
-class TelaProdutosh extends StatefulWidget {
+class TelaProdutoh extends StatefulWidget {
   @override
-  _TelaProdutoshState createState() => _TelaProdutoshState();
+  _TelaProdutohState createState() => _TelaProdutohState();
 }
 
-class _TelaProdutoshState extends State<TelaProdutosh> {
+class _TelaProdutohState extends State<TelaProdutoh> {
 
   //Referenciar a coleção nomeada "cafes"
   late CollectionReference prodhumano;
@@ -51,9 +51,15 @@ class _TelaProdutoshState extends State<TelaProdutosh> {
                 ),
                 backgroundColor: Colors.green,
                 centerTitle: true,
+                actions: <Widget>[
+                new IconButton(
+                  icon: new Icon(Icons.close),
+                    onPressed: () => Navigator.pushNamed(context, '/criarconta'),
+                  ),
+                ],
               ),
       //
-      // EXIBIR os documentos da coleção de "cafes"
+      // EXIBIR os documentos da coleção de "produtos"
       //
       body: Container(
         padding: EdgeInsets.all(30),
@@ -85,8 +91,15 @@ class _TelaProdutoshState extends State<TelaProdutosh> {
                 );
             }
           }
+        ),      
         ),
-
+      floatingActionButton: FloatingActionButton(
+        foregroundColor: Colors.white,
+        backgroundColor: Colors.green,
+        child: Icon(Icons.add),
+        onPressed: () {
+          Navigator.pushNamed(context, '/cadastroprod');
+        },
       ),
     );
   }

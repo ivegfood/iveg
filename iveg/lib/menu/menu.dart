@@ -173,7 +173,7 @@ class _TelaMenuState extends State<TelaMenu> {
                                                   context,
                                                   MaterialPageRoute(
                                                       builder: (context) =>
-                                                          TelaProdutosh()));
+                                                          TelaProdutoh()));
                                             },
                                             child: buildContainer(
                                                 dados.docs[index])),

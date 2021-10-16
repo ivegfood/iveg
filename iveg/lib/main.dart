@@ -8,6 +8,7 @@ import 'package:iveg/login/entrarPJ.dart';
 import 'package:iveg/menu/TelaCupons/TelaCupons.dart';
 import 'package:iveg/menu/TelaDetalhes/TelaDetalhes.dart';
 import 'package:iveg/menu/TelaProdutoPet/TelaPet.dart';
+import 'package:iveg/menu/cadastroprod.dart';
 import 'package:iveg/painelAdm/TelaPainelAdm.dart';
 import 'package:iveg/pesquisar/TelaPesquisa.dart';
 import 'package:iveg/telaInicial/TelaInicialv2.dart';
@@ -31,7 +32,7 @@ Future<void> main() async {
     title: 'Veg',
 
     //ROTAS DE NAVEGAÇÃO
-    initialRoute: '/adicionarcartao',
+    initialRoute: '/inicial',
     routes: {
       '/inicial': (context) => TelaInicial(),
       '/inicial1': (context) => TelaInicialv2(),
@@ -47,7 +48,8 @@ Future<void> main() async {
       '/pj2': (context) => TelaPj2(),
       '/pj3': (context) => TelaPj3(),
       '/carrinho': (context) => TelaCarrinho(),
-      '/produtosh': (context) => TelaProdutosh(),
+      '/produtoh': (context) => TelaProdutoh(),
+      '/cadastroprod': (context) => TelaCadastro(),
       '/telaPet': (context) => TelaPet(),
       '/adicionarcartao': (context) => AdicionarCartao(),
       '/fidelidades': (context) => Fidelidade(),
