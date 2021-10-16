@@ -43,7 +43,7 @@ class _TelaCadastroState extends State<TelaCadastro> {
         backgroundColor: Colors.green,
         automaticallyImplyLeading: false,
       ),
-      backgroundColor: Colors.green[50],
+      backgroundColor: Colors.white,
       body: Container(
         padding: EdgeInsets.all(30),
         child: ListView(children: [
@@ -71,8 +71,17 @@ class _TelaCadastroState extends State<TelaCadastro> {
               Container(
                 padding: EdgeInsets.all(5),
                 width: 150,
-                child: OutlinedButton(
-                  child: Text('salvar'),
+                decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                child: TextButton(
+                  child: Text('salvar', 
+                          style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 18,
+                        )),
                   onPressed: () {
 
                     var db = FirebaseFirestore.instance;
@@ -98,9 +107,7 @@ class _TelaCadastroState extends State<TelaCadastro> {
                         }
                       );
                     }
-
                     Navigator.pop(context);
-
 
                   },
                 ),
@@ -108,11 +115,20 @@ class _TelaCadastroState extends State<TelaCadastro> {
               Container(
                 padding: EdgeInsets.all(5),
                 width: 150,
-                child: OutlinedButton(
-                  child: Text('cancelar'),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
+                decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                child: TextButton(
+                  child: Text('cancelar', 
+                          style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 18,
+                        )),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
                 ),
               ),
             ],

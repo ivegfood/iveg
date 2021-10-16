@@ -1,9 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:iveg/car_compras/classes/meu_carrinho.dart';
 import 'package:iveg/menu/TelaDetalhes/TelaDetalhes.dart';
-import 'package:iveg/menu/TelaProdutoPet/acessorios/ContainerPet.dart';
 import 'package:iveg/menu/TelaProdutoPet/classes/produtosPet.dart';
 
 class BodyTelaPet extends StatefulWidget {

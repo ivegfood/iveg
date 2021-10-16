@@ -59,6 +59,7 @@ class BotoesPerfil extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      // ignore: deprecated_member_use
       child: FlatButton(
           color: Colors.white,
           padding: EdgeInsets.all(20),
@@ -96,6 +97,7 @@ class BotaoSair extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      // ignore: deprecated_member_use
       child: FlatButton(
           color: Colors.red,
           padding: EdgeInsets.all(20),

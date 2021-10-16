@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:iveg/TelaFinal/TelaFinal.dart';
 import 'package:iveg/pagamento/alertdialog4.dart';
 import 'package:flutter_credit_card_brazilian/flutter_credit_card.dart';
-
 
 class AdicionarCartao extends StatefulWidget {
   @override
@@ -79,33 +76,58 @@ class _AdicionarCartaoState extends State<AdicionarCartao> {
                         ),
                         onCreditCardModelChange: onCreditCardModelChange,
                       ),
-                      ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          primary: const Color(0xff1b447b),
-                        ),
-                        child: Container(
-                          margin: const EdgeInsets.all(8),
-                          child: const Text(
-                            'Validate',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'halter',
-                              fontSize: 14,
-                              package: 'flutter_credit_card',
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                primary: Colors.green,
+                              ),
+                              child: Container(
+                                margin: const EdgeInsets.all(8),
+                                child: const Text(
+                                  'Confirmar',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: 'halter',
+                                    fontSize: 14,
+                                    package: 'flutter_credit_card',
+                                  ),
+                                ),
+                              ),
+                              onPressed: () {
+                                if (formKey.currentState!.validate()) {
+                                  showAlertDialog4(context);
+                                } else {
+                                  print('Cartão inválido');
+                                }
+                              },
                             ),
-                          ),
-                        ),
-                        onPressed: () {
-                          if (formKey.currentState!.validate()) {
-                            showAlertDialog4(context);
-                          } else {
-                            print('Cartão inválido');
-                          }
-                        },
-                      )
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                primary: Colors.red,
+                              ),
+                              child: Container(
+                                margin: const EdgeInsets.all(8),
+                                child: const Text(
+                                  'Cancelar',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontFamily: 'halter',
+                                      fontSize: 14),
+                                ),
+                              ),
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/criarconta');
+                              },
+                            )
+                          ])
                     ],
                   ),
                 ),

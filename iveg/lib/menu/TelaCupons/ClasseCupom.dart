@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class Cupom {
   final int id;
   final String nmCupom;

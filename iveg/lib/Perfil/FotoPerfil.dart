@@ -11,8 +11,7 @@ class FotoPerfil extends StatelessWidget {
       height: 110,
       width: 110,
       child: Stack(            
-        fit: StackFit.expand,
-        overflow: Overflow.visible,
+        clipBehavior: Clip.none, fit: StackFit.expand,
         children: [
           CircleAvatar(
             backgroundImage: AssetImage("assets/imagens/JanderRaul.jpeg"),
@@ -23,6 +22,7 @@ class FotoPerfil extends StatelessWidget {
             child: SizedBox(
               height: 55,
               width: 55,
+              // ignore: deprecated_member_use
               child: FlatButton(
                 padding: EdgeInsets.zero,
                 shape: RoundedRectangleBorder(

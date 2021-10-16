@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-
 class TipoProdutos {
   final String imgTipo;
   final String texto;

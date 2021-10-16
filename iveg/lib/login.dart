@@ -1,15 +1,9 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iveg/login/BodyLogin.dart';
-import 'package:iveg/login/componentes/textfieldcontainer.dart';
-import 'package:iveg/login/componentes/textfieldsenha.dart';
-import 'package:iveg/pj/alertdialog2.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:iveg/pj/pj2.dart';
-import 'package:date_field/date_field.dart';
 
 class PrimeiraTelaInicio extends StatefulWidget {
   @override
@@ -281,7 +275,7 @@ class _TelaLogin3State extends State<TelaLogin3> {
                   SizedBox(height: 10),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pop(context);
+                      Navigator.pushNamed(context, '/criarconta');
                     },
                     child: Container(
                       width: double.infinity,
@@ -298,6 +292,7 @@ class _TelaLogin3State extends State<TelaLogin3> {
                           color: Colors.white,
                           fontSize: 18,
                         ),
+                        
                       )),
                     ),
                   ),

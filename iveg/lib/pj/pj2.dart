@@ -87,7 +87,7 @@ class _TelaPj2State extends State<TelaPj2> {
                   SizedBox(height: 10),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pop(context);
+                      Navigator.pushNamed(context, '/criarconta');
                     },
                     child: Container(
                       width: double.infinity,

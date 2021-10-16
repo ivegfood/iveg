@@ -1,8 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:iveg/car_compras/classes/carCompras.dart';
-import 'package:iveg/car_compras/classes/meu_carrinho.dart';
-import 'package:iveg/car_compras/containerProd.dart';
 
 class BodyCarrinho extends StatefulWidget {
   @override
