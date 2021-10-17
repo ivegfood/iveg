@@ -64,7 +64,9 @@ class TelaPainelAdm extends StatelessWidget {
                       text: 'Remover',
                       icon: Icons.delete,
                       color: Colors.red,
-                      press: () {},
+                      press: () {
+                        Navigator.pushNamed(context, '/removeprod');
+                      },
                     ),
                     GerenciarProdutos(
                       text: 'Alterar',

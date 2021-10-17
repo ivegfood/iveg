@@ -9,6 +9,7 @@ import 'package:iveg/menu/TelaCupons/TelaCupons.dart';
 import 'package:iveg/menu/TelaDetalhes/TelaDetalhes.dart';
 import 'package:iveg/menu/TelaProdutoPet/TelaPet.dart';
 import 'package:iveg/menu/cadastroprod.dart';
+import 'package:iveg/painelAdm/RemoveProdutos/TelaRemover.dart';
 import 'package:iveg/painelAdm/TelaPainelAdm.dart';
 import 'package:iveg/pesquisar/TelaPesquisa.dart';
 import 'package:iveg/telaInicial/TelaInicialv2.dart';
@@ -50,6 +51,7 @@ Future<void> main() async {
       '/carrinho': (context) => TelaCarrinho(),
       '/produtoh': (context) => TelaProdutoh(),
       '/cadastroprod': (context) => TelaCadastro(),
+      '/removeprod': (context) => TelaRemover(),
       '/telaPet': (context) => TelaPet(),
       '/adicionarcartao': (context) => AdicionarCartao(),
       '/fidelidades': (context) => Fidelidade(),
