@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:iveg/TelaFinal/TelaFinal.dart';
 
 showAlertDialog4(BuildContext context) {
   // configura os botões
   Widget aceitarButton = TextButton(
     child: Text("OK"),
     onPressed: () {
-      Navigator.pushNamed(context, '/final');
-    },
+                  Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => TelaFinal()));
+                },
   );
   // configura o  AlertDialog
   AlertDialog alert = AlertDialog(

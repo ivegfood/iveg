@@ -72,7 +72,9 @@ class TelaPainelAdm extends StatelessWidget {
                       text: 'Alterar',
                       icon: Icons.price_change_outlined,
                       color: Colors.blue,
-                      press: () {},
+                      press: () {
+                        Navigator.pushNamed(context, '/cadastroprod');
+                      },
                     ),
                   ],
                 ),
@@ -95,11 +97,15 @@ class TelaPainelAdm extends StatelessWidget {
               ),
               Divider(),
               GestureDetector(
-                onTap: (){
-                  Navigator.pushNamed(context, '/produtoh');
-                },
-                child: BotaoProdutos()
-              ),
+                  onTap: () {
+                    Navigator.pushNamed(context, '/produtoh');
+                  },
+                  child: BotaoProdutos()),
+              GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/inicial');
+                  },
+                  child: BotaoSair()),
             ],
           ),
         ),
@@ -125,13 +131,37 @@ class BotaoProdutos extends StatelessWidget {
       child: Center(
         child: Text(
           'Todos os seus Produtos',
-          style: TextStyle(
-              color: Colors.white, fontWeight: FontWeight.bold),
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
     );
   }
 }
+
+class BotaoSair extends StatelessWidget {
+  const BotaoSair({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 50,
+      width: MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+        color: Colors.red,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Center(
+        child: Text(
+          'Sair',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
+  }
+}
+
 
 class HistoricoDeVendas extends StatefulWidget {
   const HistoricoDeVendas({
@@ -177,7 +207,9 @@ class _HistoricoDeVendasState extends State<HistoricoDeVendas> {
                   Spacer(),
                   Padding(
                     padding: const EdgeInsets.only(right: 20),
-                    child: expandir ? Icon(Icons.arrow_downward) : Icon(Icons.cancel_outlined),
+                    child: expandir
+                        ? Icon(Icons.arrow_downward)
+                        : Icon(Icons.cancel_outlined),
                   ),
                 ],
               ),
@@ -196,7 +228,7 @@ class _HistoricoDeVendasState extends State<HistoricoDeVendas> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text('Data da Venda: 21/08/2021'),
-                          Text('Cliente: Falano da Silva Sauro'),
+                          Text('Cliente: Fulano da Silva Sauro'),
                         ],
                       ),
                       Spacer(),

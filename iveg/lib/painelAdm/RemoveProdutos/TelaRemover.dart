@@ -36,6 +36,7 @@ class _TelaRemoverState extends State<TelaRemover> {
             title: Text("Excluir?"),
             content: Text("Deseja excluir esse produto?"),
             actions: [
+              // ignore: deprecated_member_use
               FlatButton(
                   onPressed: () {
                     Navigator.pop(context);
@@ -44,6 +45,7 @@ class _TelaRemoverState extends State<TelaRemover> {
                         duration: Duration(seconds: 2)));
                   },
                   child: Text("Não")),
+              // ignore: deprecated_member_use
               FlatButton(
                   onPressed: () {
                     prodhumano.doc(veg.id).delete();

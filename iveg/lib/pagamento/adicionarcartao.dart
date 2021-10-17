@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iveg/login.dart';
 import 'package:iveg/pagamento/alertdialog4.dart';
 import 'package:flutter_credit_card_brazilian/flutter_credit_card.dart';
 
@@ -20,7 +21,7 @@ class _AdicionarCartaoState extends State<AdicionarCartao> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Credit Card',
+      
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -124,8 +125,10 @@ class _AdicionarCartaoState extends State<AdicionarCartao> {
                                 ),
                               ),
                               onPressed: () {
-                                Navigator.pushNamed(context, '/criarconta');
-                              },
+                                      Navigator.push(
+                                  context, MaterialPageRoute(
+                                    builder: (context) => PrimeiraTelaInicio()));
+                },
                             )
                           ])
                     ],

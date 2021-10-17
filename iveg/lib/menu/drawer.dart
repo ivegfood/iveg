@@ -37,13 +37,6 @@ class _TesteDrawerState extends State<TesteDrawer> {
           Column(
             children: [
               ListTile(
-                title: Text('Adicionar Cartão de Crédito'),
-                onTap: () {
-                  Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => AdicionarCartao()));
-                },
-              ),
-              ListTile(
                 title: Text('Visualizar Cupons de Desconto'),
                 onTap: () {
                   Navigator.push(
